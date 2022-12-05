@@ -1,0 +1,620 @@
+{
+  "description": "Identity and access management for the cloud using Azure Active Directory REST API services.",
+  "category": "Identity Management",
+  "name": "azure-active-directory",
+  "label": "Azure Active Directory",
+  "version": "2.0.0",
+  "publisher": "Fortinet",
+  "cs_approved": true,
+  "cs_compatible": true,
+  "icon_small_name": "small-azure.png",
+  "icon_large_name": "large-azure.png",
+  "help_online": "https://docs.fortinet.com/document/fortisoar/2.0.0/azure-active-directory/122/azure-active-directory-v2-0-0",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Get Access Token",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "select",
+        "options": [
+          "On behalf of User - Delegate Permission",
+          "Without a User - Application Permission"
+        ],
+        "name": "auth_type",
+        "value": "Without a User - Application Permission",
+        "description": "Select the method using which you will get authentication tokens used to access the security graph APIs. You can choose between On behalf of User – Delegate Permission or Without a User - Application Permission.",
+        "onchange": {
+          "Without a User - Application Permission": [
+            {
+              "title": "Server URL",
+              "required": true,
+              "editable": true,
+              "visible": true,
+              "type": "text",
+              "name": "resource",
+              "value": "https://graph.microsoft.com",
+              "description": "The service-based URI to which you will connect and perform the automated operations."
+            },
+            {
+              "title": "Client ID",
+              "required": true,
+              "editable": true,
+              "visible": true,
+              "type": "text",
+              "name": "client_id",
+              "description": "Unique Application ID of the Azure Active Directory application that is used to create an authentication token required to access the API."
+            },
+            {
+              "title": "Client Secret",
+              "required": true,
+              "editable": true,
+              "visible": true,
+              "type": "password",
+              "name": "client_secret",
+              "description": "Unique Client Secret of the Azure Active Directory application that is used to create an authentication token required to access the API. For information on how to get the secret key, see 'https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-atp/exposed-apis-create-app-webapp'."
+            },
+            {
+              "title": "Tenant ID",
+              "required": true,
+              "editable": true,
+              "visible": true,
+              "type": "text",
+              "name": "tenant_id",
+              "description": "ID of the tenant that you have been provided for your Azure Active Directory instance."
+            },
+            {
+              "title": "Verify SSL",
+              "required": false,
+              "editable": true,
+              "visible": true,
+              "type": "checkbox",
+              "name": "verify_ssl",
+              "value": true,
+              "description": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True."
+            }
+          ],
+          "On behalf of User - Delegate Permission": [
+            {
+              "title": "Server URL",
+              "required": true,
+              "editable": true,
+              "visible": true,
+              "type": "text",
+              "name": "resource",
+              "value": "https://graph.microsoft.com",
+              "description": "The service-based URI to which you will connect and perform the automated operations."
+            },
+            {
+              "title": "Client ID",
+              "required": true,
+              "editable": true,
+              "visible": true,
+              "type": "text",
+              "name": "client_id",
+              "description": "Unique API ID of the Azure Active Directory application that is used to create an authentication token required to access the API."
+            },
+            {
+              "title": "Client Secret",
+              "required": true,
+              "editable": true,
+              "visible": true,
+              "type": "password",
+              "name": "client_secret",
+              "description": "Unique API Secret of the Azure Active Directory application that is used to create an authentication token required to access the API. For information on how to get the secret key, see 'https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-atp/exposed-apis-create-app-webapp'."
+            },
+            {
+              "title": "Tenant ID",
+              "required": true,
+              "editable": true,
+              "visible": true,
+              "type": "text",
+              "name": "tenant_id",
+              "description": "ID of the tenant that you have been provided for your Azure Active Directory instance."
+            },
+            {
+              "title": "Authorization Code",
+              "required": true,
+              "editable": true,
+              "visible": true,
+              "type": "password",
+              "name": "code",
+              "tooltip": "Authorization code that you acquired in the authorization step.",
+              "description": "(Only Applicable to On behalf of User – Delegate Permission) The authorization code that you acquired during the authorization step. For more information, see the Getting Access Tokens using the Delegate Permissions method section."
+            },
+            {
+              "title": "Redirect URL",
+              "description": "The redirect_uri of your app, where authentication responses can be sent and received by your app. It must exactly match one of the redirect_uri's you registered in the app registration portal.",
+              "required": false,
+              "editable": true,
+              "visible": true,
+              "type": "text",
+              "name": "redirect_url",
+              "placeholder": "E.g. https://localhost/myapp",
+              "tooltip": "(Only Applicable to On behalf of User – Delegate Permission) The redirect_uri of your app, where authentication responses can be sent and received by your app. The redirect URL that you specify here must exactly match one of the redirect_uri's you have registered in your app registration portal."
+            },
+            {
+              "title": "Verify SSL",
+              "required": false,
+              "editable": true,
+              "visible": true,
+              "type": "checkbox",
+              "name": "verify_ssl",
+              "value": true,
+              "description": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "operations": [
+    {
+      "title": "List Users",
+      "operation": "list_users",
+      "description": "Retrieves the list of users from Azure Active Directory based on the input parameters such as the query for filtering users you have specified.",
+      "category": "investigation ",
+      "annotation": "list_users",
+      "output_schema": {
+        "@odata.context": "",
+        "value": [
+          {
+            "businessPhones": [],
+            "displayName": "",
+            "givenName": "",
+            "jobTitle": "",
+            "mail": "",
+            "mobilePhone": "",
+            "officeLocation": "",
+            "preferredLanguage": "",
+            "surname": "",
+            "userPrincipalName": "",
+            "id": ""
+          }
+        ]
+      },
+      "parameters": [
+        {
+          "title": "Filter Query",
+          "description": "Filter query based on which you want to retrieve users from Azure Active Directory. The OData's Filter query is supported on the following fields: \"id\", \"userPrincipalName\", \"displayName\", \"givenName\" and \"jobTitle\". For example [userPrincipalName eq 'username@fortisoar1.onmicrosoft.com'] retrieve a user which userPrincipalName is username@fortisoar1.onmicrosoft.com",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "$filter",
+          "placeholder": "userPrincipalName eq 'username@fortisoar1.onmicrosoft.com'",
+          "tooltip": "Filter query based on which you want to retrieve users from Azure Active Directory. The OData's Filter query is supported on the following fields: \"id\", \"userPrincipalName\", \"displayName\", \"givenName\" and \"jobTitle\". For example [userPrincipalName eq 'username@fortisoar1.onmicrosoft.com'] retrieve a user which userPrincipalName is username@fortisoar1.onmicrosoft.com"
+        },
+        {
+          "title": "Select Query",
+          "description": "Specify the select query to retrieve user fields from Azure Active Directory. The OData's Select query is supported on fields such as: \"id\", \"userPrincipalName\", \"displayName\", etc.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "$select",
+          "placeholder": "id,displayName",
+          "tooltip": "Specify the select query to retrieve user fields from Azure Active Directory. The OData's Select query is supported on fields such as: \"id\", \"userPrincipalName\", \"displayName\", etc."
+        },
+        {
+          "title": "Search Query",
+          "description": "Specify the search query to retrieve user details from Azure Active Directory. The OData's Search query is supported on fields such as: \"id\", \"userPrincipalName\", \"displayName\", etc.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "$search",
+          "placeholder": "displayName:root",
+          "tooltip": "Specify the search query to retrieve user details from Azure Active Directory. The OData's Search query is supported on fields such as: \"id\", \"userPrincipalName\", \"displayName\", etc."
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Get User Details",
+      "operation": "get_user_details",
+      "description": "Retrieves specific information for a specific user from Azure Active Directory, based on the Object ID or User Principal Name you have specified.",
+      "category": "investigation",
+      "annotation": "get_user_details",
+      "output_schema": {
+        "@odata.context": "",
+        "businessPhones": [],
+        "displayName": "",
+        "givenName": "",
+        "jobTitle": "",
+        "mail": "",
+        "mobilePhone": "",
+        "officeLocation": "",
+        "preferredLanguage": "",
+        "surname": "",
+        "userPrincipalName": "",
+        "id": ""
+      },
+      "parameters": [
+        {
+          "title": "Based On",
+          "name": "based_on",
+          "type": "select",
+          "tooltip": "Select the parameter based on which you want to retrieve details of a user from Azure Active Directory. You can choose between Object ID or User Principal Name.",
+          "description": "Select the parameter based on which you want to retrieve details of a user from Azure Active Directory. You can choose between Object ID or User Principal Name.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "options": [
+            "Object ID",
+            "User Principal Name"
+          ],
+          "value": "Object ID",
+          "onchange": {
+            "Object ID": [
+              {
+                "title": "Object ID",
+                "name": "id",
+                "type": "text",
+                "tooltip": "If you choose Object ID, then in the Object ID field, you must specify the ID of the object based on which details of the user are retrieved from Azure Active Directory.",
+                "description": "If you choose Object ID, then in the Object ID field, you must specify the ID of the object based on which details of the user are retrieved from Azure Active Directory.",
+                "required": true,
+                "editable": true,
+                "visible": true
+              }
+            ],
+            "User Principal Name": [
+              {
+                "title": "User Principal Name",
+                "name": "id",
+                "type": "text",
+                "tooltip": "If you choose User Principal Name, then in the User Principal Name field, you must specify the principal name of the user whose details you want to retrieve from Azure Active Directory.",
+                "description": "If you choose User Principal Name, then in the User Principal Name field, you must specify the principal name of the user whose details you want to retrieve from Azure Active Directory.",
+                "required": true,
+                "editable": true,
+                "visible": true
+              }
+            ]
+          }
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Add User",
+      "operation": "add_user",
+      "description": "Creates a new user in Azure Active Directory, based on the User Principal Name, Display Name, Password, and other input parameters you have specified.",
+      "category": "investigation",
+      "annotation": "add_user",
+      "output_schema": {
+        "@odata.context": "",
+        "id": "",
+        "businessPhones": [],
+        "displayName": "",
+        "givenName": "",
+        "jobTitle": "",
+        "mail": "",
+        "mobilePhone": "",
+        "officeLocation": "",
+        "preferredLanguage": "",
+        "surname": "",
+        "userPrincipalName": ""
+      },
+      "parameters": [
+        {
+          "title": "Display Name",
+          "name": "displayName",
+          "type": "text",
+          "tooltip": "Name that you want to display in the address book for the user that you are creating in Azure Active Directory.",
+          "description": "Name that you want to display in the address book for the user that you are creating in Azure Active Directory.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Mail Nick Name",
+          "name": "mailNickname",
+          "type": "text",
+          "tooltip": "Mail alias for the user that you are creating in Azure Active Directory.",
+          "description": "Mail alias for the user that you are creating in Azure Active Directory.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "User Principal Name",
+          "name": "userPrincipalName",
+          "type": "text",
+          "description": "Principal name of the user that you are creating in Azure Active Directory.",
+          "tooltip": "Principal name of the user that you are creating in Azure Active Directory.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "placeholder": "someuser@contoso.com"
+        },
+        {
+          "title": "Password",
+          "name": "password",
+          "type": "password",
+          "tooltip": "Password of the user that you are creating in Azure Active Directory.",
+          "description": "Password of the user that you are creating in Azure Active Directory.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Force Change Password Next Login",
+          "name": "force_change",
+          "type": "checkbox",
+          "tooltip": "If you select this option, i.e., set it to true, then the user is forced to change his password when the users next logs into Azure Active Directory.",
+          "description": "If you select this option, i.e., set it to true, then the user is forced to change his password when the users next logs into Azure Active Directory.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "value": true
+        },
+        {
+          "title": "Account Enabled",
+          "name": "accountEnabled",
+          "type": "checkbox",
+          "tooltip": "If you select this option, i.e., set it to true, then the user's account is enabled on Azure Active Directory.",
+          "description": "If you select this option, i.e., set it to true, then the user's account is enabled on Azure Active Directory.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "value": true
+        },
+        {
+          "title": "Additional Fields",
+          "name": "additional_fields",
+          "type": "json",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "value": "",
+          "tooltip": "(Optional) Additional fields that you want to add to the user that you are creating in Azure Active Directory.",
+          "description": "(Optional) Additional fields that you want to add to the user that you are creating in Azure Active Directory."
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Enable User",
+      "operation": "enable_user",
+      "description": "Enables a specific user's account in Azure Active Directory, based on the Object ID or User Principal Name you have specified.",
+      "category": "containment",
+      "annotation": "enable_user",
+      "output_schema": {
+        "result": "",
+        "status": ""
+      },
+      "parameters": [
+        {
+          "title": "Based On",
+          "name": "based_on",
+          "type": "select",
+          "tooltip": "Select the parameter based on which you want to enable a user's account on Azure Active Directory. You can choose between Object ID or User Principal Name.",
+          "description": "Select the parameter based on which you want to enable a user's account on Azure Active Directory. You can choose between Object ID or User Principal Name.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "options": [
+            "Object ID",
+            "User Principal Name"
+          ],
+          "value": "Object ID",
+          "onchange": {
+            "Object ID": [
+              {
+                "title": "Object ID",
+                "name": "id",
+                "type": "text",
+                "tooltip": "If you choose Object ID, then in the Object ID field, you must specify the ID of the object based on which user account is enabled on Azure Active Directory.",
+                "description": "If you choose Object ID, then in the Object ID field, you must specify the ID of the object based on which user account is enabled on Azure Active Directory.",
+                "required": true,
+                "editable": true,
+                "visible": true
+              }
+            ],
+            "User Principal Name": [
+              {
+                "title": "User Principal Name",
+                "name": "id",
+                "type": "text",
+                "tooltip": "If you choose User Principal Name, then in the User Principal Name field, you must specify the principal name of the user based on which user account is enabled on Azure Active Directory.",
+                "description": "If you choose User Principal Name, then in the User Principal Name field, you must specify the principal name of the user based on which user account is enabled on Azure Active Directory.",
+                "required": true,
+                "editable": true,
+                "visible": true
+              }
+            ]
+          }
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Disable User",
+      "operation": "disable_user",
+      "description": "Disables a specific user's account in Azure Active Directory, based on the Object ID or User Principal Name you have specified.",
+      "category": "containment",
+      "annotation": "disable_user",
+      "output_schema": {
+        "result": "",
+        "status": ""
+      },
+      "parameters": [
+        {
+          "title": "Based On",
+          "name": "based_on",
+          "type": "select",
+          "tooltip": "Select the parameter based on which you want to disable a user's account on Azure Active Directory. You can choose between Object ID or User Principal Name.",
+          "description": "Select the parameter based on which you want to disable a user's account on Azure Active Directory. You can choose between Object ID or User Principal Name.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "options": [
+            "Object ID",
+            "User Principal Name"
+          ],
+          "value": "Object ID",
+          "onchange": {
+            "Object ID": [
+              {
+                "title": "Object ID",
+                "name": "id",
+                "type": "text",
+                "tooltip": "If you choose Object ID, then in the Object ID field, you must specify the ID of the object based on which user account is disabled on Azure Active Directory.",
+                "description": "If you choose Object ID, then in the Object ID field, you must specify the ID of the object based on which user account is disabled on Azure Active Directory.",
+                "required": true,
+                "editable": true,
+                "visible": true
+              }
+            ],
+            "User Principal Name": [
+              {
+                "title": "User Principal Name",
+                "name": "id",
+                "type": "text",
+                "tooltip": "If you choose User Principal Name, then in the User Principal Name field, you must specify the principal name of the user based on which user account is disabled on Azure Active Directory.",
+                "description": "If you choose User Principal Name, then in the User Principal Name field, you must specify the principal name of the user based on which user account is disabled on Azure Active Directory.",
+                "required": true,
+                "editable": true,
+                "visible": true
+              }
+            ]
+          }
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Delete User",
+      "operation": "delete_user",
+      "description": "Deletes a specific user's account from Azure Active Directory, based on the Object ID or User Principal Name you have specified.",
+      "category": "investigation",
+      "annotation": "delete_user",
+      "output_schema": {
+        "result": "",
+        "status": ""
+      },
+      "parameters": [
+        {
+          "title": "Based On",
+          "name": "based_on",
+          "type": "select",
+          "tooltip": "Select the parameter based on which you want to delete a user's account from Azure Active Directory. You can choose between Object ID or User Principal Name.",
+          "description": "Select the parameter based on which you want to delete a user's account from Azure Active Directory. You can choose between Object ID or User Principal Name.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "options": [
+            "Object ID",
+            "User Principal Name"
+          ],
+          "value": "Object ID",
+          "onchange": {
+            "Object ID": [
+              {
+                "title": "Object ID",
+                "name": "id",
+                "type": "text",
+                "tooltip": "If you choose Object ID, then in the Object ID field, you must specify the ID of the object based on which user account is deleted from Azure Active Directory.",
+                "description": "If you choose Object ID, then in the Object ID field, you must specify the ID of the object based on which user account is deleted from Azure Active Directory.",
+                "required": true,
+                "editable": true,
+                "visible": true
+              }
+            ],
+            "User Principal Name": [
+              {
+                "title": "User Principal Name",
+                "name": "id",
+                "type": "text",
+                "tooltip": "If you choose User Principal Name, then in the User Principal Name field, you must specify the principal name of the user based on which user account is deleted from Azure Active Directory.",
+                "description": "If you choose User Principal Name, then in the User Principal Name field, you must specify the principal name of the user based on which user account is deleted from Azure Active Directory.",
+                "required": true,
+                "editable": true,
+                "visible": true
+              }
+            ]
+          }
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Reset Password",
+      "operation": "reset_password",
+      "description": "Resets the password for an existing Azure Active Directory user, based on the Object ID or User Principal Name, password, and other input parameters you have specified.",
+      "category": "containment",
+      "annotation": "reset_password",
+      "output_schema": {
+        "result": "",
+        "status": ""
+      },
+      "parameters": [
+        {
+          "title": "Based On",
+          "name": "based_on",
+          "type": "select",
+          "tooltip": "Select the parameter based on which you want to retrieve details of the user, whose password you want to reset, from Azure Active Directory. You can choose between Object ID or User Principal Name.",
+          "description": "Select the parameter based on which you want to retrieve details of the user, whose password you want to reset, from Azure Active Directory. You can choose between Object ID or User Principal Name.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "options": [
+            "Object ID",
+            "User Principal Name"
+          ],
+          "value": "Object ID",
+          "onchange": {
+            "Object ID": [
+              {
+                "title": "Object ID",
+                "name": "id",
+                "type": "text",
+                "tooltip": "If you choose Object ID, then in the Object ID field, you must specify the ID of the object based on which details of the user are retrieved from Azure Active Directory.",
+                "description": "If you choose Object ID, then in the Object ID field, you must specify the ID of the object based on which details of the user are retrieved from Azure Active Directory.",
+                "required": true,
+                "editable": true,
+                "visible": true
+              }
+            ],
+            "User Principal Name": [
+              {
+                "title": "User Principal Name",
+                "name": "id",
+                "type": "text",
+                "tooltip": "If you choose User Principal Name, then in the User Principal Name field, you must specify the principal name of the user whose details you want to retrieve from Azure Active Directory.",
+                "description": "If you choose User Principal Name, then in the User Principal Name field, you must specify the principal name of the user whose details you want to retrieve from Azure Active Directory.",
+                "required": true,
+                "editable": true,
+                "visible": true
+              }
+            ]
+          }
+        },
+        {
+          "title": "Password",
+          "name": "password",
+          "type": "password",
+          "tooltip": "Temporary password that you want to set for the user whose password you want to rest on Azure Active Directory.",
+          "description": "Temporary password that you want to set for the user whose password you want to rest on Azure Active Directory.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "value": true
+        },
+        {
+          "title": "Force Change Password Next Login",
+          "name": "force_change",
+          "type": "checkbox",
+          "tooltip": "If you select this option, i.e., set it to true, then the user is forced to change his password when the user next logs into Azure Active Directory.",
+          "description": "If you select this option, i.e., set it to true, then the user is forced to change his password when the user next logs into Azure Active Directory.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true
+    }
+  ]
+}
+
