@@ -6,8 +6,11 @@
       "name": "Sample - Azure Active Directory - 2.0.0",
       "description": "Sample playbooks for \"Azure Active Directory\" connector. If you are planning to use any of the sample playbooks in your environment, ensure that you clone those playbooks and move them to a different collection, since the sample playbook collection gets deleted during connector upgrade and delete.",
       "visible": true,
-      "image": "/api/3/images/263f5e93-4b0b-46e3-ab13-756ab11f2ce5",
+      "image": "data:png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAIAAAABc2X6AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQ1IDc5LjE2MzQ5OSwgMjAxOC8wOC8xMy0xNjo0MDoyMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1MDNhYTZiMy0zYzEzLTQ5YzEtODNiZi00MThjZWIxM2VhNTIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QzIxMkJGN0VBNENDMTFFOUFERjQ5MEM2RkQwNkU2OEYiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QzIxMkJGN0RBNENDMTFFOUFERjQ5MEM2RkQwNkU2OEYiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTkgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDozYzE3NDQ1MC1lMWMzLTRjOWEtYWM4OS1iNDliMmE3ZWFmZTkiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NTAzYWE2YjMtM2MxMy00OWMxLTgzYmYtNDE4Y2ViMTNlYTUy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",
       "uuid": "a4cc53a2-6057-4c8a-bc7c-87f06111d960",
+      "id": 142,
+      "deletedAt": null,
+      "importedBy": [],
       "recordTags": [],
       "workflows": [
         {
@@ -15,14 +18,17 @@
           "triggerLimit": null,
           "name": "Disable User",
           "aliasName": null,
-          "description": "Disable user's account in Azure Active Directory based specified parameter.",
-          "collection": "/api/3/workflow_collections/a4cc53a2-6057-4c8a-bc7c-87f06111d960",
           "tag": "#azure-active-directory",
+          "description": "Disable user's account in Azure Active Directory based specified parameter.",
           "isActive": false,
+          "debug": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
           "parameters": [],
           "synchronous": false,
+          "lastModifyDate": 1619789895,
+          "collection": "/api/3/workflow_collections/a4cc53a2-6057-4c8a-bc7c-87f06111d960",
+          "versions": [],
           "triggerStep": "/api/3/workflow_steps/f1d9f769-a122-41ba-ac22-eca579129823",
           "steps": [
             {
@@ -44,9 +50,10 @@
                 "step_variables": []
               },
               "status": null,
-              "left": "125",
               "top": "165",
+              "left": "125",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
               "uuid": "eab5f173-54cc-437a-a6cb-c0baab883296"
             },
             {
@@ -70,46 +77,52 @@
                 "singleRecordExecution": false
               },
               "status": null,
-              "left": "125",
               "top": "30",
+              "left": "125",
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
               "uuid": "f1d9f769-a122-41ba-ac22-eca579129823"
             }
           ],
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "a4b86d7e-f7bf-4713-bbb6-7e50b815489f",
               "name": "Start -> Disable User",
+              "targetStep": "/api/3/workflow_steps/eab5f173-54cc-437a-a6cb-c0baab883296",
+              "sourceStep": "/api/3/workflow_steps/f1d9f769-a122-41ba-ac22-eca579129823",
               "label": null,
               "isExecuted": false,
-              "targetStep": "/api/3/workflow_steps/eab5f173-54cc-437a-a6cb-c0baab883296",
-              "sourceStep": "/api/3/workflow_steps/f1d9f769-a122-41ba-ac22-eca579129823"
+              "uuid": "a4b86d7e-f7bf-4713-bbb6-7e50b815489f"
             }
           ],
-          "versions": [],
-          "lastModifyDate": 1619789895,
+          "groups": [],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "237386ab-cbf9-489c-8b88-209f70c6e9a6",
+          "id": 2165,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
           "recordTags": [
             "azure-active-directory"
-          ],
-          "isPrivate": false,
-          "owners": []
+          ]
         },
         {
           "@type": "Workflow",
           "triggerLimit": null,
           "name": "List Users",
           "aliasName": null,
-          "description": "Get the list of users in Azure Active Directory",
-          "collection": "/api/3/workflow_collections/a4cc53a2-6057-4c8a-bc7c-87f06111d960",
           "tag": "#azure-active-directory",
+          "description": "Get the list of users in Azure Active Directory",
           "isActive": false,
+          "debug": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
           "parameters": [],
           "synchronous": false,
+          "lastModifyDate": 1620715689,
+          "collection": "/api/3/workflow_collections/a4cc53a2-6057-4c8a-bc7c-87f06111d960",
+          "versions": [],
           "triggerStep": "/api/3/workflow_steps/0f75da9d-fe3f-4dd5-86fa-e62b37e99565",
           "steps": [
             {
@@ -133,9 +146,10 @@
                 "singleRecordExecution": false
               },
               "status": null,
-              "left": "125",
               "top": "30",
+              "left": "125",
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
               "uuid": "0f75da9d-fe3f-4dd5-86fa-e62b37e99565"
             },
             {
@@ -158,46 +172,52 @@
                 "step_variables": []
               },
               "status": null,
-              "left": "125",
               "top": "165",
+              "left": "125",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
               "uuid": "a8c71c34-f290-4e54-aa11-24b5828d8d20"
             }
           ],
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "b19052cd-4778-45c9-bbb0-6939cad5f415",
               "name": "Start -> List Users",
+              "targetStep": "/api/3/workflow_steps/a8c71c34-f290-4e54-aa11-24b5828d8d20",
+              "sourceStep": "/api/3/workflow_steps/0f75da9d-fe3f-4dd5-86fa-e62b37e99565",
               "label": null,
               "isExecuted": false,
-              "targetStep": "/api/3/workflow_steps/a8c71c34-f290-4e54-aa11-24b5828d8d20",
-              "sourceStep": "/api/3/workflow_steps/0f75da9d-fe3f-4dd5-86fa-e62b37e99565"
+              "uuid": "b19052cd-4778-45c9-bbb0-6939cad5f415"
             }
           ],
-          "versions": [],
-          "lastModifyDate": 1620715689,
+          "groups": [],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "25c4ce12-c261-45e4-8daf-4c0016f2db91",
+          "id": 2166,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
           "recordTags": [
             "azure-active-directory"
-          ],
-          "isPrivate": false,
-          "owners": []
+          ]
         },
         {
           "@type": "Workflow",
           "triggerLimit": null,
           "name": "Delete User",
           "aliasName": null,
-          "description": "Deleter user for an existing Azure Active Directory user",
-          "collection": "/api/3/workflow_collections/a4cc53a2-6057-4c8a-bc7c-87f06111d960",
           "tag": "#azure-active-directory",
+          "description": "Deleter user for an existing Azure Active Directory user",
           "isActive": false,
+          "debug": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
           "parameters": [],
           "synchronous": false,
+          "lastModifyDate": 1619789928,
+          "collection": "/api/3/workflow_collections/a4cc53a2-6057-4c8a-bc7c-87f06111d960",
+          "versions": [],
           "triggerStep": "/api/3/workflow_steps/431b8fcd-934f-4772-8585-ed3d37c92fd3",
           "steps": [
             {
@@ -219,9 +239,10 @@
                 "step_variables": []
               },
               "status": null,
-              "left": "125",
               "top": "165",
+              "left": "125",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
               "uuid": "3332faf4-1e35-4ca8-bfb3-a3a3abe35bdd"
             },
             {
@@ -245,46 +266,52 @@
                 "singleRecordExecution": false
               },
               "status": null,
-              "left": "125",
               "top": "30",
+              "left": "125",
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
               "uuid": "431b8fcd-934f-4772-8585-ed3d37c92fd3"
             }
           ],
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "53af04d7-ea85-48ff-975a-7a03633bb24e",
               "name": "Start -> Delete User",
+              "targetStep": "/api/3/workflow_steps/3332faf4-1e35-4ca8-bfb3-a3a3abe35bdd",
+              "sourceStep": "/api/3/workflow_steps/431b8fcd-934f-4772-8585-ed3d37c92fd3",
               "label": null,
               "isExecuted": false,
-              "targetStep": "/api/3/workflow_steps/3332faf4-1e35-4ca8-bfb3-a3a3abe35bdd",
-              "sourceStep": "/api/3/workflow_steps/431b8fcd-934f-4772-8585-ed3d37c92fd3"
+              "uuid": "53af04d7-ea85-48ff-975a-7a03633bb24e"
             }
           ],
-          "versions": [],
-          "lastModifyDate": 1619789928,
+          "groups": [],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "47169c12-dec0-449b-bd68-db23b79e5b8e",
+          "id": 2167,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
           "recordTags": [
             "azure-active-directory"
-          ],
-          "isPrivate": false,
-          "owners": []
+          ]
         },
         {
           "@type": "Workflow",
           "triggerLimit": null,
           "name": "Get User Details",
           "aliasName": null,
-          "description": "Get specific information around a user based specified parameter.",
-          "collection": "/api/3/workflow_collections/a4cc53a2-6057-4c8a-bc7c-87f06111d960",
           "tag": "#azure-active-directory",
+          "description": "Get specific information around a user based specified parameter.",
           "isActive": false,
+          "debug": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
           "parameters": [],
           "synchronous": false,
+          "lastModifyDate": 1619789149,
+          "collection": "/api/3/workflow_collections/a4cc53a2-6057-4c8a-bc7c-87f06111d960",
+          "versions": [],
           "triggerStep": "/api/3/workflow_steps/424f964c-77de-4f37-9a23-a5d6824e5ca0",
           "steps": [
             {
@@ -308,9 +335,10 @@
                 "singleRecordExecution": false
               },
               "status": null,
-              "left": "125",
               "top": "30",
+              "left": "125",
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
               "uuid": "424f964c-77de-4f37-9a23-a5d6824e5ca0"
             },
             {
@@ -332,46 +360,429 @@
                 "step_variables": []
               },
               "status": null,
-              "left": "125",
               "top": "165",
+              "left": "125",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
               "uuid": "f6708c0d-2024-4dbd-9538-79db8f1ac02e"
             }
           ],
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "52f5351b-8028-425b-9c0a-514e837714d7",
               "name": "Start -> Get User Details",
+              "targetStep": "/api/3/workflow_steps/f6708c0d-2024-4dbd-9538-79db8f1ac02e",
+              "sourceStep": "/api/3/workflow_steps/424f964c-77de-4f37-9a23-a5d6824e5ca0",
               "label": null,
               "isExecuted": false,
-              "targetStep": "/api/3/workflow_steps/f6708c0d-2024-4dbd-9538-79db8f1ac02e",
-              "sourceStep": "/api/3/workflow_steps/424f964c-77de-4f37-9a23-a5d6824e5ca0"
+              "uuid": "52f5351b-8028-425b-9c0a-514e837714d7"
             }
           ],
-          "versions": [],
-          "lastModifyDate": 1619789149,
+          "groups": [],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "6fa585cc-95b2-45e3-b459-f3d4ac5a07f4",
+          "id": 2168,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
           "recordTags": [
             "azure-active-directory"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Add Member",
+          "aliasName": null,
+          "tag": "#azure-active-directory",
+          "description": "Add user to a group",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1670508532,
+          "collection": "/api/3/workflow_collections/a4cc53a2-6057-4c8a-bc7c-87f06111d960",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/6f6b0f80-4cd4-4683-aca4-fd35725c5f8f",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Add Member",
+              "description": null,
+              "arguments": {
+                "name": "Azure Active Directory",
+                "config": "2f1057b5-d89c-4641-a441-aa4622997d96",
+                "params": {
+                  "id": "a6a7f6e9-c30b-2085-b99d-85b34cbbe5c0",
+                  "dir_object_id": "b9a0c6ec-c30b-4085-b99d-99b04ccb45a6"
+                },
+                "version": "2.0.0",
+                "connector": "azure-active-directory",
+                "operation": "add_member",
+                "operationTitle": "Add Member",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "163cfa97-f480-4ed2-bdf5-01ba40df63c8"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "2238c3ab-0db6-4422-9336-bba37bb7813f",
+                "title": "Azure Active Directory: Add User",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "6f6b0f80-4cd4-4683-aca4-fd35725c5f8f"
+            }
           ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Add User",
+              "targetStep": "/api/3/workflow_steps/163cfa97-f480-4ed2-bdf5-01ba40df63c8",
+              "sourceStep": "/api/3/workflow_steps/6f6b0f80-4cd4-4683-aca4-fd35725c5f8f",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "edf29c04-539e-45e6-99fd-3b2fa60ffe1a"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "801ee723-00a7-4f75-87e4-9a1285787b25",
+          "id": 2255,
+          "owners": [],
           "isPrivate": false,
-          "owners": []
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "azure-active-directory"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "List Groups",
+          "aliasName": null,
+          "tag": "#azure-active-directory",
+          "description": "List Azure AD Groups",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1670508174,
+          "collection": "/api/3/workflow_collections/a4cc53a2-6057-4c8a-bc7c-87f06111d960",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/57d33470-4c0b-4253-b8c5-f8df43146fad",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "List Groups",
+              "description": null,
+              "arguments": {
+                "name": "Azure Active Directory",
+                "config": "2f1057b5-d89c-4641-a441-aa4622997d96",
+                "params": {
+                  "$top": "",
+                  "$filter": "",
+                  "$skipToken": "",
+                  "get_all_pages": false
+                },
+                "version": "2.0.0",
+                "connector": "azure-active-directory",
+                "operation": "list_groups",
+                "operationTitle": "List Groups",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "0957d412-07e4-4d4c-8db8-555920996d85"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "0a2cce77-d989-4536-a528-993227623117",
+                "title": "Azure Active Directory: Add User",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "57d33470-4c0b-4253-b8c5-f8df43146fad"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Add User",
+              "targetStep": "/api/3/workflow_steps/0957d412-07e4-4d4c-8db8-555920996d85",
+              "sourceStep": "/api/3/workflow_steps/57d33470-4c0b-4253-b8c5-f8df43146fad",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "d49cfd4f-1a45-4ad5-90af-a912a7a75014"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "857a013e-a2c9-4ccd-bd18-11ccb6f0635a",
+          "id": 2253,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "azure-active-directory"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Remove Member",
+          "aliasName": null,
+          "tag": "#azure-active-directory",
+          "description": "Remove user from a group",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1670508620,
+          "collection": "/api/3/workflow_collections/a4cc53a2-6057-4c8a-bc7c-87f06111d960",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/45dc942b-8524-4891-95e6-c0f060cbf0d1",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Remove member",
+              "description": null,
+              "arguments": {
+                "name": "Azure Active Directory",
+                "config": "2f1057b5-d89c-4641-a441-aa4622997d96",
+                "params": {
+                  "id": "a6a7f6e9-c30b-4085-b99d-85b34cbbe9c3",
+                  "dir_object_id": "b9a0c6ec-c30b-4085-b99d-99b04ccb45a6"
+                },
+                "version": "2.0.0",
+                "connector": "azure-active-directory",
+                "operation": "remove_member",
+                "operationTitle": "Remove Member",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "24469e0c-d539-4193-9d30-47f034513ef9"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "88087665-62b8-4185-b75b-f23b8aa1a27b",
+                "title": "Azure Active Directory: Add User",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "45dc942b-8524-4891-95e6-c0f060cbf0d1"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Add User",
+              "targetStep": "/api/3/workflow_steps/24469e0c-d539-4193-9d30-47f034513ef9",
+              "sourceStep": "/api/3/workflow_steps/45dc942b-8524-4891-95e6-c0f060cbf0d1",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "9eca0e0f-d295-469d-ba09-232f1391ab3b"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "9b9d0874-4690-488e-a073-d56a20b11b74",
+          "id": 2256,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "azure-active-directory"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Group Details",
+          "aliasName": null,
+          "tag": "#azure-active-directory",
+          "description": "Get Azure Group Details",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1670508263,
+          "collection": "/api/3/workflow_collections/a4cc53a2-6057-4c8a-bc7c-87f06111d960",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/16542498-7b79-4cd1-b322-b730c49e0483",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "681ba307-7bd0-4aba-820b-2c3ce71ee7f2",
+                "title": "Azure Active Directory: Add User",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "16542498-7b79-4cd1-b322-b730c49e0483"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Group Details",
+              "description": null,
+              "arguments": {
+                "name": "Azure Active Directory",
+                "config": "2f1057b5-d89c-4641-a441-aa4622997d96",
+                "params": {
+                  "id": "Users"
+                },
+                "version": "2.0.0",
+                "connector": "azure-active-directory",
+                "operation": "get_group_details",
+                "operationTitle": "Get Group Details",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "51d40fc7-c392-4e5b-b695-18679033fdf4"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Add User",
+              "targetStep": "/api/3/workflow_steps/51d40fc7-c392-4e5b-b695-18679033fdf4",
+              "sourceStep": "/api/3/workflow_steps/16542498-7b79-4cd1-b322-b730c49e0483",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "ea25e43b-c129-4f29-9280-7a1b27fcd126"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "af831473-3ec5-455e-bd44-6a1360a52cfd",
+          "id": 2254,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "azure-active-directory"
+          ]
         },
         {
           "@type": "Workflow",
           "triggerLimit": null,
           "name": "Reset Password",
           "aliasName": null,
-          "description": "Reset password for an existing Azure Active Directory user.",
-          "collection": "/api/3/workflow_collections/a4cc53a2-6057-4c8a-bc7c-87f06111d960",
           "tag": "#azure-active-directory",
+          "description": "Reset password for an existing Azure Active Directory user.",
           "isActive": false,
+          "debug": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
           "parameters": [],
           "synchronous": false,
+          "lastModifyDate": 1619789858,
+          "collection": "/api/3/workflow_collections/a4cc53a2-6057-4c8a-bc7c-87f06111d960",
+          "versions": [],
           "triggerStep": "/api/3/workflow_steps/6b62564b-823d-4c25-ba82-527356797dfd",
           "steps": [
             {
@@ -395,9 +806,10 @@
                 "singleRecordExecution": false
               },
               "status": null,
-              "left": "125",
               "top": "30",
+              "left": "125",
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
               "uuid": "6b62564b-823d-4c25-ba82-527356797dfd"
             },
             {
@@ -421,46 +833,52 @@
                 "step_variables": []
               },
               "status": null,
-              "left": "125",
               "top": "165",
+              "left": "125",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
               "uuid": "a0ca9463-2b61-4b41-8794-69616d231d97"
             }
           ],
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "8dbd6631-aa19-4b73-8980-c906fc32f30b",
               "name": "Start -> Reset Password",
+              "targetStep": "/api/3/workflow_steps/a0ca9463-2b61-4b41-8794-69616d231d97",
+              "sourceStep": "/api/3/workflow_steps/6b62564b-823d-4c25-ba82-527356797dfd",
               "label": null,
               "isExecuted": false,
-              "targetStep": "/api/3/workflow_steps/a0ca9463-2b61-4b41-8794-69616d231d97",
-              "sourceStep": "/api/3/workflow_steps/6b62564b-823d-4c25-ba82-527356797dfd"
+              "uuid": "8dbd6631-aa19-4b73-8980-c906fc32f30b"
             }
           ],
-          "versions": [],
-          "lastModifyDate": 1619789858,
+          "groups": [],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "d5fa249d-dc26-4248-844c-4df5ae275890",
+          "id": 2169,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
           "recordTags": [
             "azure-active-directory"
-          ],
-          "isPrivate": false,
-          "owners": []
+          ]
         },
         {
           "@type": "Workflow",
           "triggerLimit": null,
           "name": "Enable User",
           "aliasName": null,
-          "description": "Enable user's account in Azure Active Directory based specified parameter.",
-          "collection": "/api/3/workflow_collections/a4cc53a2-6057-4c8a-bc7c-87f06111d960",
           "tag": "#azure-active-directory",
+          "description": "Enable user's account in Azure Active Directory based specified parameter.",
           "isActive": false,
+          "debug": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
           "parameters": [],
           "synchronous": false,
+          "lastModifyDate": 1619789580,
+          "collection": "/api/3/workflow_collections/a4cc53a2-6057-4c8a-bc7c-87f06111d960",
+          "versions": [],
           "triggerStep": "/api/3/workflow_steps/3bafe2a7-2ec4-436c-a58b-3e39b471458f",
           "steps": [
             {
@@ -484,9 +902,10 @@
                 "singleRecordExecution": false
               },
               "status": null,
-              "left": "125",
               "top": "30",
+              "left": "125",
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
               "uuid": "3bafe2a7-2ec4-436c-a58b-3e39b471458f"
             },
             {
@@ -508,46 +927,148 @@
                 "step_variables": []
               },
               "status": null,
-              "left": "125",
               "top": "165",
+              "left": "125",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
               "uuid": "590d9a1a-540e-46bf-8b6b-2d23f7815367"
             }
           ],
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "e98f86f3-5681-4623-986e-d7fc176ebad4",
               "name": "Start -> Enable User",
+              "targetStep": "/api/3/workflow_steps/590d9a1a-540e-46bf-8b6b-2d23f7815367",
+              "sourceStep": "/api/3/workflow_steps/3bafe2a7-2ec4-436c-a58b-3e39b471458f",
               "label": null,
               "isExecuted": false,
-              "targetStep": "/api/3/workflow_steps/590d9a1a-540e-46bf-8b6b-2d23f7815367",
-              "sourceStep": "/api/3/workflow_steps/3bafe2a7-2ec4-436c-a58b-3e39b471458f"
+              "uuid": "e98f86f3-5681-4623-986e-d7fc176ebad4"
             }
           ],
-          "versions": [],
-          "lastModifyDate": 1619789580,
+          "groups": [],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "e55c364d-e5f4-415c-b7a5-5b27a27d8603",
+          "id": 2170,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
           "recordTags": [
             "azure-active-directory"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "List Sign In Events",
+          "aliasName": null,
+          "tag": "#azure-active-directory",
+          "description": "List Sign In Events",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1668590446,
+          "collection": "/api/3/workflow_collections/a4cc53a2-6057-4c8a-bc7c-87f06111d960",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/aedae0a0-c284-4273-82f2-16f24bc804a7",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "List Sign In Events",
+              "description": null,
+              "arguments": {
+                "name": "Azure Active Directory",
+                "config": "2f1057b5-d89c-4641-a441-aa4622997d96",
+                "params": {
+                  "$top": "",
+                  "$filter": "ipAddress eq '87.201.48.52'",
+                  "$skipToken": "",
+                  "get_all_pages": false
+                },
+                "version": "2.0.0",
+                "connector": "azure-active-directory",
+                "operation": "list_sign_ins",
+                "operationTitle": "List SignIns Events",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "34187f8b-8f27-4643-9a43-a045687f8bb2"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "dd590bba-dc8d-4cf3-9d4f-daa6e0669725",
+                "title": "Azure Active Directory: Add User",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "aedae0a0-c284-4273-82f2-16f24bc804a7"
+            }
           ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Add User",
+              "targetStep": "/api/3/workflow_steps/34187f8b-8f27-4643-9a43-a045687f8bb2",
+              "sourceStep": "/api/3/workflow_steps/aedae0a0-c284-4273-82f2-16f24bc804a7",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "34d17b19-3d4d-4da3-8c6f-c67cba044082"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "e71a996c-69af-4e86-bd06-30912f52f400",
+          "id": 2172,
+          "owners": [],
           "isPrivate": false,
-          "owners": []
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "azure-active-directory"
+          ]
         },
         {
           "@type": "Workflow",
           "triggerLimit": null,
           "name": "Add User",
           "aliasName": null,
-          "description": "Create a new user in Azure Active Directory",
-          "collection": "/api/3/workflow_collections/a4cc53a2-6057-4c8a-bc7c-87f06111d960",
           "tag": "#azure-active-directory",
+          "description": "Create a new user in Azure Active Directory",
           "isActive": false,
+          "debug": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
           "parameters": [],
           "synchronous": false,
+          "lastModifyDate": 1619789112,
+          "collection": "/api/3/workflow_collections/a4cc53a2-6057-4c8a-bc7c-87f06111d960",
+          "versions": [],
           "triggerStep": "/api/3/workflow_steps/f33be953-62b1-40e4-b5cc-acac6739a1fc",
           "steps": [
             {
@@ -574,9 +1095,10 @@
                 "step_variables": []
               },
               "status": null,
-              "left": "125",
               "top": "165",
+              "left": "125",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
               "uuid": "b41e270a-a23b-4627-9d67-e7e203c8a5c4"
             },
             {
@@ -600,32 +1122,35 @@
                 "singleRecordExecution": false
               },
               "status": null,
-              "left": "125",
               "top": "30",
+              "left": "125",
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
               "uuid": "f33be953-62b1-40e4-b5cc-acac6739a1fc"
             }
           ],
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "3744ec3d-c191-4919-8ed2-6a63dbd77f97",
               "name": "Start -> Add User",
+              "targetStep": "/api/3/workflow_steps/b41e270a-a23b-4627-9d67-e7e203c8a5c4",
+              "sourceStep": "/api/3/workflow_steps/f33be953-62b1-40e4-b5cc-acac6739a1fc",
               "label": null,
               "isExecuted": false,
-              "targetStep": "/api/3/workflow_steps/b41e270a-a23b-4627-9d67-e7e203c8a5c4",
-              "sourceStep": "/api/3/workflow_steps/f33be953-62b1-40e4-b5cc-acac6739a1fc"
+              "uuid": "3744ec3d-c191-4919-8ed2-6a63dbd77f97"
             }
           ],
-          "versions": [],
-          "lastModifyDate": 1619789112,
+          "groups": [],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "fbe28646-e22e-4748-8c69-c0c5f32126f6",
+          "id": 2171,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
           "recordTags": [
             "azure-active-directory"
-          ],
-          "isPrivate": false,
-          "owners": []
+          ]
         }
       ]
     }
