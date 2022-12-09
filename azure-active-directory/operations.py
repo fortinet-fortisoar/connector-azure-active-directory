@@ -6,6 +6,9 @@
 
 from requests import request, exceptions as req_exceptions
 from .microsoft_api_auth import *
+from urllib import parse
+from requests_toolbelt.utils import dump
+import copy
 
 logger = get_logger('azure-active-directory')
 
@@ -23,6 +26,7 @@ def api_request(method, endpoint, connector_info, config, params=None, data=None
         headers['consistencylevel'] = 'eventual'
         try:
             response = request(method, endpoint, headers=headers, params=params, json=data, verify=ms.verify_ssl)
+            logger.debug('\n{}\n'.format(dump.dump_all(response).decode('utf-8')))
             if response.status_code in [200, 201, 204]:
                 if response.text != "":
                     return response.json()
@@ -56,6 +60,18 @@ def api_request(method, endpoint, connector_info, config, params=None, data=None
         raise ConnectorError(str(err))
 
 
+def _fetch_remaining_pages(response, url_params, connector_info, config):
+    url_params.update({"$top":1000})
+    results = copy.deepcopy(response)
+    while '@odata.nextLink' in response:
+        skiptoken = parse.parse_qs(parse.urlparse(response['@odata.nextLink']).query)['$skiptoken'][0]
+        url_params.update({"$skiptoken": skiptoken})
+        response = api_request("GET", "/auditLogs/signIns", connector_info, config, params=url_params)
+        results['value'] += response['value']
+        logger.debug('Append {} more records'.format(str(len(response['value']))))
+    return results
+
+
 def list_users(config, params, connector_info):
     try:
         search = params.get('$search')
@@ -72,6 +88,60 @@ def list_users(config, params, connector_info):
     except Exception as err:
         raise ConnectorError(str(err))
 
+
+def _list_records(config, params, connector_info, endpoint):
+    try:
+        url_params = {"$filter": params.get('$filter')} if params.get('$filter', None) else {}
+        get_all_pages = params.get("get_all_pages")
+        if params.get("$top"):
+            url_params.update({"$top": params.get('$top')})
+        if params.get("$skipToken"):
+            url_params.update({"$skipToken": params.get('$skipToken')})
+        response = api_request("GET", endpoint, connector_info, config, params=url_params)
+        if '@odata.nextLink' in response and get_all_pages:
+            return _fetch_remaining_pages(response, url_params, connector_info, config)
+        else:
+            return response
+
+    except Exception as err:
+        raise ConnectorError(str(err))
+
+
+def list_groups(config, params, connector_info):
+    return _list_records(config, params, connector_info, "/groups")
+
+
+def list_sign_ins(config, params, connector_info):
+    return _list_records(config, params, connector_info, "/auditLogs/signIns")
+
+
+def get_group_details(config, params, connector_info):
+    try:
+        response = api_request("GET", "/groups/{0}".format(params.get('id')), connector_info, config)
+        return response
+    except Exception as err:
+        raise ConnectorError(str(err))
+
+
+def remove_member(config, params, connector_info):
+    try:
+        response = api_request("DELETE", "/groups/{0}/members/{1}/$ref".format(params.get('id'),
+                                                                               params.get("dir_object_id")),
+                                                                               connector_info, config)
+        return response
+    except Exception as err:
+        raise ConnectorError(str(err))
+
+def add_member(config, params, connector_info):
+    try:
+        payload = {
+            "@odata.id": "https://graph.microsoft.com/v1.0/directoryObjects/{0}".format(params.get("dir_object_id"))
+        }
+        response = api_request("POST", "/groups/{0}/members/$ref".format(params.get('id')), connector_info, config,
+                               data=payload)
+        return response
+    except Exception as err:
+        raise ConnectorError(str(err))
 
 def get_user_details(config, params, connector_info):
     try:
@@ -158,5 +228,10 @@ operations = {
     'disable_user': disable_user,
     'reset_password': reset_password,
     'add_user': add_user,
-    'delete_user': delete_user
+    'delete_user': delete_user,
+    'list_sign_ins': list_sign_ins,
+    'list_groups': list_groups,
+    'get_group_details': get_group_details,
+    'remove_member':remove_member,
+    'add_member':add_member
 }
