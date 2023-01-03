@@ -11,6 +11,7 @@ logger = get_logger('azure-active-directory')
 
 
 class AzureAcivedirectory(Connector):
+    
     def execute(self, config, operation, params, **kwargs):
         try:
             connector_info = {"connector_name": self._info_json.get('name'),

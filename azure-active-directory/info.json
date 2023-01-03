@@ -9,7 +9,7 @@
   "cs_compatible": true,
   "icon_small_name": "small-azure.png",
   "icon_large_name": "large-azure.png",
-  "help_online": "https://docs.fortinet.com/document/fortisoar/2.1.0/azure-active-directory/122/azure-active-directory-v2-1-0",
+  "help_online": "",
   "configuration": {
     "fields": [
       {
@@ -158,25 +158,25 @@
       "annotation": "list_groups",
       "output_schema": "",
       "parameters": [
-          {
-              "title": "Filter Query",
-              "description": "Filter query based on which groups criteria you want to retrieve as documented at https://learn.microsoft.com/en-us/graph/filter-query-parameter",
-              "required": false,
-              "editable": true,
-              "visible": true,
-              "type": "text",
-              "name": "$filter",
-              "placeholder": "userPrincipalName eq 'username@fortisoar1.onmicrosoft.com'",
-              "tooltip": "Filter query based on which groups criteria you want to retrieve as documented at https://learn.microsoft.com/en-us/graph/filter-query-parameter"
-          },
-          {
-            "title": "Number of Groups to Fetch",
-            "required": false,
-            "editable": true,
-            "visible": true,
-            "type": "integer",
-            "name": "$top",
-            "description": "(Optional) Maximum number of groups that this operation should return from Azure."
+        {
+          "title": "Filter Query",
+          "description": "Filter query based on which groups criteria you want to retrieve as documented at https://learn.microsoft.com/en-us/graph/filter-query-parameter",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "$filter",
+          "placeholder": "userPrincipalName eq 'username@fortisoar1.onmicrosoft.com'",
+          "tooltip": "Filter query based on which groups criteria you want to retrieve as documented at https://learn.microsoft.com/en-us/graph/filter-query-parameter"
+        },
+        {
+          "title": "Number of Groups to Fetch",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "$top",
+          "description": "(Optional) Maximum number of groups that this operation should return from Azure."
         },
         {
           "title": "Get All Pages",
@@ -190,17 +190,17 @@
           "value": false
         },
         {
-            "title": "Skip Token",
-            "required": false,
-            "editable": true,
-            "visible": true,
-            "type": "integer",
-            "name": "$skipToken",
-            "description": "(Optional) Skiptoken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies a starting point to use for subsequent calls."
+          "title": "Skip Token",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "$skipToken",
+          "description": "(Optional) Skiptoken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies a starting point to use for subsequent calls."
         }
       ],
       "enabled": true
-  },
+    },
     {
       "title": "Get Group Details",
       "operation": "get_group_details",
@@ -209,19 +209,19 @@
       "annotation": "get_group_details",
       "output_schema": "",
       "parameters": [
-              {
-                "title": "Group ID",
-                "name": "id",
-                "type": "text",
-                "tooltip": "Group ID to fetch the details for.",
-                "description": "Group ID to fetch the details for.",
-                "required": true,
-                "editable": true,
-                "visible": true
-              }
+        {
+          "title": "Group ID",
+          "name": "id",
+          "type": "text",
+          "tooltip": "Group ID to fetch the details for.",
+          "description": "Group ID to fetch the details for.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        }
       ],
       "enabled": true
-  },
+    },
     {
       "title": "List Group Members",
       "operation": "list_group_members",
@@ -230,24 +230,24 @@
       "annotation": "list_group_members",
       "output_schema": "",
       "parameters": [
-              {
-                "title": "Group ID",
-                "name": "id",
-                "type": "text",
-                "tooltip": "ID to of the group you want to list the users for.",
-                "description": "ID to of the group you want to list the users for.",
-                "required": true,
-                "editable": true,
-                "visible": true
-              },
-          {
-            "title": "Number of Users to List",
-            "required": false,
-            "editable": true,
-            "visible": true,
-            "type": "integer",
-            "name": "$top",
-            "description": "(Optional) Maximum number of users to return."
+        {
+          "title": "Group ID",
+          "name": "id",
+          "type": "text",
+          "tooltip": "ID to of the group you want to list the users for.",
+          "description": "ID to of the group you want to list the users for.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Number of Users to List",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "$top",
+          "description": "(Optional) Maximum number of users to return."
         },
         {
           "title": "Get All Pages",
@@ -261,17 +261,17 @@
           "value": false
         },
         {
-            "title": "Skip Token",
-            "required": false,
-            "editable": true,
-            "visible": true,
-            "type": "integer",
-            "name": "$skipToken",
-            "description": "(Optional) Skiptoken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies a starting point to use for subsequent calls."
+          "title": "Skip Token",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "$skipToken",
+          "description": "(Optional) Skiptoken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies a starting point to use for subsequent calls."
         }
       ],
       "enabled": true
-  },
+    },
     {
       "title": "Remove Member",
       "operation": "remove_member",
@@ -280,29 +280,29 @@
       "annotation": "remove_member",
       "output_schema": "",
       "parameters": [
-              {
-                "title": "Group ID",
-                "name": "id",
-                "type": "text",
-                "tooltip": "ID to of the group you want to remove the users from.",
-                "description": "ID to of the group you want to remove the users from",
-                "required": true,
-                "editable": true,
-                "visible": true
-              },
-              {
-                "title": "Directory Object ID",
-                "name": "dir_object_id",
-                "type": "text",
-                "tooltip": "Directory Object ID of the user to remove from the group.",
-                "description": "Directory Object ID of the user to remove from the group",
-                "required": true,
-                "editable": true,
-                "visible": true
-              }
+        {
+          "title": "Group ID",
+          "name": "id",
+          "type": "text",
+          "tooltip": "ID to of the group you want to remove the users from.",
+          "description": "ID to of the group you want to remove the users from",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Directory Object ID",
+          "name": "dir_object_id",
+          "type": "text",
+          "tooltip": "Directory Object ID of the user to remove from the group.",
+          "description": "Directory Object ID of the user to remove from the group",
+          "required": true,
+          "editable": true,
+          "visible": true
+        }
       ],
       "enabled": true
-  },
+    },
     {
       "title": "Add Member",
       "operation": "add_member",
@@ -311,29 +311,29 @@
       "annotation": "add_member",
       "output_schema": "",
       "parameters": [
-              {
-                "title": "Group ID",
-                "name": "id",
-                "type": "text",
-                "tooltip": "ID to of the group you want to add a users to.",
-                "description": "ID to of the group you want to add a users to",
-                "required": true,
-                "editable": true,
-                "visible": true
-              },
-              {
-                "title": "Directory Object ID",
-                "name": "dir_object_id",
-                "type": "text",
-                "tooltip": "Directory Object ID of the user you want to add to the group.",
-                "description": "Directory Object ID of the user you want to add to the group.",
-                "required": true,
-                "editable": true,
-                "visible": true
-              }
+        {
+          "title": "Group ID",
+          "name": "id",
+          "type": "text",
+          "tooltip": "ID to of the group you want to add a users to.",
+          "description": "ID to of the group you want to add a users to",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Directory Object ID",
+          "name": "dir_object_id",
+          "type": "text",
+          "tooltip": "Directory Object ID of the user you want to add to the group.",
+          "description": "Directory Object ID of the user you want to add to the group.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        }
       ],
       "enabled": true
-  },
+    },
     {
       "title": "List SignIns Events",
       "operation": "list_sign_ins",
@@ -342,25 +342,25 @@
       "annotation": "list_sign_ins",
       "output_schema": "",
       "parameters": [
-          {
-              "title": "Filter Query",
-              "description": "Filter query based on which you want to retrieve sign-in events from Azure Active Directory. The OData's Filter query is supported on the following fields: \"id\", \"userPrincipalName\", \"displayName\", \"givenName\" and \"jobTitle\". For example [userPrincipalName eq 'username@fortisoar1.onmicrosoft.com'] retrieve a user which userPrincipalName is username@fortisoar1.onmicrosoft.com",
-              "required": false,
-              "editable": true,
-              "visible": true,
-              "type": "text",
-              "name": "$filter",
-              "placeholder": "userPrincipalName eq 'username@fortisoar1.onmicrosoft.com'",
-              "tooltip": "Filter query based on which you want to retrieve sign-in events from Azure Active Directory. The OData's Filter query is supported on the following fields: \"id\", \"userPrincipalName\", \"displayName\", \"givenName\" and \"jobTitle\". For example [userPrincipalName eq 'username@fortisoar1.onmicrosoft.com'] retrieve a user which userPrincipalName is username@fortisoar1.onmicrosoft.com"
-          },
-          {
-            "title": "Number of Events to Fetch",
-            "required": false,
-            "editable": true,
-            "visible": true,
-            "type": "integer",
-            "name": "$top",
-            "description": "(Optional) Maximum number of events that this operation should return from Azure."
+        {
+          "title": "Filter Query",
+          "description": "Filter query based on which you want to retrieve sign-in events from Azure Active Directory. The OData's Filter query is supported on the following fields: \"id\", \"userPrincipalName\", \"displayName\", \"givenName\" and \"jobTitle\". For example [userPrincipalName eq 'username@fortisoar1.onmicrosoft.com'] retrieve a user which userPrincipalName is username@fortisoar1.onmicrosoft.com",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "$filter",
+          "placeholder": "userPrincipalName eq 'username@fortisoar1.onmicrosoft.com'",
+          "tooltip": "Filter query based on which you want to retrieve sign-in events from Azure Active Directory. The OData's Filter query is supported on the following fields: \"id\", \"userPrincipalName\", \"displayName\", \"givenName\" and \"jobTitle\". For example [userPrincipalName eq 'username@fortisoar1.onmicrosoft.com'] retrieve a user which userPrincipalName is username@fortisoar1.onmicrosoft.com"
+        },
+        {
+          "title": "Number of Events to Fetch",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "$top",
+          "description": "(Optional) Maximum number of events that this operation should return from Azure."
         },
         {
           "title": "Get All Pages",
@@ -374,17 +374,17 @@
           "value": false
         },
         {
-            "title": "Skip Token",
-            "required": false,
-            "editable": true,
-            "visible": true,
-            "type": "integer",
-            "name": "$skipToken",
-            "description": "(Optional) Skiptoken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies a starting point to use for subsequent calls."
+          "title": "Skip Token",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "$skipToken",
+          "description": "(Optional) Skiptoken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies a starting point to use for subsequent calls."
         }
       ],
       "enabled": true
-  },
+    },
     {
       "title": "List Users",
       "operation": "list_users",

@@ -5,6 +5,7 @@
   Copyright end """
 
 from requests import request, exceptions as req_exceptions
+from connectors.core.connector import get_logger, ConnectorError
 from .microsoft_api_auth import *
 from urllib import parse
 from requests_toolbelt.utils import dump
@@ -20,7 +21,6 @@ def api_request(method, endpoint, connector_info, config, params=None, data=None
         ms = MicrosoftAuth(config)
         endpoint = ms.host + "/" + API_VERSION + endpoint
         token = ms.validate_token(config, connector_info)
-
         headers['Authorization'] = token
         headers['Content-Type'] = 'application/json'
         headers['consistencylevel'] = 'eventual'
@@ -61,7 +61,7 @@ def api_request(method, endpoint, connector_info, config, params=None, data=None
 
 
 def _fetch_remaining_pages(response, url_params, connector_info, config):
-    url_params.update({"$top":1000})
+    url_params.update({"$top": 1000})
     results = copy.deepcopy(response)
     while '@odata.nextLink' in response:
         skiptoken = parse.parse_qs(parse.urlparse(response['@odata.nextLink']).query)['$skiptoken'][0]
@@ -115,6 +115,11 @@ def list_sign_ins(config, params, connector_info):
     return _list_records(config, params, connector_info, "/auditLogs/signIns")
 
 
+def list_group_members(config, params, connector_info):
+
+    return _list_records(config, params, connector_info, "/groups/{0}/members".format(params.get('id')))
+
+
 def get_group_details(config, params, connector_info):
     try:
         response = api_request("GET", "/groups/{0}".format(params.get('id')), connector_info, config)
@@ -127,10 +132,11 @@ def remove_member(config, params, connector_info):
     try:
         response = api_request("DELETE", "/groups/{0}/members/{1}/$ref".format(params.get('id'),
                                                                                params.get("dir_object_id")),
-                                                                               connector_info, config)
+                               connector_info, config)
         return response
     except Exception as err:
         raise ConnectorError(str(err))
+
 
 def add_member(config, params, connector_info):
     try:
@@ -142,6 +148,7 @@ def add_member(config, params, connector_info):
         return response
     except Exception as err:
         raise ConnectorError(str(err))
+
 
 def get_user_details(config, params, connector_info):
     try:
@@ -215,10 +222,8 @@ def delete_user(config, params, connector_info):
 
 
 def _check_health(config, connector_info):
-    try:
-        return check(config, connector_info)
-    except Exception as err:
-        raise ConnectorError(str(err))
+    if check(config, connector_info) and list_users(config, params={}, connector_info=connector_info):
+        return True
 
 
 operations = {
@@ -232,6 +237,7 @@ operations = {
     'list_sign_ins': list_sign_ins,
     'list_groups': list_groups,
     'get_group_details': get_group_details,
-    'remove_member':remove_member,
-    'add_member':add_member
+    'remove_member': remove_member,
+    'add_member': add_member,
+    'list_group_members':list_group_members
 }
