@@ -156,7 +156,45 @@
       "description": "Retrieves the list of groups from Azure Active Directory with filtering capability",
       "category": "investigation ",
       "annotation": "list_groups",
-      "output_schema": "",
+      "output_schema": {
+        "@odata.context": "",
+        "value": [
+          {
+            "id": "",
+            "deletedDateTime": "",
+            "classification": "",
+            "createdDateTime": "",
+            "creationOptions": [],
+            "description": "",
+            "displayName": "",
+            "expirationDateTime": "",
+            "groupTypes": [],
+            "isAssignableToRole": "",
+            "mail": "",
+            "mailEnabled": "",
+            "mailNickname": "",
+            "membershipRule": "",
+            "membershipRuleProcessingState": "",
+            "onPremisesDomainName": "",
+            "onPremisesLastSyncDateTime": "",
+            "onPremisesNetBiosName": "",
+            "onPremisesSamAccountName": "",
+            "onPremisesSecurityIdentifier": "",
+            "onPremisesSyncEnabled": "",
+            "preferredDataLocation": "",
+            "preferredLanguage": "",
+            "proxyAddresses": [],
+            "renewedDateTime": "",
+            "resourceBehaviorOptions": [],
+            "resourceProvisioningOptions": [],
+            "securityEnabled": "",
+            "securityIdentifier": "",
+            "theme": "",
+            "visibility": "",
+            "onPremisesProvisioningErrors": []
+          }
+        ]
+      },
       "parameters": [
         {
           "title": "Filter Query",
@@ -207,7 +245,41 @@
       "description": "Retrieves the details of a particular group.",
       "category": "investigation ",
       "annotation": "get_group_details",
-      "output_schema": "",
+      "output_schema": {
+        "@odata.context": "",
+        "id": "",
+        "deletedDateTime": "",
+        "classification": "",
+        "createdDateTime": "",
+        "creationOptions": [],
+        "description": "",
+        "displayName": "",
+        "expirationDateTime": "",
+        "groupTypes": [],
+        "isAssignableToRole": "",
+        "mail": "",
+        "mailEnabled": "",
+        "mailNickname": "",
+        "membershipRule": "",
+        "membershipRuleProcessingState": "",
+        "onPremisesDomainName": "",
+        "onPremisesLastSyncDateTime": "",
+        "onPremisesNetBiosName": "",
+        "onPremisesSamAccountName": "",
+        "onPremisesSecurityIdentifier": "",
+        "onPremisesSyncEnabled": "",
+        "preferredDataLocation": "",
+        "preferredLanguage": "",
+        "proxyAddresses": [],
+        "renewedDateTime": "",
+        "resourceBehaviorOptions": [],
+        "resourceProvisioningOptions": [],
+        "securityEnabled": "",
+        "securityIdentifier": "",
+        "theme": "",
+        "visibility": "",
+        "onPremisesProvisioningErrors": []
+      },
       "parameters": [
         {
           "title": "Group ID",
@@ -223,62 +295,15 @@
       "enabled": true
     },
     {
-      "title": "List Group Members",
-      "operation": "list_group_members",
-      "description": "Retrieves the list of member users of a particular group.",
-      "category": "investigation ",
-      "annotation": "list_group_members",
-      "output_schema": "",
-      "parameters": [
-        {
-          "title": "Group ID",
-          "name": "id",
-          "type": "text",
-          "tooltip": "ID to of the group you want to list the users for.",
-          "description": "ID to of the group you want to list the users for.",
-          "required": true,
-          "editable": true,
-          "visible": true
-        },
-        {
-          "title": "Number of Users to List",
-          "required": false,
-          "editable": true,
-          "visible": true,
-          "type": "integer",
-          "name": "$top",
-          "description": "(Optional) Maximum number of users to return."
-        },
-        {
-          "title": "Get All Pages",
-          "name": "get_all_pages",
-          "type": "checkbox",
-          "tooltip": "If you select this option, i.e., set it to true, all pages will be fetched from azure so the action will return all available records.",
-          "description": "If you select this option, i.e., set it to true, all pages will be fetched from azure so the action will return all available records.",
-          "required": false,
-          "editable": true,
-          "visible": true,
-          "value": false
-        },
-        {
-          "title": "Skip Token",
-          "required": false,
-          "editable": true,
-          "visible": true,
-          "type": "integer",
-          "name": "$skipToken",
-          "description": "(Optional) Skiptoken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies a starting point to use for subsequent calls."
-        }
-      ],
-      "enabled": true
-    },
-    {
       "title": "Remove Member",
       "operation": "remove_member",
       "description": "Remove member from a group.",
       "category": "investigation ",
       "annotation": "remove_member",
-      "output_schema": "",
+      "output_schema": {
+        "status": "",
+        "result": ""
+      },
       "parameters": [
         {
           "title": "Group ID",
@@ -309,7 +334,10 @@
       "description": "Add member to a group.",
       "category": "investigation ",
       "annotation": "add_member",
-      "output_schema": "",
+      "output_schema": {
+        "status": "",
+        "result": ""
+      },
       "parameters": [
         {
           "title": "Group ID",
@@ -340,7 +368,59 @@
       "description": "Retrieves the list sign ins events from Azure Active Directory based on the input parameters such as the query for filtering users you have specified.",
       "category": "investigation ",
       "annotation": "list_sign_ins",
-      "output_schema": "",
+      "output_schema": {
+        "@odata.context": "",
+        "@odata.nextLink": "",
+        "value": [
+          {
+            "id": "",
+            "createdDateTime": "",
+            "userDisplayName": "",
+            "userPrincipalName": "",
+            "userId": "",
+            "appId": "",
+            "appDisplayName": "",
+            "ipAddress": "",
+            "clientAppUsed": "",
+            "correlationId": "",
+            "conditionalAccessStatus": "",
+            "isInteractive": "",
+            "riskDetail": "",
+            "riskLevelAggregated": "",
+            "riskLevelDuringSignIn": "",
+            "riskState": "",
+            "riskEventTypes": [],
+            "riskEventTypes_v2": [],
+            "resourceDisplayName": "",
+            "resourceId": "",
+            "status": {
+              "errorCode": "",
+              "failureReason": "",
+              "additionalDetails": ""
+            },
+            "deviceDetail": {
+              "deviceId": "",
+              "displayName": "",
+              "operatingSystem": "",
+              "browser": "",
+              "isCompliant": "",
+              "isManaged": "",
+              "trustType": ""
+            },
+            "location": {
+              "city": "",
+              "state": "",
+              "countryOrRegion": "",
+              "geoCoordinates": {
+                "altitude": "",
+                "latitude": "",
+                "longitude": ""
+              }
+            },
+            "appliedConditionalAccessPolicies": []
+          }
+        ]
+      },
       "parameters": [
         {
           "title": "Filter Query",
