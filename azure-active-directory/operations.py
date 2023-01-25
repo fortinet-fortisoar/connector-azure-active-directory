@@ -115,11 +115,6 @@ def list_sign_ins(config, params, connector_info):
     return _list_records(config, params, connector_info, "/auditLogs/signIns")
 
 
-def list_group_members(config, params, connector_info):
-
-    return _list_records(config, params, connector_info, "/groups/{0}/members".format(params.get('id')))
-
-
 def get_group_details(config, params, connector_info):
     try:
         response = api_request("GET", "/groups/{0}".format(params.get('id')), connector_info, config)
@@ -130,10 +125,9 @@ def get_group_details(config, params, connector_info):
 
 def remove_member(config, params, connector_info):
     try:
-        response = api_request("DELETE", "/groups/{0}/members/{1}/$ref".format(params.get('id'),
-                                                                               params.get("dir_object_id")),
-                               connector_info, config)
-        return response
+        response = api_request("DELETE", "/groups/{0}/members/{1}/$ref".format(params.get('id'), params.get("dir_object_id")), connector_info, config)
+        if response:
+            return {'status': 'success', 'result': 'Member successfully removed'}
     except Exception as err:
         raise ConnectorError(str(err))
 
@@ -145,7 +139,8 @@ def add_member(config, params, connector_info):
         }
         response = api_request("POST", "/groups/{0}/members/$ref".format(params.get('id')), connector_info, config,
                                data=payload)
-        return response
+        if response:
+            return {'status': 'success', 'result': 'Member successfully added'}
     except Exception as err:
         raise ConnectorError(str(err))
 
@@ -238,6 +233,5 @@ operations = {
     'list_groups': list_groups,
     'get_group_details': get_group_details,
     'remove_member': remove_member,
-    'add_member': add_member,
-    'list_group_members':list_group_members
+    'add_member': add_member
 }
