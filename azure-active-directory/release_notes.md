@@ -7,4 +7,5 @@
 - List SignIns Events
 - Add Member
 - Remove Member
+- List Group Members
 
