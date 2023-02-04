@@ -199,14 +199,25 @@
       "parameters": [
         {
           "title": "Filter Query",
-          "description": "Filter query based on which groups criteria you want to retrieve as documented at https://learn.microsoft.com/en-us/graph/filter-query-parameter",
+          "description": "Filter query based on which you want to retrieve groups as documented at https://learn.microsoft.com/en-us/graph/filter-query-parameter",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "$filter",
           "placeholder": "displayName eq 'FortiSOAR'",
-          "tooltip": "Filter query based on which groups criteria you want to retrieve as documented at https://learn.microsoft.com/en-us/graph/filter-query-parameter"
+          "tooltip": "Filter query based on which you want to retrieve groups as documented at https://learn.microsoft.com/en-us/graph/filter-query-parameter"
+        },
+        {
+          "title": "Select Query",
+          "description": "Specify the select query to retrieve groups from Azure Active Directory. The OData's Select query is supported on fields such as: \"id\", \"displayName\", etc.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "$select",
+          "placeholder": "id,displayName",
+          "tooltip": "Specify the select query to retrieve groups from Azure Active Directory. The OData's Select query is supported on fields such as: \"id\", \"displayName\", etc."
         },
         {
           "title": "Number Of Groups To Fetch",
@@ -233,7 +244,7 @@
           "required": false,
           "editable": true,
           "visible": true,
-          "type": "integer",
+          "type": "text",
           "name": "$skipToken",
           "description": "(Optional) Skiptoken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies a starting point to use for subsequent calls."
         }
@@ -324,7 +335,7 @@
           "required": false,
           "editable": true,
           "visible": true,
-          "type": "integer",
+          "type": "text",
           "name": "$skipToken",
           "description": "(Optional) Skiptoken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies a starting point to use for subsequent calls."
         }
@@ -550,7 +561,7 @@
           "required": false,
           "editable": true,
           "visible": true,
-          "type": "integer",
+          "type": "text",
           "name": "$skipToken",
           "description": "(Optional) Skiptoken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies a starting point to use for subsequent calls."
         }
@@ -630,7 +641,7 @@
           "required": false,
           "editable": true,
           "visible": true,
-          "type": "integer",
+          "type": "text",
           "name": "$skipToken",
           "description": "(Optional) Skiptoken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies a starting point to use for subsequent calls."
         }
