@@ -13,7 +13,7 @@
   "configuration": {
     "fields": [
       {
-        "title": "Get Access Token",
+        "title": "Access Token Type",
         "required": true,
         "editable": true,
         "visible": true,
@@ -158,6 +158,7 @@
       "annotation": "list_groups",
       "output_schema": {
         "@odata.context": "",
+        "@odata.count": "",
         "value": [
           {
             "id": "",
@@ -198,17 +199,28 @@
       "parameters": [
         {
           "title": "Filter Query",
-          "description": "Filter query based on which groups criteria you want to retrieve as documented at https://learn.microsoft.com/en-us/graph/filter-query-parameter",
+          "description": "Filter query based on which you want to retrieve groups as documented at https://learn.microsoft.com/en-us/graph/filter-query-parameter",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "$filter",
-          "placeholder": "userPrincipalName eq 'username@fortisoar1.onmicrosoft.com'",
-          "tooltip": "Filter query based on which groups criteria you want to retrieve as documented at https://learn.microsoft.com/en-us/graph/filter-query-parameter"
+          "placeholder": "displayName eq 'FortiSOAR'",
+          "tooltip": "Filter query based on which you want to retrieve groups as documented at https://learn.microsoft.com/en-us/graph/filter-query-parameter"
         },
         {
-          "title": "Number of Groups to Fetch",
+          "title": "Select Query",
+          "description": "Specify the select query to retrieve groups from Azure Active Directory. The OData's Select query is supported on fields such as: \"id\", \"displayName\", etc.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "$select",
+          "placeholder": "id,displayName",
+          "tooltip": "Specify the select query to retrieve groups from Azure Active Directory. The OData's Select query is supported on fields such as: \"id\", \"displayName\", etc."
+        },
+        {
+          "title": "Number Of Groups To Fetch",
           "required": false,
           "editable": true,
           "visible": true,
@@ -232,7 +244,98 @@
           "required": false,
           "editable": true,
           "visible": true,
+          "type": "text",
+          "name": "$skipToken",
+          "description": "(Optional) Skiptoken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies a starting point to use for subsequent calls."
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "List Group Members",
+      "operation": "list_group_members",
+      "description": "Retrieves the list of member users of a particular group.",
+      "category": "investigation ",
+      "annotation": "list_group_members",
+      "output_schema": {
+        "@odata.context": "",
+        "@odata.count": "",
+        "value": [
+          {
+            "@odata.type": "",
+            "id": "",
+            "businessPhones": [],
+            "displayName": "",
+            "givenName": "",
+            "jobTitle": "",
+            "mail": "",
+            "mobilePhone": "",
+            "officeLocation": "",
+            "preferredLanguage": "",
+            "surname": "",
+            "userPrincipalName": ""
+          }
+        ]
+      },
+      "parameters": [
+        {
+          "title": "Group ID",
+          "name": "id",
+          "type": "text",
+          "tooltip": "ID to of the group you want to list the users for.",
+          "description": "ID to of the group you want to list the users for.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Filter Query",
+          "description": "Filter query based on which you want to retrieve group members as documented at https://learn.microsoft.com/en-us/graph/filter-query-parameter",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "$filter",
+          "placeholder": "displayName eq 'FortiSOAR'",
+          "tooltip": "Filter query based on you want to retrieve group members as documented at https://learn.microsoft.com/en-us/graph/filter-query-parameter"
+        },
+        {
+          "title": "Select Query",
+          "description": "Specify the select query to retrieve group members from Azure Active Directory. The OData's Select query is supported on fields such as: \"id\", \"userPrincipalName\", \"displayName\", etc.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "$select",
+          "placeholder": "id,displayName",
+          "tooltip": "Specify the select query to retrieve group members from Azure Active Directory. The OData's Select query is supported on fields such as: \"id\", \"userPrincipalName\", \"displayName\", etc."
+        },
+        {
+          "title": "Number Of Group Members To Fetch",
+          "required": false,
+          "editable": true,
+          "visible": true,
           "type": "integer",
+          "name": "$top",
+          "description": "(Optional) Maximum number of group member that this operation should return from Azure."
+        },
+        {
+          "title": "Get All Pages",
+          "name": "get_all_pages",
+          "type": "checkbox",
+          "tooltip": "If you select this option, i.e., set it to true, all pages will be fetched from azure so the action will return all available records.",
+          "description": "If you select this option, i.e., set it to true, all pages will be fetched from azure so the action will return all available records.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "value": false
+        },
+        {
+          "title": "Skip Token",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
           "name": "$skipToken",
           "description": "(Optional) Skiptoken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies a starting point to use for subsequent calls."
         }
@@ -316,7 +419,7 @@
           "visible": true
         },
         {
-          "title": "Directory Object ID",
+          "title": "User ID",
           "name": "dir_object_id",
           "type": "text",
           "tooltip": "Directory Object ID of the user to remove from the group.",
@@ -350,7 +453,7 @@
           "visible": true
         },
         {
-          "title": "Directory Object ID",
+          "title": "User ID",
           "name": "dir_object_id",
           "type": "text",
           "tooltip": "Directory Object ID of the user you want to add to the group.",
@@ -458,7 +561,7 @@
           "required": false,
           "editable": true,
           "visible": true,
-          "type": "integer",
+          "type": "text",
           "name": "$skipToken",
           "description": "(Optional) Skiptoken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies a starting point to use for subsequent calls."
         }
@@ -473,6 +576,7 @@
       "annotation": "list_users",
       "output_schema": {
         "@odata.context": "",
+        "@odata.count": "",
         "value": [
           {
             "businessPhones": [],
@@ -513,15 +617,33 @@
           "tooltip": "Specify the select query to retrieve user fields from Azure Active Directory. The OData's Select query is supported on fields such as: \"id\", \"userPrincipalName\", \"displayName\", etc."
         },
         {
-          "title": "Search Query",
-          "description": "Specify the search query to retrieve user details from Azure Active Directory. The OData's Search query is supported on fields such as: \"id\", \"userPrincipalName\", \"displayName\", etc.",
+          "title": "Number Of Users To Fetch",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "$top",
+          "description": "(Optional) Maximum number of users that this operation should return from Azure."
+        },
+        {
+          "title": "Get All Pages",
+          "name": "get_all_pages",
+          "type": "checkbox",
+          "tooltip": "If you select this option, i.e., set it to true, all pages will be fetched from azure so the action will return all available records.",
+          "description": "If you select this option, i.e., set it to true, all pages will be fetched from azure so the action will return all available records.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "value": false
+        },
+        {
+          "title": "Skip Token",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
-          "name": "$search",
-          "placeholder": "displayName:root",
-          "tooltip": "Specify the search query to retrieve user details from Azure Active Directory. The OData's Search query is supported on fields such as: \"id\", \"userPrincipalName\", \"displayName\", etc."
+          "name": "$skipToken",
+          "description": "(Optional) Skiptoken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies a starting point to use for subsequent calls."
         }
       ],
       "enabled": true

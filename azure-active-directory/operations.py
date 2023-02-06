@@ -1,8 +1,9 @@
 """ Copyright start
-  Copyright (C) 2008 - 2021 Fortinet Inc.
+  Copyright (C) 2008 - 2023 Fortinet Inc.
   All rights reserved.
   FORTINET CONFIDENTIAL & FORTINET PROPRIETARY SOURCE CODE
   Copyright end """
+import json
 
 from requests import request, exceptions as req_exceptions
 from connectors.core.connector import get_logger, ConnectorError
@@ -60,51 +61,42 @@ def api_request(method, endpoint, connector_info, config, params=None, data=None
         raise ConnectorError(str(err))
 
 
-def _fetch_remaining_pages(response, url_params, connector_info, config):
-    url_params.update({"$top": 1000})
+def _fetch_remaining_pages(response, url_params, connector_info, config, endpoint):
     results = copy.deepcopy(response)
     while '@odata.nextLink' in response:
         skiptoken = parse.parse_qs(parse.urlparse(response['@odata.nextLink']).query)['$skiptoken'][0]
         url_params.update({"$skiptoken": skiptoken})
-        response = api_request("GET", "/auditLogs/signIns", connector_info, config, params=url_params)
+        response = api_request("GET", endpoint, connector_info, config, params=url_params)
         results['value'] += response['value']
         logger.debug('Append {} more records'.format(str(len(response['value']))))
     return results
 
 
-def list_users(config, params, connector_info):
-    try:
-        search = params.get('$search')
-        if search:
-            search = '\"{0}\"'.format(search)
-        payload = {
-            '$filter': params.get('$filter'),
-            '$search': search,
-            '$select': params.get('$select')
-        }
-        payload = {k: v for k, v in payload.items() if v is not None and v != ''}
-        response = api_request("GET", "/users", connector_info, config, params=payload)
-        return response
-    except Exception as err:
-        raise ConnectorError(str(err))
-
-
 def _list_records(config, params, connector_info, endpoint):
     try:
-        url_params = {"$filter": params.get('$filter')} if params.get('$filter', None) else {}
+        if params.get('$filter'):
+            endpoint = endpoint + "?$filter={0}".format(params.get('$filter'))
+        url_params = {}
         get_all_pages = params.get("get_all_pages")
         if params.get("$top"):
             url_params.update({"$top": params.get('$top')})
+        if endpoint != "/auditLogs/signIns":
+            url_params.update({"$count": 'true'})
+        if params.get("$select"):
+            url_params.update({"$select": params.get('$select')})
         if params.get("$skipToken"):
-            url_params.update({"$skipToken": params.get('$skipToken')})
+            url_params.update({"$skiptoken": params.get('$skipToken')})
         response = api_request("GET", endpoint, connector_info, config, params=url_params)
         if '@odata.nextLink' in response and get_all_pages:
-            return _fetch_remaining_pages(response, url_params, connector_info, config)
+            return _fetch_remaining_pages(response, url_params, connector_info, config, endpoint)
         else:
             return response
-
     except Exception as err:
         raise ConnectorError(str(err))
+
+
+def list_users(config, params, connector_info):
+    return _list_records(config, params, connector_info, "/users")
 
 
 def list_groups(config, params, connector_info):
@@ -113,6 +105,10 @@ def list_groups(config, params, connector_info):
 
 def list_sign_ins(config, params, connector_info):
     return _list_records(config, params, connector_info, "/auditLogs/signIns")
+
+
+def list_group_members(config, params, connector_info):
+    return _list_records(config, params, connector_info, "/groups/{0}/members".format(params.get('id')))
 
 
 def get_group_details(config, params, connector_info):
@@ -125,7 +121,9 @@ def get_group_details(config, params, connector_info):
 
 def remove_member(config, params, connector_info):
     try:
-        response = api_request("DELETE", "/groups/{0}/members/{1}/$ref".format(params.get('id'), params.get("dir_object_id")), connector_info, config)
+        response = api_request("DELETE",
+                               "/groups/{0}/members/{1}/$ref".format(params.get('id'), params.get("dir_object_id")),
+                               connector_info, config)
         if response:
             return {'status': 'success', 'result': 'Member successfully removed'}
     except Exception as err:
@@ -233,5 +231,6 @@ operations = {
     'list_groups': list_groups,
     'get_group_details': get_group_details,
     'remove_member': remove_member,
-    'add_member': add_member
+    'add_member': add_member,
+    'list_group_members': list_group_members
 }
