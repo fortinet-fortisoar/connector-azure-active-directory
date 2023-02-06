@@ -1,6 +1,6 @@
 {
   "description": "Identity and access management for the cloud using Azure Active Directory REST API services.",
-  "category": "Identity Management",
+  "category": "Identity and Access Management",
   "name": "azure-active-directory",
   "label": "Azure Active Directory",
   "version": "2.1.0",
@@ -153,7 +153,7 @@
     {
       "title": "List Groups",
       "operation": "list_groups",
-      "description": "Retrieves the list of groups from Azure Active Directory with filtering capability",
+      "description": "Retrieves the list of groups from Azure Active Directory based on the input parameters such as the query for filtering groups you have specified.",
       "category": "investigation ",
       "annotation": "list_groups",
       "output_schema": {
@@ -254,7 +254,7 @@
     {
       "title": "List Group Members",
       "operation": "list_group_members",
-      "description": "Retrieves the list of member users of a particular group.",
+      "description": "Retrieves the list of member users of a particular group from Azure Active Directory based on the input parameters such as the query for filtering groups members you have specified",
       "category": "investigation ",
       "annotation": "list_group_members",
       "output_schema": {
@@ -282,8 +282,8 @@
           "title": "Group ID",
           "name": "id",
           "type": "text",
-          "tooltip": "ID to of the group you want to list the users for.",
-          "description": "ID to of the group you want to list the users for.",
+          "tooltip": "ID of the group for which you want to list the members",
+          "description": "ID of the group for which you want to list the members",
           "required": true,
           "editable": true,
           "visible": true
@@ -345,7 +345,7 @@
     {
       "title": "Get Group Details",
       "operation": "get_group_details",
-      "description": "Retrieves the details of a particular group.",
+      "description": "Retrieves the details of a particular group from Azure Active Directory.",
       "category": "investigation ",
       "annotation": "get_group_details",
       "output_schema": {
@@ -388,8 +388,8 @@
           "title": "Group ID",
           "name": "id",
           "type": "text",
-          "tooltip": "Group ID to fetch the details for.",
-          "description": "Group ID to fetch the details for.",
+          "tooltip": "Group ID to fetch the details of the group",
+          "description": "Group ID to fetch the details of the group",
           "required": true,
           "editable": true,
           "visible": true
@@ -412,8 +412,8 @@
           "title": "Group ID",
           "name": "id",
           "type": "text",
-          "tooltip": "ID to of the group you want to remove the users from.",
-          "description": "ID to of the group you want to remove the users from",
+          "tooltip": "ID to of the group from which you want to remove the user",
+          "description": "ID to of the group from which you want to remove the user",
           "required": true,
           "editable": true,
           "visible": true
@@ -446,8 +446,8 @@
           "title": "Group ID",
           "name": "id",
           "type": "text",
-          "tooltip": "ID to of the group you want to add a users to.",
-          "description": "ID to of the group you want to add a users to",
+          "tooltip": "ID to of the group to which you want to add a user",
+          "description": "ID to of the group to which you want to add a user",
           "required": true,
           "editable": true,
           "visible": true
