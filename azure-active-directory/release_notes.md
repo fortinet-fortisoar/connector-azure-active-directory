@@ -8,4 +8,5 @@
 - Add Member
 - Remove Member
 - List Group Members
+- Removed python dependency package adal.
 
