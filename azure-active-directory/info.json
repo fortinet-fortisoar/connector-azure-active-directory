@@ -9,7 +9,7 @@
   "cs_compatible": true,
   "icon_small_name": "small-azure.png",
   "icon_large_name": "large-azure.png",
-  "help_online": "",
+  "help_online": "https://docs.fortinet.com/document/fortisoar/2.1.0/azure-active-directory/510/azure-active-directory-v2-1-0",
   "configuration": {
     "fields": [
       {
@@ -153,7 +153,7 @@
     {
       "title": "List Groups",
       "operation": "list_groups",
-      "description": "Retrieves the list of groups from Azure Active Directory based on the input parameters such as the query for filtering groups you have specified.",
+      "description": "Retrieves a list of groups from Azure Active Directory based on the query for filtering groups that you have specified.",
       "category": "investigation ",
       "annotation": "list_groups",
       "output_schema": {
@@ -199,7 +199,7 @@
       "parameters": [
         {
           "title": "Filter Query",
-          "description": "Filter query based on which you want to retrieve groups as documented at https://learn.microsoft.com/en-us/graph/filter-query-parameter",
+          "description": "Specify the filter query based on which you want to retrieve groups. Refer to Azure Filter Query Parameters for information on the filter query syntax. ",
           "required": false,
           "editable": true,
           "visible": true,
@@ -210,7 +210,7 @@
         },
         {
           "title": "Select Query",
-          "description": "Specify the select query to retrieve groups from Azure Active Directory. The OData's Select query is supported on fields such as: \"id\", \"displayName\", etc.",
+          "description": "Specify the $select query to retrieve groups from Azure Active Directory. The OData's Select query is supported on fields such as id, displayName, etc. Refer to OData system query options for more information. ",
           "required": false,
           "editable": true,
           "visible": true,
@@ -226,14 +226,14 @@
           "visible": true,
           "type": "integer",
           "name": "$top",
-          "description": "(Optional) Maximum number of groups that this operation should return from Azure."
+          "description": "(Optional) Specify the maximum number of groups that this operation should return from Azure. "
         },
         {
           "title": "Get All Pages",
           "name": "get_all_pages",
           "type": "checkbox",
           "tooltip": "If you select this option, i.e., set it to true, all pages will be fetched from azure so the action will return all available records.",
-          "description": "If you select this option, i.e., set it to true, all pages will be fetched from azure so the action will return all available records.",
+          "description": "Select this option, i.e., set it to true, to fetch all pages containing all available records from Azure.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -246,7 +246,7 @@
           "visible": true,
           "type": "text",
           "name": "$skipToken",
-          "description": "(Optional) Skiptoken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies a starting point to use for subsequent calls."
+          "description": "(Optional) Specify a Skiptoken if a previous operation returned a partial result. If the previous response contains a nextLink element, the value of the nextLink element includes a skiptoken parameter that specifies a starting point to use for subsequent calls."
         }
       ],
       "enabled": true
@@ -254,7 +254,7 @@
     {
       "title": "List Group Members",
       "operation": "list_group_members",
-      "description": "Retrieves the list of member users of a particular group from Azure Active Directory based on the input parameters such as the query for filtering groups members you have specified",
+      "description": "Retrieves a list of members of a particular group from Azure Active Directory based on the query for filtering group members that you have specified. ",
       "category": "investigation ",
       "annotation": "list_group_members",
       "output_schema": {
@@ -283,14 +283,14 @@
           "name": "id",
           "type": "text",
           "tooltip": "ID of the group for which you want to list the members",
-          "description": "ID of the group for which you want to list the members",
+          "description": "Specify an ID of the group for which you want to list the members. ",
           "required": true,
           "editable": true,
           "visible": true
         },
         {
           "title": "Filter Query",
-          "description": "Filter query based on which you want to retrieve group members as documented at https://learn.microsoft.com/en-us/graph/filter-query-parameter",
+          "description": "Specify the filter query based on which you want to retrieve group members. Refer to Azure Filter Query Parameters for information on the filter query syntax. ",
           "required": false,
           "editable": true,
           "visible": true,
@@ -301,7 +301,7 @@
         },
         {
           "title": "Select Query",
-          "description": "Specify the select query to retrieve group members from Azure Active Directory. The OData's Select query is supported on fields such as: \"id\", \"userPrincipalName\", \"displayName\", etc.",
+          "description": "Specify the $select query to retrieve group members from Azure Active Directory. The OData's Select query is supported on fields such as id, userPrincipalName, displayName, etc.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -317,14 +317,14 @@
           "visible": true,
           "type": "integer",
           "name": "$top",
-          "description": "(Optional) Maximum number of group member that this operation should return from Azure."
+          "description": "(Optional) Specify the maximum number of group members that this operation should return from Azure."
         },
         {
           "title": "Get All Pages",
           "name": "get_all_pages",
           "type": "checkbox",
           "tooltip": "If you select this option, i.e., set it to true, all pages will be fetched from azure so the action will return all available records.",
-          "description": "If you select this option, i.e., set it to true, all pages will be fetched from azure so the action will return all available records.",
+          "description": "Select this option, i.e., set it to true, to fetch all pages containing all available records from Azure. ",
           "required": false,
           "editable": true,
           "visible": true,
@@ -337,7 +337,7 @@
           "visible": true,
           "type": "text",
           "name": "$skipToken",
-          "description": "(Optional) Skiptoken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies a starting point to use for subsequent calls."
+          "description": "(Optional) Specify a Skiptoken if a previous operation returned a partial result. If the previous response contains a nextLink element, the value of the nextLink element includes a skiptoken parameter that specifies a starting point to use for subsequent calls."
         }
       ],
       "enabled": true
@@ -345,7 +345,7 @@
     {
       "title": "Get Group Details",
       "operation": "get_group_details",
-      "description": "Retrieves the details of a particular group from Azure Active Directory.",
+      "description": "Retrieves the details of a particular group from Azure Active Directory based on the group ID that you have specified. ",
       "category": "investigation ",
       "annotation": "get_group_details",
       "output_schema": {
@@ -389,7 +389,7 @@
           "name": "id",
           "type": "text",
           "tooltip": "Group ID to fetch the details of the group",
-          "description": "Group ID to fetch the details of the group",
+          "description": "Specify a group ID to fetch the details for that group. ",
           "required": true,
           "editable": true,
           "visible": true
@@ -400,7 +400,7 @@
     {
       "title": "Remove Member",
       "operation": "remove_member",
-      "description": "Remove member from a group.",
+      "description": "Removes a member from a group based on the group and user ID that you have specified. ",
       "category": "investigation ",
       "annotation": "remove_member",
       "output_schema": {
@@ -413,7 +413,7 @@
           "name": "id",
           "type": "text",
           "tooltip": "ID to of the group from which you want to remove the user",
-          "description": "ID to of the group from which you want to remove the user",
+          "description": "Specify a group ID from which you want to remove the user. ",
           "required": true,
           "editable": true,
           "visible": true
@@ -423,7 +423,7 @@
           "name": "dir_object_id",
           "type": "text",
           "tooltip": "Directory Object ID of the user to remove from the group.",
-          "description": "Directory Object ID of the user to remove from the group",
+          "description": "Specify the directory object ID of the user to remove from the group.",
           "required": true,
           "editable": true,
           "visible": true
@@ -434,7 +434,7 @@
     {
       "title": "Add Member",
       "operation": "add_member",
-      "description": "Add member to a group.",
+      "description": "Adds a member to a group based on the group and user ID that you have specified. ",
       "category": "investigation ",
       "annotation": "add_member",
       "output_schema": {
@@ -447,7 +447,7 @@
           "name": "id",
           "type": "text",
           "tooltip": "ID to of the group to which you want to add a user",
-          "description": "ID to of the group to which you want to add a user",
+          "description": "Specify a group ID to which you want to add a user. ",
           "required": true,
           "editable": true,
           "visible": true
@@ -457,7 +457,7 @@
           "name": "dir_object_id",
           "type": "text",
           "tooltip": "Directory Object ID of the user you want to add to the group.",
-          "description": "Directory Object ID of the user you want to add to the group.",
+          "description": "Specify the directory object ID of the user to add to the group. ",
           "required": true,
           "editable": true,
           "visible": true
@@ -468,7 +468,7 @@
     {
       "title": "List SignIns Events",
       "operation": "list_sign_ins",
-      "description": "Retrieves the list sign ins events from Azure Active Directory based on the input parameters such as the query for filtering users you have specified.",
+      "description": "Retrieves the list of sign-in events from Azure Active Directory based on the query for filtering users that you have specified. ",
       "category": "investigation ",
       "annotation": "list_sign_ins",
       "output_schema": {
@@ -527,7 +527,7 @@
       "parameters": [
         {
           "title": "Filter Query",
-          "description": "Filter query based on which you want to retrieve sign-in events from Azure Active Directory. The OData's Filter query is supported on the following fields: \"id\", \"userPrincipalName\", \"displayName\", \"givenName\" and \"jobTitle\". For example [userPrincipalName eq 'username@fortisoar1.onmicrosoft.com'] retrieve a user which userPrincipalName is username@fortisoar1.onmicrosoft.com",
+          "description": "Specify the filter query based on which you want to retrieve sign-in events from Azure Active Directory. The OData's Filter query is supported on the following fields: id, userPrincipalName, displayName, givenName and jobTitle. For example [userPrincipalName eq 'username@example.com'] retrieves a user whose userPrincipalName is username@example.com. Refer to OData system query options for more information.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -543,14 +543,14 @@
           "visible": true,
           "type": "integer",
           "name": "$top",
-          "description": "(Optional) Maximum number of events that this operation should return from Azure."
+          "description": "(Optional) Specify the maximum number of events that this operation should return from Azure. "
         },
         {
           "title": "Get All Pages",
           "name": "get_all_pages",
           "type": "checkbox",
           "tooltip": "If you select this option, i.e., set it to true, all pages will be fetched from azure so the action will return all available records.",
-          "description": "If you select this option, i.e., set it to true, all pages will be fetched from azure so the action will return all available records.",
+          "description": "Select this option, i.e., set it to true, to fetch all pages containing all available records from Azure. ",
           "required": false,
           "editable": true,
           "visible": true,
@@ -563,7 +563,7 @@
           "visible": true,
           "type": "text",
           "name": "$skipToken",
-          "description": "(Optional) Skiptoken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies a starting point to use for subsequent calls."
+          "description": "(Optional) Specify a Skiptoken if a previous operation returned a partial result. If the previous response contains a nextLink element, the value of the nextLink element includes a skiptoken parameter that specifies a starting point to use for subsequent calls. "
         }
       ],
       "enabled": true
@@ -571,7 +571,7 @@
     {
       "title": "List Users",
       "operation": "list_users",
-      "description": "Retrieves the list of users from Azure Active Directory based on the input parameters such as the query for filtering users you have specified.",
+      "description": "Retrieves a list of users from Azure Active Directory based on the query for filtering users you have specified. ",
       "category": "investigation ",
       "annotation": "list_users",
       "output_schema": {
@@ -596,7 +596,7 @@
       "parameters": [
         {
           "title": "Filter Query",
-          "description": "Filter query based on which you want to retrieve users from Azure Active Directory. The OData's Filter query is supported on the following fields: \"id\", \"userPrincipalName\", \"displayName\", \"givenName\" and \"jobTitle\". For example [userPrincipalName eq 'username@fortisoar1.onmicrosoft.com'] retrieve a user which userPrincipalName is username@fortisoar1.onmicrosoft.com",
+          "description": "Specify the filter query based on which you want to retrieve users from Azure Active Directory. The OData's Filter query is supported on the following fields: id, userPrincipalName, displayName, givenName and jobTitle. For example [userPrincipalName eq \"username@example.com\"] retrieves a user whose userPrincipalName is username@example.com ",
           "required": false,
           "editable": true,
           "visible": true,
@@ -607,7 +607,7 @@
         },
         {
           "title": "Select Query",
-          "description": "Specify the select query to retrieve user fields from Azure Active Directory. The OData's Select query is supported on fields such as: \"id\", \"userPrincipalName\", \"displayName\", etc.",
+          "description": "Specify the $select query to retrieve user fields from Azure Active Directory. The OData's Select query is supported on fields such as id, userPrincipalName, displayName, etc. Refer to OData system query options for more information. ",
           "required": false,
           "editable": true,
           "visible": true,
@@ -690,7 +690,7 @@
                 "name": "id",
                 "type": "text",
                 "tooltip": "If you choose Object ID, then in the Object ID field, you must specify the ID of the object based on which details of the user are retrieved from Azure Active Directory.",
-                "description": "If you choose Object ID, then in the Object ID field, you must specify the ID of the object based on which details of the user are retrieved from Azure Active Directory.",
+                "description": "Specify the object ID of the user whose details are to be retrieved from Azure Active Directory.",
                 "required": true,
                 "editable": true,
                 "visible": true
@@ -702,7 +702,7 @@
                 "name": "id",
                 "type": "text",
                 "tooltip": "If you choose User Principal Name, then in the User Principal Name field, you must specify the principal name of the user whose details you want to retrieve from Azure Active Directory.",
-                "description": "If you choose User Principal Name, then in the User Principal Name field, you must specify the principal name of the user whose details you want to retrieve from Azure Active Directory.",
+                "description": "Specify the principal name of the user whose details are to be retrieved from Azure Active Directory.",
                 "required": true,
                 "editable": true,
                 "visible": true
@@ -739,7 +739,7 @@
           "name": "displayName",
           "type": "text",
           "tooltip": "Name that you want to display in the address book for the user that you are creating in Azure Active Directory.",
-          "description": "Name that you want to display in the address book for the user that you are creating in Azure Active Directory.",
+          "description": "Specify the name that you want to be displayed in the address book for the user that you are creating in Azure Active Directory. ",
           "required": true,
           "editable": true,
           "visible": true
@@ -749,7 +749,7 @@
           "name": "mailNickname",
           "type": "text",
           "tooltip": "Mail alias for the user that you are creating in Azure Active Directory.",
-          "description": "Mail alias for the user that you are creating in Azure Active Directory.",
+          "description": "Specify the mail alias for the user that you are creating in Azure Active Directory. ",
           "required": true,
           "editable": true,
           "visible": true
@@ -758,7 +758,7 @@
           "title": "User Principal Name",
           "name": "userPrincipalName",
           "type": "text",
-          "description": "Principal name of the user that you are creating in Azure Active Directory.",
+          "description": "Specify the principal name of the user that you are creating in Azure Active Directory. ",
           "tooltip": "Principal name of the user that you are creating in Azure Active Directory.",
           "required": true,
           "editable": true,
@@ -770,7 +770,7 @@
           "name": "password",
           "type": "password",
           "tooltip": "Password of the user that you are creating in Azure Active Directory.",
-          "description": "Password of the user that you are creating in Azure Active Directory.",
+          "description": "Specify the password of the user that you are creating in Azure Active Directory. ",
           "required": true,
           "editable": true,
           "visible": true
@@ -780,7 +780,7 @@
           "name": "force_change",
           "type": "checkbox",
           "tooltip": "If you select this option, i.e., set it to true, then the user is forced to change his password when the users next logs into Azure Active Directory.",
-          "description": "If you select this option, i.e., set it to true, then the user is forced to change his password when the users next logs into Azure Active Directory.",
+          "description": "Select this option, i.e., set it to true, to force the users to change their password when they next log on to Azure Active Directory. ",
           "required": false,
           "editable": true,
           "visible": true,
@@ -791,7 +791,7 @@
           "name": "accountEnabled",
           "type": "checkbox",
           "tooltip": "If you select this option, i.e., set it to true, then the user's account is enabled on Azure Active Directory.",
-          "description": "If you select this option, i.e., set it to true, then the user's account is enabled on Azure Active Directory.",
+          "description": "Select this option, i.e., set it to true, to enable this user's account on Azure Active Directory. ",
           "required": false,
           "editable": true,
           "visible": true,
@@ -806,7 +806,7 @@
           "visible": true,
           "value": "",
           "tooltip": "(Optional) Additional fields that you want to add to the user that you are creating in Azure Active Directory.",
-          "description": "(Optional) Additional fields that you want to add to the user that you are creating in Azure Active Directory."
+          "description": "(Optional) Specify additional fields to add to the user's account that you are creating in Azure Active Directory. "
         }
       ],
       "enabled": true
@@ -843,7 +843,7 @@
                 "name": "id",
                 "type": "text",
                 "tooltip": "If you choose Object ID, then in the Object ID field, you must specify the ID of the object based on which user account is enabled on Azure Active Directory.",
-                "description": "If you choose Object ID, then in the Object ID field, you must specify the ID of the object based on which user account is enabled on Azure Active Directory.",
+                "description": "Specify the object ID associated with the user account to be enabled on Azure Active Directory.",
                 "required": true,
                 "editable": true,
                 "visible": true
@@ -855,7 +855,7 @@
                 "name": "id",
                 "type": "text",
                 "tooltip": "If you choose User Principal Name, then in the User Principal Name field, you must specify the principal name of the user based on which user account is enabled on Azure Active Directory.",
-                "description": "If you choose User Principal Name, then in the User Principal Name field, you must specify the principal name of the user based on which user account is enabled on Azure Active Directory.",
+                "description": "Specify the principal name associated with the user account to be enabled on Azure Active Directory.",
                 "required": true,
                 "editable": true,
                 "visible": true
@@ -898,7 +898,7 @@
                 "name": "id",
                 "type": "text",
                 "tooltip": "If you choose Object ID, then in the Object ID field, you must specify the ID of the object based on which user account is disabled on Azure Active Directory.",
-                "description": "If you choose Object ID, then in the Object ID field, you must specify the ID of the object based on which user account is disabled on Azure Active Directory.",
+                "description": "Specify the object ID associated with the user account to be disabled on Azure Active Directory.",
                 "required": true,
                 "editable": true,
                 "visible": true
@@ -910,7 +910,7 @@
                 "name": "id",
                 "type": "text",
                 "tooltip": "If you choose User Principal Name, then in the User Principal Name field, you must specify the principal name of the user based on which user account is disabled on Azure Active Directory.",
-                "description": "If you choose User Principal Name, then in the User Principal Name field, you must specify the principal name of the user based on which user account is disabled on Azure Active Directory.",
+                "description": "Specify the principal name associated with the user account to be disabled on Azure Active Directory.",
                 "required": true,
                 "editable": true,
                 "visible": true
@@ -953,7 +953,7 @@
                 "name": "id",
                 "type": "text",
                 "tooltip": "If you choose Object ID, then in the Object ID field, you must specify the ID of the object based on which user account is deleted from Azure Active Directory.",
-                "description": "If you choose Object ID, then in the Object ID field, you must specify the ID of the object based on which user account is deleted from Azure Active Directory.",
+                "description": "Specify the object ID associated with the user account to be deleted on Azure Active Directory.",
                 "required": true,
                 "editable": true,
                 "visible": true
@@ -965,7 +965,7 @@
                 "name": "id",
                 "type": "text",
                 "tooltip": "If you choose User Principal Name, then in the User Principal Name field, you must specify the principal name of the user based on which user account is deleted from Azure Active Directory.",
-                "description": "If you choose User Principal Name, then in the User Principal Name field, you must specify the principal name of the user based on which user account is deleted from Azure Active Directory.",
+                "description": "Specify the principal name associated with the user account to be deleted on Azure Active Directory.",
                 "required": true,
                 "editable": true,
                 "visible": true
@@ -992,7 +992,7 @@
           "name": "based_on",
           "type": "select",
           "tooltip": "Select the parameter based on which you want to retrieve details of the user, whose password you want to reset, from Azure Active Directory. You can choose between Object ID or User Principal Name.",
-          "description": "Select the parameter based on which you want to retrieve details of the user, whose password you want to reset, from Azure Active Directory. You can choose between Object ID or User Principal Name.",
+          "description": "Select the parameter based on which you want to reset the password of a user's account on Azure Active Directory You can choose between Object ID or User Principal Name.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -1008,7 +1008,7 @@
                 "name": "id",
                 "type": "text",
                 "tooltip": "If you choose Object ID, then in the Object ID field, you must specify the ID of the object based on which details of the user are retrieved from Azure Active Directory.",
-                "description": "If you choose Object ID, then in the Object ID field, you must specify the ID of the object based on which details of the user are retrieved from Azure Active Directory.",
+                "description": "Specify the object ID associated with the user account whose password is to be reset on Azure Active Directory. ",
                 "required": true,
                 "editable": true,
                 "visible": true
@@ -1020,7 +1020,7 @@
                 "name": "id",
                 "type": "text",
                 "tooltip": "If you choose User Principal Name, then in the User Principal Name field, you must specify the principal name of the user whose details you want to retrieve from Azure Active Directory.",
-                "description": "If you choose User Principal Name, then in the User Principal Name field, you must specify the principal name of the user whose details you want to retrieve from Azure Active Directory.",
+                "description": "Specify the principal name associated with the user account whose password is to be reset on Azure Active Directory. ",
                 "required": true,
                 "editable": true,
                 "visible": true
@@ -1033,7 +1033,7 @@
           "name": "password",
           "type": "password",
           "tooltip": "Temporary password that you want to set for the user whose password you want to rest on Azure Active Directory.",
-          "description": "Temporary password that you want to set for the user whose password you want to rest on Azure Active Directory.",
+          "description": "Specify a temporary password that you want to set for the user on Azure Active Directory. ",
           "required": true,
           "editable": true,
           "visible": true,
@@ -1044,7 +1044,7 @@
           "name": "force_change",
           "type": "checkbox",
           "tooltip": "If you select this option, i.e., set it to true, then the user is forced to change his password when the user next logs into Azure Active Directory.",
-          "description": "If you select this option, i.e., set it to true, then the user is forced to change his password when the user next logs into Azure Active Directory.",
+          "description": "Select this option, i.e., set it to true, to force the users to change their password when they next log on to Azure Active Directory. ",
           "required": false,
           "editable": true,
           "visible": true
