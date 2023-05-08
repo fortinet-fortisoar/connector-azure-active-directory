@@ -252,6 +252,10 @@ def get_registered_users(config, params, connector_info):
     return api_request("GET", "/devices/{0}/registeredUsers".format(params.get('device_id')), connector_info, config)
 
 
+def revoke_sign_in_sessions(config, params, connector_info):
+    return api_request("POST", "/users/{0}/revokeSignInSessions".format(params.get('user_id')), connector_info, config)
+
+
 def _check_health(config, connector_info):
     if check(config, connector_info) and list_users(config, params={}, connector_info=connector_info):
         return True
@@ -277,5 +281,6 @@ operations = {
     'list_direct_reports': list_direct_reports,
     'list_devices': list_devices,
     'get_registered_owners': get_registered_owners,
-    'get_registered_users': get_registered_users
+    'get_registered_users': get_registered_users,
+    'revoke_sign_in_sessions': revoke_sign_in_sessions
 }

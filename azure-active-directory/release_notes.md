@@ -9,3 +9,4 @@
 - List Devices
 - List Registered Owners
 - List Registered Users
+- Revoke Signin Sessions

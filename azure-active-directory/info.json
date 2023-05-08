@@ -363,6 +363,30 @@
           "enabled":true
        },
        {
+         "title":"Revoke SignIn Sessions",
+         "operation":"revoke_sign_in_sessions",
+         "description":"Invalidates all the refresh tokens issued to applications for a user. Action typically performed if the user has a lost or stolen device",
+         "category":"response",
+         "annotation":"revoke_sign_in_sessions",
+         "output_schema":{
+            "@odata.context": "",
+            "value": ""
+        },
+         "parameters":[
+            {
+               "title":"User ID",
+               "name":"user_id",
+               "type":"text",
+               "tooltip":"User ID or principal name",
+               "description":"Specify the user ID or the principal name of the user you want to revoke all sign in sessions for",
+               "required":true,
+               "editable":true,
+               "visible":true
+            }
+         ],
+         "enabled":true
+      },       
+       {
           "title":"List Direct Reports",
           "operation":"list_direct_reports",
           "description":"Retrieves the direct reports for the specified user.",
