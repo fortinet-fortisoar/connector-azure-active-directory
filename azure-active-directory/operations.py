@@ -10,12 +10,13 @@ from connectors.core.connector import get_logger, ConnectorError
 from .microsoft_api_auth import *
 from urllib import parse
 from requests_toolbelt.utils import dump
+import logging
 import copy
 
 logger = get_logger('azure-active-directory')
+#logger.setLevel(logging.DEBUG) # Uncomment for connector specific debug
 
 API_VERSION = "v1.0"
-
 
 def api_request(method, endpoint, connector_info, config, params=None, data=None, headers={}):
     try:
@@ -74,18 +75,20 @@ def _fetch_remaining_pages(response, url_params, connector_info, config, endpoin
 
 def _list_records(config, params, connector_info, endpoint):
     try:
-        if params.get('$filter'):
-            endpoint = endpoint + "?$filter={0}".format(params.get('$filter'))
         url_params = {}
+        endpoint = endpoint
         get_all_pages = params.get("get_all_pages")
+        if params.get('$filter'):
+            url_params.update({"$filter": params.get('$filter')})
         if params.get("$top"):
             url_params.update({"$top": params.get('$top')})
-        if endpoint != "/auditLogs/signIns":
+        if not any([path in endpoint for path in ['/auditLogs', 'people']]):
             url_params.update({"$count": 'true'})
         if params.get("$select"):
             url_params.update({"$select": params.get('$select')})
         if params.get("$skipToken"):
             url_params.update({"$skiptoken": params.get('$skipToken')})
+
         response = api_request("GET", endpoint, connector_info, config, params=url_params)
         if '@odata.nextLink' in response and get_all_pages:
             return _fetch_remaining_pages(response, url_params, connector_info, config, endpoint)
@@ -213,6 +216,45 @@ def delete_user(config, params, connector_info):
     except Exception as err:
         raise ConnectorError(str(err))
 
+def get_user_membership(config, params, connector_info):
+    membership_type_map = {
+        "Direct": "/users/{0}/memberOf",
+        "Transitive": "/users/{0}/transitiveMemberOf"
+    }
+    user_id = params.get('user_id')
+    membership_type = params.get('membership_type')
+    endpoint = membership_type_map[membership_type].format(user_id)
+    return _list_records(config, params, connector_info, endpoint)
+
+
+def get_people(config, params, connector_info):
+    return _list_records(config, params, connector_info, '/users/{0}/people'.format(params.get('user_id')))
+
+
+def get_managers(config, params, connector_info):
+    return api_request("GET", "/users/{0}/".format(params.get('user_id')),
+                       connector_info, config, params={"$expand": "manager($levels=max)"})
+
+
+def list_direct_reports(config, params, connector_info):
+    return api_request("GET", "/users/{0}/directReports".format(params.get('user_id')), connector_info, config)
+
+
+def list_devices(config, params, connector_info):
+    return _list_records(config, params, connector_info, '/devices')
+
+
+def get_registered_owners(config, params, connector_info):
+    return api_request("GET", "/devices/{0}/registeredOwners".format(params.get('device_id')), connector_info, config)
+
+
+def get_registered_users(config, params, connector_info):
+    return api_request("GET", "/devices/{0}/registeredUsers".format(params.get('device_id')), connector_info, config)
+
+
+def revoke_sign_in_sessions(config, params, connector_info):
+    return api_request("POST", "/users/{0}/revokeSignInSessions".format(params.get('user_id')), connector_info, config)
+
 
 def _check_health(config, connector_info):
     if check(config, connector_info) and list_users(config, params={}, connector_info=connector_info):
@@ -232,5 +274,13 @@ operations = {
     'get_group_details': get_group_details,
     'remove_member': remove_member,
     'add_member': add_member,
-    'list_group_members': list_group_members
+    'list_group_members': list_group_members,
+    'get_user_membership': get_user_membership,
+    'get_people': get_people,
+    'get_managers': get_managers,
+    'list_direct_reports': list_direct_reports,
+    'list_devices': list_devices,
+    'get_registered_owners': get_registered_owners,
+    'get_registered_users': get_registered_users,
+    'revoke_sign_in_sessions': revoke_sign_in_sessions
 }
