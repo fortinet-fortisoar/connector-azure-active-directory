@@ -180,7 +180,7 @@ def disable_user(config, params, connector_info):
 
 def reset_password(config, params, connector_info):
     try:
-        force_change = params.pop('force_change', False)
+        force_change = params.get('force_change', False)
         payload = {'passwordProfile': {'forceChangePasswordNextSignIn': force_change}}
         password = params.get('password')
         if password:
