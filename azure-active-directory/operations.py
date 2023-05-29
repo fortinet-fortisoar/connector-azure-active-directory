@@ -82,6 +82,8 @@ def _list_records(config, params, connector_info, endpoint):
             url_params.update({"$filter": params.get('$filter')})
         if params.get("$top"):
             url_params.update({"$top": params.get('$top')})
+        if params.get("$skip"):
+            url_params.update({"$skip": params.get('$skip')})
         if not any([path in endpoint for path in ['/auditLogs', 'people']]):
             url_params.update({"$count": 'true'})
         if params.get("$select"):
