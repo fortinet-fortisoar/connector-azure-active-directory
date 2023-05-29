@@ -14,7 +14,7 @@ import logging
 import copy
 
 logger = get_logger('azure-active-directory')
-# logger.setLevel(logging.DEBUG) # Uncomment for connector specific debug
+#logger.setLevel(logging.DEBUG) # Uncomment for connector specific debug
 
 API_VERSION = "v1.0"
 
@@ -91,9 +91,7 @@ def _list_records(config, params, connector_info, endpoint):
         if params.get("$skipToken"):
             url_params.update({"$skiptoken": params.get('$skipToken')})
 
-        response = api_request("GET", endpoint, connector_info, config, params={"$skip": 2,
-                                                                                "$top": 1
-                                                                                })
+        response = api_request("GET", endpoint, connector_info, config, params=url_params)
         if '@odata.nextLink' in response and get_all_pages:
             return _fetch_remaining_pages(response, url_params, connector_info, config, endpoint)
         else:
