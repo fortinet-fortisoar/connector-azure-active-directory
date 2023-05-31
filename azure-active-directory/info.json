@@ -727,7 +727,7 @@
           "type": "text",
           "name": "$select",
           "placeholder": "id,displayName",
-          "tooltip": "Specify the select query to retrieve group members from Azure Active Directory. The OData's Select query is supported on fields such as: \"id\", \"userPrincipalName\", \"displayName\", etc."
+          "tooltip": "Specify the select query to retrieve group members from Azure Active Directory. The OData's Select query is supported on fields such as: \"id\", \"userPrincipalName\", \"displayName\", etc. Allowed properties: businessPhones,displayName,givenName,jobTitle,mail,mobilePhone,officeLocation,preferredLanguage,surname,userPrincipalName,accountEnabled,ageGroup,assignedLicenses,assignedPlans,city,companyName,consentProvidedForMinor,country,createdDateTime,creationType,deletedDateTime,department,employeeHireDate,employeeId,employeeOrgData,employeeType,externalUserState,externalUserStateChangeDateTime,faxNumber,id,identities,imAddresses,isResourceAccount,lastPasswordChangeDateTime,legalAgeGroupClassification,licenseAssignmentStates,mailNickname,onPremisesDistinguishedName,onPremisesDomainName,onPremisesExtensionAttributes,onPremisesImmutableId,onPremisesLastSyncDateTime,onPremisesProvisioningErrors,onPremisesSamAccountName,onPremisesSecurityIdentifier,onPremisesSyncEnabled,onPremisesUserPrincipalName,otherMails,passwordPolicies,passwordProfile,postalCode,preferredDataLocation,provisionedPlans,proxyAddresses,refreshTokensValidFromDateTime,securityIdentifier,showInAddressList,signInSessionsValidFromDateTime,state,streetAddress,usageLocation"
         },
         {
           "title": "Number Of Group Members To Fetch",

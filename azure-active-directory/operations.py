@@ -13,6 +13,7 @@ from requests_toolbelt.utils import dump
 import logging
 import copy
 
+
 logger = get_logger('azure-active-directory')
 #logger.setLevel(logging.DEBUG) # Uncomment for connector specific debug
 
@@ -150,7 +151,8 @@ def add_member(config, params, connector_info):
 
 def get_user_details(config, params, connector_info):
     try:
-        response = api_request("GET", "/users/{0}".format(params.get('id')), connector_info, config)
+        url_params = {'$select': 'id,businessPhones,displayName,givenName,jobTitle,mail,mobilePhone,officeLocation,preferredLanguage,surname,userPrincipalName,aboutMe,accountEnabled,ageGroup,assignedLicenses,assignedPlans,birthday,city,companyName,consentProvidedForMinor,country,createdDateTime,creationType,deletedDateTime,department,employeeHireDate,employeeId,employeeOrgData,employeeType,externalUserState,externalUserStateChangeDateTime,faxNumber,hireDate,id,identities,imAddresses,interests,isResourceAccount,lastPasswordChangeDateTime,legalAgeGroupClassification,licenseAssignmentStates,mailNickname,mySite,onPremisesDistinguishedName,onPremisesDomainName,onPremisesExtensionAttributes,onPremisesImmutableId,onPremisesLastSyncDateTime,onPremisesProvisioningErrors,onPremisesSamAccountName,onPremisesSecurityIdentifier,onPremisesSyncEnabled,onPremisesUserPrincipalName,otherMails,passwordPolicies,passwordProfile,pastProjects,postalCode,preferredDataLocation,preferredName,provisionedPlans,proxyAddresses,refreshTokensValidFromDateTime,responsibilities,schools,securityIdentifier,showInAddressList,signInSessionsValidFromDateTime,skills,state,streetAddress,usageLocation,userType'}
+        response = api_request("GET", "/users/{0}".format(params.get('id')), connector_info, config, params=url_params)
         return response
     except Exception as err:
         raise ConnectorError(str(err))
