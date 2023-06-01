@@ -563,6 +563,60 @@
       "enabled": true
     },
     {
+      "title": "List User Owned Devices",
+      "operation": "list_user_owned_devices",
+      "description": "Lists the devices that are owned by a user.",
+      "category": "enrichment",
+      "annotation": "list_user_owned_devices",
+      "output_schema": {
+  "value": [
+    {
+      "id": "id-value"
+    }
+  ]
+},
+      "parameters": [
+        {
+          "title": "User ID",
+          "name": "user_id",
+          "type": "text",
+          "tooltip": "Specify the user ID or the principal name of the user you want to fetch owned devices for",
+          "description": "Specify the user ID or the principal name of the user you want to fetch owned devices for",
+          "required": true,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "List User Owned Objects",
+      "operation": "list_user_owned_objects",
+      "description": "Get the list of directory objects that are owned by a user.",
+      "category": "enrichment",
+      "annotation": "list_user_owned_objects",
+      "output_schema": {
+  "value": [
+    {
+      "id": "id-value"
+    }
+  ]
+},
+      "parameters": [
+        {
+          "title": "User ID",
+          "name": "user_id",
+          "type": "text",
+          "tooltip": "Specify the user ID or the principal name of the user you want to fetch directory objects for",
+          "description": "Specify the user ID or the principal name of the user you want to fetch directory objects for",
+          "required": true,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true
+    },
+    {
       "title": "List Groups",
       "operation": "list_groups",
       "description": "Retrieves a list of groups from Azure Active Directory based on the query for filtering groups that you have specified.",
@@ -1481,6 +1535,65 @@
           "visible": true
         }
       ],
+      "enabled": true
+    },
+    {
+      "description": "Make a Generic MS Graph API Call",
+      "operation": "rest_api_call",
+      "annotation": "rest_api_call",
+      "title": "Generic REST API Call",
+      "parameters": [
+        {
+          "title": "API Endpoint",
+          "name": "endpoint",
+          "description": "MS Graph API Endpoint",
+          "tooltip": "MS Graph API Endpoint exp: /users/user@domain.com/ownedDevices",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true
+        },
+        {
+          "title": "HTTP method",
+          "name": "method",
+          "description": "HTTP Method",
+          "type": "select",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "options": [
+            "GET",
+            "POST",
+            "PUT",
+            "DELETE",
+            "PATCH"
+          ],
+          "value": "GET"
+        },
+        {
+          "title": "Query params",
+          "name": "params",
+          "description": "Any query params in JSON format to send as part of the url",
+          "tooltip": "Any query params in JSON format to send as part of the url",
+          "type": "json",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "placeholder": "{'id':'1'}"
+        },
+        {
+          "title": "Request Payload",
+          "name": "body",
+          "description": "The Body of the request in JSON",
+          "tooltip": "The Body of the POST/PUT/PATCH... request in JSON, exp: {\"officeLocation\": \"18/2111\"}",
+          "type": "json",
+          "visible": true,
+          "editable": true,
+          "required": false
+        }
+      ],
+      "output_schema": {
+      },
       "enabled": true
     }
   ]

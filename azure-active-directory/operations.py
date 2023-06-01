@@ -3,7 +3,6 @@
   All rights reserved.
   FORTINET CONFIDENTIAL & FORTINET PROPRIETARY SOURCE CODE
   Copyright end """
-import json
 
 from requests import request, exceptions as req_exceptions
 from connectors.core.connector import get_logger, ConnectorError
@@ -259,6 +258,25 @@ def get_registered_users(config, params, connector_info):
 def revoke_sign_in_sessions(config, params, connector_info):
     return api_request("POST", "/users/{0}/revokeSignInSessions".format(params.get('user_id')), connector_info, config)
 
+def list_user_owned_devices(config, params, connector_info):
+    return api_request("GET", "/users/{0}/ownedDevices".format(params.get('user_id')), connector_info, config)
+
+def list_user_owned_objects(config, params, connector_info):
+    return api_request("GET", "/users/{0}/ownedObjects".format(params.get('user_id')), connector_info, config)
+
+def rest_api_call(config, params, connector_info):
+    try:
+        endpoint = params.get("endpoint")
+        if '/' not in endpoint:
+            raise ConnectorError("Wrong endpoint, make sure to follow the MS Graph API documentation")
+        method = params.get("method","GET")
+        url_params = params.get("params", None)
+        body = params.get("body", None)
+        response = api_request(method, endpoint, connector_info, config, params=url_params, data=body)
+        if response:
+            return response
+    except Exception as err:
+        raise ConnectorError(str(err))
 
 def _check_health(config, connector_info):
     if check(config, connector_info) and list_users(config, params={}, connector_info=connector_info):
@@ -286,5 +304,8 @@ operations = {
     'list_devices': list_devices,
     'get_registered_owners': get_registered_owners,
     'get_registered_users': get_registered_users,
-    'revoke_sign_in_sessions': revoke_sign_in_sessions
+    'revoke_sign_in_sessions': revoke_sign_in_sessions,
+    'list_user_owned_devices': list_user_owned_devices,
+    'list_user_owned_objects': list_user_owned_objects,
+    'rest_api_call': rest_api_call
 }
