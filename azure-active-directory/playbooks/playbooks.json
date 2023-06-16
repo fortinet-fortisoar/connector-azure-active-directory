@@ -1326,7 +1326,7 @@
           "name": "List Devices",
           "aliasName": null,
           "tag": "#Azure Active Directory",
-          "description": "List devices",
+          "description": "Retrieve a list of device objects registered in the organization.",
           "isActive": false,
           "debug": false,
           "singleRecordExecution": false,
@@ -1340,7 +1340,7 @@
           "steps": [
             {
               "@type": "WorkflowStep",
-              "name": "List Direct Reports",
+              "name": "List Devices",
               "description": null,
               "arguments": {
                 "name": "Azure Active Directory",
@@ -2867,7 +2867,7 @@
           "name": "Revoke SignIn Sessions",
           "aliasName": null,
           "tag": "#Azure Active Directory",
-          "description": "Resets the password for an existing Azure Active Directory user, based on the Object ID or User Principal Name, password, and other input parameters you have specified.",
+          "description": "Invalidates all the refresh tokens issued to applications for a user. Action typically performed if the user has a lost or stolen device.",
           "isActive": false,
           "debug": false,
           "singleRecordExecution": false,

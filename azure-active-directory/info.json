@@ -571,7 +571,7 @@
       "output_schema": {
   "value": [
     {
-      "id": "id-value"
+      "id": ""
     }
   ]
 },
@@ -598,7 +598,7 @@
       "output_schema": {
   "value": [
     {
-      "id": "id-value"
+      "id": ""
     }
   ]
 },
