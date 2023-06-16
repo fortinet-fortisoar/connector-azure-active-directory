@@ -10,3 +10,6 @@
 - List Registered Owners
 - List Registered Users
 - Revoke Signin Sessions
+- List User Owned Devices
+- List User Owned Objects
+- Generic REST API Call
