@@ -1724,7 +1724,8 @@
                 "config": "3f014316-51eb-4048-81fd-a2ff2b25c922",
                 "params": {
                   "id": "{{vars.indicator_value}}",
-                  "based_on": "User Principal Name"
+                  "based_on": "User Principal Name",
+                  "additional_info": true
                 },
                 "version": "2.2.0",
                 "connector": "azure-active-directory",
@@ -2500,7 +2501,8 @@
                 "name": "Azure Active Directory",
                 "config": "''",
                 "params": {
-                  "based_on": "Object ID"
+                  "based_on": "Object ID",
+                  "additional_info": true
                 },
                 "version": "2.2.0",
                 "connector": "azure-active-directory",
