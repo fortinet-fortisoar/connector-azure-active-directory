@@ -569,12 +569,12 @@
       "category": "enrichment",
       "annotation": "list_user_owned_devices",
       "output_schema": {
-  "value": [
-    {
-      "id": ""
-    }
-  ]
-},
+        "value": [
+          {
+            "id": ""
+          }
+        ]
+      },
       "parameters": [
         {
           "title": "User ID",
@@ -596,12 +596,12 @@
       "category": "enrichment",
       "annotation": "list_user_owned_objects",
       "output_schema": {
-  "value": [
-    {
-      "id": ""
-    }
-  ]
-},
+        "value": [
+          {
+            "id": ""
+          }
+        ]
+      },
       "parameters": [
         {
           "title": "User ID",
@@ -1193,6 +1193,17 @@
               }
             ]
           }
+        },
+        {
+          "title": "Provide Additional Details",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "checkbox",
+          "name": "additional_info",
+          "tooltip": "Specifies whether to fetch additional details (aboutMe,birthday,hireDate,interests,mySite,pastProjects,preferredName,responsibilities,schools,skills) of the user. By default, this option is set as True.",
+          "value": true,
+          "description": "Specifies whether to fetch additional details (aboutMe,birthday,hireDate,interests,mySite,pastProjects,preferredName,responsibilities,schools,skills) of the user. By default, this option is set as True."
         }
       ],
       "enabled": true
