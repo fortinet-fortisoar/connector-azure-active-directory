@@ -1623,7 +1623,7 @@
           "tag": null,
           "description": "Retrieve indicator's user details from Azure Active Directory",
           "isActive": true,
-          "debug": true,
+          "debug": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
           "parameters": [
@@ -1631,20 +1631,22 @@
             "style_colors"
           ],
           "synchronous": false,
-          "lastModifyDate": 1686293146,
-          "collection": "/api/3/workflow_collections/95daac2d-16dc-4eb8-9482-f2c4e19769ec",
+          "lastModifyDate": 1688126858,
+          "collection": "/api/3/workflow_collections/9d176996-c73e-4590-a229-55b7c3324346",
           "versions": [],
-          "triggerStep": "/api/3/workflow_steps/e64c6069-a6ad-4db1-9d4c-8cf7715a5b7f",
+          "triggerStep": "/api/3/workflow_steps/fe8e279c-358b-44d0-9135-d884843d4796",
           "steps": [
             {
               "@type": "WorkflowStep",
               "name": "Configuration",
               "description": null,
               "arguments": {
+                "entity": "[]",
                 "managers": "{}",
                 "json_tables": "[]",
                 "source_data": "{}",
                 "useMockOutput": "{{globalVars.Demo_mode}}",
+                "arrange_output": "[\"User Details\",\"Manager Details\",\"Group Memberships\",\"Relevant Contacts\",\"Owned Devices\",\"Owned Objects\"]",
                 "manager_filter": "[\"displayName\",\"surname\",\"givenName\",\"mail\",\"country\",\"jobTitle\",\"mobilePhone\"]",
                 "this_is_a_dict": "{}",
                 "indicator_value": "{{vars.input.params['indicator_value']}}",
@@ -1656,11 +1658,11 @@
                 "description_section_header_template": "<div class=\\\"font-size-11 ng-binding padding-bottom-sm\\\"><h4 style=\\\"background: #404142;padding: 5px;text-align: left;color: orange;background: black;\\\">{0}</h4></div>"
               },
               "status": null,
-              "top": "165",
+              "top": "160",
               "left": "300",
               "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
               "group": null,
-              "uuid": "68d1fef4-7638-476e-93b4-1af01478d494"
+              "uuid": "fc62b88c-7333-478e-b972-553eac996766"
             },
             {
               "@type": "WorkflowStep",
@@ -1668,20 +1670,20 @@
               "description": null,
               "arguments": {
                 "params": {
-                  "value": "{%for table in vars.json_tables%}\n<div style=\"float:left; border:2px solid grey; margin:5px;background-color: #1b2430; color:white;font-size:16;\"><h6 style=\"background:#3A6A9B;color:white;padding:5px;\">{{table.0}}</h2>    <p style=\"padding:1px;color:white;\">\n{{table.1|json2html(row_fields=[], template=\"Stylized with row selection\", display=\"Vertical\", styling=true, table_style={'th':'background-color:#22a6af !important;'})}}</p></div>\n{%endfor%}\n"
+                  "value": "<div class=\"solid-border\" style=\"width: fit-content;\">\n<table class=\"no-border\">\n<tr>\n<th colspan=\"5\" class=\"no-background padding-0\">\n<div class=\"font-size-11 ng-binding padding-bottom-sm\">\n<h4 style=\"color: orange;\"\n                    class=\"body-default-bgcolor margin-bottom-0 padding-bottom-md padding-left-md padding-top-md text-align-left\">\n                    Azure Active Directory Detection Summary</h4>\n</div>\n</th>\n</tr>\n{%for table in vars.entity%}\n<tr>\n<td>\n<div style=\"float:left; border:2px solid grey; margin:5px;background-color: #1b2430; color:white;font-size:16;\"><h6 style=\"background:#3A6A9B;color:white;padding:5px;\">{{table.0}}</h2>    <p style=\"padding:1px;color:white;\">\n{{table.1|json2html(row_fields=[], template=\"Stylized with row selection\", display=\"Vertical\", styling=true, table_style={'th':'background-color:#22a6af !important;'})}}</p></div>\n</td>\n</tr>\n{%endfor%}\n</table>\n </div>"
                 },
-                "version": "3.2.3",
+                "version": "3.2.4",
                 "connector": "cyops_utilities",
                 "operation": "format_richtext",
                 "operationTitle": "Utils: Format as RichText (Markdown)",
                 "step_variables": []
               },
               "status": null,
-              "top": "1245",
+              "top": "1380",
               "left": "300",
               "stepType": "/api/3/workflow_step_types/0109f35d-090b-4a2b-bd8a-94cbc3508562",
               "group": null,
-              "uuid": "2eba7973-a345-4136-8440-bf470a6c6b74"
+              "uuid": "bae3ac85-a247-4e32-b7e4-cc8b6c38e18f"
             },
             {
               "@type": "WorkflowStep",
@@ -1713,7 +1715,7 @@
               "left": "300",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
               "group": null,
-              "uuid": "6a6af606-1f77-4be2-a741-5a7000ca7492"
+              "uuid": "85ad66c7-cff6-442f-8fd1-982fdd4dd8ef"
             },
             {
               "@type": "WorkflowStep",
@@ -1743,7 +1745,7 @@
               "left": "300",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
               "group": null,
-              "uuid": "f93e109f-8d9f-41ca-836c-61176adb4868"
+              "uuid": "6bb3af75-fc44-47e4-bdad-c50f0b1843ed"
             },
             {
               "@type": "WorkflowStep",
@@ -1771,7 +1773,7 @@
               "left": "300",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
               "group": null,
-              "uuid": "8baad83a-0100-4853-a4ab-9ffb6e214e1f"
+              "uuid": "59a3a44f-b590-44f9-b157-314f3af0ebab"
             },
             {
               "@type": "WorkflowStep",
@@ -1800,7 +1802,7 @@
               "left": "300",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
               "group": null,
-              "uuid": "641e10d6-0504-4fca-801c-8e5c0a75c713"
+              "uuid": "bb14c180-dd6b-43cc-80a8-5a0c634f8272"
             },
             {
               "@type": "WorkflowStep",
@@ -1828,7 +1830,7 @@
               "left": "300",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
               "group": null,
-              "uuid": "7044f977-3259-48fd-8518-6589ffcfbf74"
+              "uuid": "cfe93599-d226-4882-94ec-4111127ad79a"
             },
             {
               "@type": "WorkflowStep",
@@ -1856,7 +1858,7 @@
               "left": "300",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
               "group": null,
-              "uuid": "6a9aa0c8-1bd5-4d31-905a-7dd153396749"
+              "uuid": "ebd1a37d-810f-4227-bb30-a6676a3bb8f5"
             },
             {
               "@type": "WorkflowStep",
@@ -1866,24 +1868,24 @@
                 "conditions": [
                   {
                     "option": "Yes",
-                    "step_iri": "/api/3/workflow_steps/ff39984a-7458-4390-962d-711115ff4e0b",
+                    "step_iri": "/api/3/workflow_steps/9edbcc85-e18e-4414-8925-6835ee65e6d6",
                     "condition": "{{ vars.json_tables | length > 0 }}",
                     "step_name": "Return Output Data"
                   },
                   {
                     "option": "No",
                     "default": true,
-                    "step_iri": "/api/3/workflow_steps/13bb8132-a7a7-41df-b05e-85b5915aec22",
+                    "step_iri": "/api/3/workflow_steps/ba1813c7-84d5-4b40-bcc1-8f39290f5aec",
                     "step_name": "No Operation"
                   }
                 ]
               },
               "status": null,
-              "top": "1380",
+              "top": "1515",
               "left": "300",
               "stepType": "/api/3/workflow_step_types/12254cf5-5db7-4b1a-8cb1-3af081924b28",
               "group": null,
-              "uuid": "e860cbec-05fb-4327-93f4-5d8238556e39"
+              "uuid": "432a0db0-0cac-4343-979a-b0dfb30fd945"
             },
             {
               "@type": "WorkflowStep",
@@ -1898,11 +1900,25 @@
                 "step_variables": []
               },
               "status": null,
-              "top": "1520",
-              "left": "120",
+              "top": "1650",
+              "left": "125",
               "stepType": "/api/3/workflow_step_types/0109f35d-090b-4a2b-bd8a-94cbc3508562",
               "group": null,
-              "uuid": "13bb8132-a7a7-41df-b05e-85b5915aec22"
+              "uuid": "ba1813c7-84d5-4b40-bcc1-8f39290f5aec"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Ordering The Output",
+              "description": null,
+              "arguments": {
+                "demo": "{%for key in vars.arrange_output%}\n{%for item in vars.json_tables%}\n{%if item[0] == key%}\n{{vars.entity.append(item)}}\n{%endif%}\n{%endfor%}\n{%endfor%}"
+              },
+              "status": null,
+              "top": "1240",
+              "left": "300",
+              "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+              "group": null,
+              "uuid": "973ac4d9-ccdf-493b-a374-52f0d7e0e4a7"
             },
             {
               "@type": "WorkflowStep",
@@ -1910,18 +1926,18 @@
               "description": null,
               "arguments": {
                 "_people": "{#returns a ready to convert json#}\n{%set _entries=[]%}\n{% for entry in vars.source_data.People.value%}\n{%set _entry={}%}\n{% for k, v in entry.items()%}\n{%if k in vars.poeple_fields_filter%}\n{{_entry.update({k:v})}}\n{%endif%}\n{%endfor%}\n{{_entries.append(_entry)}}\n{%endfor%}\n{%if _entries|length > 0%}\n{{vars.json_tables.append([\"Relevant Contacts\",_entries])}}\n{%endif%}",
-                "_managers": "{%for k,v in vars.source_data.Managers.manager.items()%}\n{%if k in vars.manager_filter%}\n{{vars.managers.update({k:v})}}\n{%endif%}\n{%endfor%}\n{%if vars.managers|length > 0%}\n{{vars.json_tables.append([\"Manager Details\",vars.managers])}}\n{%endif%}",
+                "_managers": "{%for k,v in vars.source_data.Managers.items()%}\n{%if k in vars.manager_filter%}\n{{vars.managers.update({k:v})}}\n{%endif%}\n{%endfor%}\n{%if vars.managers|length > 0%}\n{{vars.json_tables.append([\"Manager Details\",vars.managers])}}\n{%endif%}",
                 "_memberships": "{#returns a ready to convert json#}\n{%set _entries=[]%}\n{% for entry in vars.source_data.Memberships.value%}\n{%set _entry={}%}\n{% for k, v in entry.items()%}\n{%if k in vars.memberships_filter%}\n{{_entry.update({k:v})}}\n{%endif%}\n{%endfor%}\n{{_entries.append(_entry)}}\n{%endfor%}\n{%if _entries|length > 0%}\n{{vars.json_tables.append([\"Group Memberships\",_entries])}}{%endif%}",
                 "_user_details": "{%set _tmp={}%}\n{#iterate over userDetails and pick the keys in user_details_filter (defined in Configuration step)#}\n{% for k, v in vars.source_data.userDetails.items()%}\n{%if v and k in vars.user_details_filter%}\n{{_tmp.update({k:v})}}\n{%endif%}\n{%endfor%}\n{%if _tmp|length > 0%}\n{{vars.json_tables.append([\"User Details\",_tmp])}}\n{%endif%}",
                 "_owned_devices": "{#returns a ready to convert json#}\n{%set _entries=[]%}\n{% for entry in vars.source_data.ownedDevices.value%}\n{%set _entry={}%}\n{% for k, v in entry.items()%}\n{%if k in vars.owned_devices_filter%}\n{{_entry.update({k:v})}}\n{%endif%}\n{%endfor%}\n{{_entries.append(_entry)}}\n{%endfor%}\n{%if _entries|length > 0%}\n{{vars.json_tables.append([\"Owned Devices\",_entries])}}\n{%endif%}",
                 "_owned_objects": "{#returns a ready to convert json#}\n{%set _entries=[]%}\n{% for entry in vars.source_data.ownedObjects.value%}\n{%set _entry={}%}\n{% for k, v in entry.items()%}\n{%if k in vars.ownded_objects_filter%}\n{{_entry.update({k:v})}}\n{%endif%}\n{%endfor%}\n{{_entries.append(_entry)}}\n{%endfor%}\n{%if _entries|length > 0%}\n{{vars.json_tables.append([\"Owned Objects\",_entries])}}\n{%endif%}"
               },
               "status": null,
-              "top": "1110",
+              "top": "1100",
               "left": "300",
               "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
               "group": null,
-              "uuid": "5f4176b8-c6ff-4a6d-bfb4-7555af3d55e0"
+              "uuid": "14ffe4ba-3c08-41c0-84b0-9b78b884e9e4"
             },
             {
               "@type": "WorkflowStep",
@@ -1933,11 +1949,11 @@
                 "enrichment_summary": "{{vars.steps.Create_Description_Summary.data['formatted_string']}}"
               },
               "status": null,
-              "top": "1515",
+              "top": "1650",
               "left": "475",
               "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
               "group": null,
-              "uuid": "ff39984a-7458-4390-962d-711115ff4e0b"
+              "uuid": "9edbcc85-e18e-4414-8925-6835ee65e6d6"
             },
             {
               "@type": "WorkflowStep",
@@ -1955,135 +1971,149 @@
               "left": "300",
               "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
               "group": null,
-              "uuid": "e64c6069-a6ad-4db1-9d4c-8cf7715a5b7f"
+              "uuid": "fe8e279c-358b-44d0-9135-d884843d4796"
             }
           ],
           "routes": [
             {
               "@type": "WorkflowRoute",
               "name": "Configuration -> Copy of Get User Details",
-              "targetStep": "/api/3/workflow_steps/f93e109f-8d9f-41ca-836c-61176adb4868",
-              "sourceStep": "/api/3/workflow_steps/68d1fef4-7638-476e-93b4-1af01478d494",
+              "targetStep": "/api/3/workflow_steps/6bb3af75-fc44-47e4-bdad-c50f0b1843ed",
+              "sourceStep": "/api/3/workflow_steps/fc62b88c-7333-478e-b972-553eac996766",
               "label": null,
               "isExecuted": false,
               "group": null,
-              "uuid": "e67677fb-2f13-4513-8285-fd295336a913"
+              "uuid": "6ac6d127-d9be-42dd-8dbf-613c3497507b"
             },
             {
               "@type": "WorkflowRoute",
               "name": "Copy of Get User Details -> Get User Managers",
-              "targetStep": "/api/3/workflow_steps/8baad83a-0100-4853-a4ab-9ffb6e214e1f",
-              "sourceStep": "/api/3/workflow_steps/f93e109f-8d9f-41ca-836c-61176adb4868",
+              "targetStep": "/api/3/workflow_steps/59a3a44f-b590-44f9-b157-314f3af0ebab",
+              "sourceStep": "/api/3/workflow_steps/6bb3af75-fc44-47e4-bdad-c50f0b1843ed",
               "label": null,
               "isExecuted": false,
               "group": null,
-              "uuid": "091e4a3f-2ef9-4cbb-ad43-4373f32d8c31"
+              "uuid": "b3ca921e-0849-49e1-91e1-7b5714a9143c"
             },
             {
               "@type": "WorkflowRoute",
               "name": "Create Description Summary -> Is Reputation Found",
-              "targetStep": "/api/3/workflow_steps/e860cbec-05fb-4327-93f4-5d8238556e39",
-              "sourceStep": "/api/3/workflow_steps/2eba7973-a345-4136-8440-bf470a6c6b74",
+              "targetStep": "/api/3/workflow_steps/432a0db0-0cac-4343-979a-b0dfb30fd945",
+              "sourceStep": "/api/3/workflow_steps/bae3ac85-a247-4e32-b7e4-cc8b6c38e18f",
               "label": null,
               "isExecuted": false,
               "group": null,
-              "uuid": "95426a08-d420-4653-87f9-8dbfa93c08b9"
+              "uuid": "cc505b0d-34e3-49ab-b289-f33f9ae35259"
             },
             {
               "@type": "WorkflowRoute",
               "name": "Get People -> Get User Owned Devices",
-              "targetStep": "/api/3/workflow_steps/7044f977-3259-48fd-8518-6589ffcfbf74",
-              "sourceStep": "/api/3/workflow_steps/6a6af606-1f77-4be2-a741-5a7000ca7492",
+              "targetStep": "/api/3/workflow_steps/cfe93599-d226-4882-94ec-4111127ad79a",
+              "sourceStep": "/api/3/workflow_steps/85ad66c7-cff6-442f-8fd1-982fdd4dd8ef",
               "label": null,
               "isExecuted": false,
               "group": null,
-              "uuid": "f4a740fc-6dae-4a73-8fb3-5d48e25cdc4a"
+              "uuid": "00141166-334c-4026-b700-0c3b8f5985d5"
             },
             {
               "@type": "WorkflowRoute",
               "name": "Get User Managers -> Get User Membership",
-              "targetStep": "/api/3/workflow_steps/641e10d6-0504-4fca-801c-8e5c0a75c713",
-              "sourceStep": "/api/3/workflow_steps/8baad83a-0100-4853-a4ab-9ffb6e214e1f",
+              "targetStep": "/api/3/workflow_steps/bb14c180-dd6b-43cc-80a8-5a0c634f8272",
+              "sourceStep": "/api/3/workflow_steps/59a3a44f-b590-44f9-b157-314f3af0ebab",
               "label": null,
               "isExecuted": false,
               "group": null,
-              "uuid": "6a0be2b7-741f-4b47-bd0e-cfcf20faf598"
+              "uuid": "8b63522b-be81-4621-bbe3-b0f4e4255f27"
             },
             {
               "@type": "WorkflowRoute",
               "name": "Get User Membership -> Get People",
-              "targetStep": "/api/3/workflow_steps/6a6af606-1f77-4be2-a741-5a7000ca7492",
-              "sourceStep": "/api/3/workflow_steps/641e10d6-0504-4fca-801c-8e5c0a75c713",
+              "targetStep": "/api/3/workflow_steps/85ad66c7-cff6-442f-8fd1-982fdd4dd8ef",
+              "sourceStep": "/api/3/workflow_steps/bb14c180-dd6b-43cc-80a8-5a0c634f8272",
               "label": null,
               "isExecuted": false,
               "group": null,
-              "uuid": "80144417-9490-43c5-916e-39fb990d0bf3"
+              "uuid": "77db0d68-c033-4faf-a2e6-00f67a36e264"
             },
             {
               "@type": "WorkflowRoute",
               "name": "Get User Owned Devices -> Get User Owned Objects",
-              "targetStep": "/api/3/workflow_steps/6a9aa0c8-1bd5-4d31-905a-7dd153396749",
-              "sourceStep": "/api/3/workflow_steps/7044f977-3259-48fd-8518-6589ffcfbf74",
+              "targetStep": "/api/3/workflow_steps/ebd1a37d-810f-4227-bb30-a6676a3bb8f5",
+              "sourceStep": "/api/3/workflow_steps/cfe93599-d226-4882-94ec-4111127ad79a",
               "label": null,
               "isExecuted": false,
               "group": null,
-              "uuid": "2e92051f-616f-475d-b510-8c581f501a0a"
+              "uuid": "c9610676-50d2-483a-900f-ea84f4611944"
             },
             {
               "@type": "WorkflowRoute",
-              "name": "Get User Owned Objects -> Process Fetched Data",
-              "targetStep": "/api/3/workflow_steps/5f4176b8-c6ff-4a6d-bfb4-7555af3d55e0",
-              "sourceStep": "/api/3/workflow_steps/6a9aa0c8-1bd5-4d31-905a-7dd153396749",
+              "name": "Get User Owned Objects -> Copy of Process Fetched Data",
+              "targetStep": "/api/3/workflow_steps/14ffe4ba-3c08-41c0-84b0-9b78b884e9e4",
+              "sourceStep": "/api/3/workflow_steps/ebd1a37d-810f-4227-bb30-a6676a3bb8f5",
               "label": null,
               "isExecuted": false,
               "group": null,
-              "uuid": "779a4169-d521-4e88-bb21-1a7fb71e8bac"
+              "uuid": "0f4cae06-f728-4199-bc80-91a1c631fddb"
             },
             {
               "@type": "WorkflowRoute",
               "name": "Is Reputation Found -> No Operation",
-              "targetStep": "/api/3/workflow_steps/13bb8132-a7a7-41df-b05e-85b5915aec22",
-              "sourceStep": "/api/3/workflow_steps/e860cbec-05fb-4327-93f4-5d8238556e39",
+              "targetStep": "/api/3/workflow_steps/ba1813c7-84d5-4b40-bcc1-8f39290f5aec",
+              "sourceStep": "/api/3/workflow_steps/432a0db0-0cac-4343-979a-b0dfb30fd945",
               "label": "No",
               "isExecuted": false,
               "group": null,
-              "uuid": "686047e7-9ea4-4404-ab6d-581654adbbb8"
+              "uuid": "a164729c-91ba-4632-9063-cb46687d2ec0"
             },
             {
               "@type": "WorkflowRoute",
               "name": "Is Reputation Found -> Return Output Data",
-              "targetStep": "/api/3/workflow_steps/ff39984a-7458-4390-962d-711115ff4e0b",
-              "sourceStep": "/api/3/workflow_steps/e860cbec-05fb-4327-93f4-5d8238556e39",
+              "targetStep": "/api/3/workflow_steps/9edbcc85-e18e-4414-8925-6835ee65e6d6",
+              "sourceStep": "/api/3/workflow_steps/432a0db0-0cac-4343-979a-b0dfb30fd945",
               "label": "Yes",
               "isExecuted": false,
               "group": null,
-              "uuid": "fbef1853-5c25-4045-9905-41fb116b6237"
+              "uuid": "5a588dab-2192-4f7a-b328-0ccb865034f2"
             },
             {
               "@type": "WorkflowRoute",
-              "name": "Process Fetched Data -> Create Description Summary",
-              "targetStep": "/api/3/workflow_steps/2eba7973-a345-4136-8440-bf470a6c6b74",
-              "sourceStep": "/api/3/workflow_steps/5f4176b8-c6ff-4a6d-bfb4-7555af3d55e0",
+              "name": "Process Fetched Data -> testing",
+              "targetStep": "/api/3/workflow_steps/973ac4d9-ccdf-493b-a374-52f0d7e0e4a7",
+              "sourceStep": "/api/3/workflow_steps/14ffe4ba-3c08-41c0-84b0-9b78b884e9e4",
               "label": null,
               "isExecuted": false,
               "group": null,
-              "uuid": "752026f7-b88d-4a1c-b15a-4ed258626de2"
+              "uuid": "bfcdc7eb-4fe2-43c8-81cb-a71f68f21289"
             },
             {
               "@type": "WorkflowRoute",
               "name": "Start -> Configuration",
-              "targetStep": "/api/3/workflow_steps/68d1fef4-7638-476e-93b4-1af01478d494",
-              "sourceStep": "/api/3/workflow_steps/e64c6069-a6ad-4db1-9d4c-8cf7715a5b7f",
+              "targetStep": "/api/3/workflow_steps/fc62b88c-7333-478e-b972-553eac996766",
+              "sourceStep": "/api/3/workflow_steps/fe8e279c-358b-44d0-9135-d884843d4796",
               "label": null,
               "isExecuted": false,
               "group": null,
-              "uuid": "069c7933-c5bd-4833-ab84-8576d54175ae"
+              "uuid": "b8a40b11-d6a9-4841-b153-30e9ee8f1f5f"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "name": "testing -> Create Description Summary",
+              "targetStep": "/api/3/workflow_steps/bae3ac85-a247-4e32-b7e4-cc8b6c38e18f",
+              "sourceStep": "/api/3/workflow_steps/973ac4d9-ccdf-493b-a374-52f0d7e0e4a7",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "ce466634-9a15-4ad2-8e8f-61210d707ef4"
             }
           ],
           "groups": [],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
-          "uuid": "a44cd23c-ec9a-446d-9f49-7fe15a8802a1",
-          "id": 1097,
+          "uuid": "9fa8c7c2-f63c-486d-8a63-0f4a3ec7d9b8",
+          "id": 1729,
+          "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "createDate": 1687770746.017838,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1688126859.669553,
           "owners": [],
           "isPrivate": false,
           "deletedAt": null,

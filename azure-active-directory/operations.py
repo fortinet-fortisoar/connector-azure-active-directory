@@ -262,11 +262,14 @@ def get_registered_users(config, params, connector_info):
 def revoke_sign_in_sessions(config, params, connector_info):
     return api_request("POST", "/users/{0}/revokeSignInSessions".format(params.get('user_id')), connector_info, config)
 
+
 def list_user_owned_devices(config, params, connector_info):
     return api_request("GET", "/users/{0}/ownedDevices".format(params.get('user_id')), connector_info, config)
 
+
 def list_user_owned_objects(config, params, connector_info):
     return api_request("GET", "/users/{0}/ownedObjects".format(params.get('user_id')), connector_info, config)
+
 
 def rest_api_call(config, params, connector_info):
     try:
