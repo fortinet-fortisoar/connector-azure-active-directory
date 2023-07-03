@@ -1137,21 +1137,6 @@
       "description": "Retrieves specific information for a specific user from Azure Active Directory, based on the Object ID or User Principal Name you have specified.",
       "category": "investigation",
       "annotation": "get_user_details",
-      "output_schema": {
-        "@odata.context": "",
-        "businessPhones": [
-        ],
-        "displayName": "",
-        "givenName": "",
-        "jobTitle": "",
-        "mail": "",
-        "mobilePhone": "",
-        "officeLocation": "",
-        "preferredLanguage": "",
-        "surname": "",
-        "userPrincipalName": "",
-        "id": ""
-      },
       "parameters": [
         {
           "title": "Based On",
@@ -1204,6 +1189,139 @@
           "tooltip": "Specifies whether to fetch additional details (aboutMe,birthday,hireDate,interests,mySite,pastProjects,preferredName,responsibilities,schools,skills) of the user. By default, this option is set as True.",
           "value": true,
           "description": "Specifies whether to fetch additional details (aboutMe,birthday,hireDate,interests,mySite,pastProjects,preferredName,responsibilities,schools,skills) of the user. By default, this option is set as True."
+        }
+      ],
+      "conditional_output_schema": [
+        {
+          "condition": "{{additional_info === false}}",
+          "output_schema": {
+            "@odata.context": "",
+            "businessPhones": [
+            ],
+            "displayName": "",
+            "givenName": "",
+            "jobTitle": "",
+            "mail": "",
+            "mobilePhone": "",
+            "officeLocation": "",
+            "preferredLanguage": "",
+            "surname": "",
+            "userPrincipalName": "",
+            "id": ""
+          }
+        },
+        {
+          "condition": "{{additional_info === true}}",
+          "output_schema": {
+            "id": "",
+            "city": "",
+            "mail": "",
+            "state": "",
+            "mySite": "",
+            "skills": [],
+            "aboutMe": "",
+            "country": "",
+            "schools": [],
+            "surname": "",
+            "ageGroup": "",
+            "birthday": "",
+            "hireDate": "",
+            "jobTitle": "",
+            "userType": "",
+            "faxNumber": "",
+            "givenName": "",
+            "interests": [],
+            "department": "",
+            "employeeId": "",
+            "identities": [
+              {
+                "issuer": "",
+                "signInType": "",
+                "issuerAssignedId": ""
+              }
+            ],
+            "otherMails": [],
+            "postalCode": "",
+            "companyName": "",
+            "displayName": "",
+            "imAddresses": [],
+            "mobilePhone": "",
+            "creationType": "",
+            "employeeType": "",
+            "mailNickname": "",
+            "pastProjects": [],
+            "assignedPlans": [
+              {
+                "service": "",
+                "servicePlanId": "",
+                "assignedDateTime": "",
+                "capabilityStatus": ""
+              }
+            ],
+            "preferredName": "",
+            "streetAddress": "",
+            "usageLocation": "",
+            "@odata.context": "",
+            "accountEnabled": "",
+            "businessPhones": [],
+            "officeLocation": "",
+            "proxyAddresses": [],
+            "createdDateTime": "",
+            "deletedDateTime": "",
+            "employeeOrgData": "",
+            "passwordProfile": "",
+            "assignedLicenses": [
+              {
+                "skuId": "",
+                "disabledPlans": []
+              }
+            ],
+            "employeeHireDate": "",
+            "passwordPolicies": "",
+            "provisionedPlans": [
+              {
+                "service": "",
+                "capabilityStatus": "",
+                "provisioningStatus": ""
+              }
+            ],
+            "responsibilities": [],
+            "externalUserState": "",
+            "isResourceAccount": "",
+            "preferredLanguage": "",
+            "showInAddressList": "",
+            "userPrincipalName": "",
+            "securityIdentifier": "",
+            "onPremisesDomainName": "",
+            "onPremisesImmutableId": "",
+            "onPremisesSyncEnabled": "",
+            "preferredDataLocation": "",
+            "consentProvidedForMinor": "",
+            "licenseAssignmentStates": [
+              {
+                "error": "",
+                "skuId": "",
+                "state": "",
+                "disabledPlans": [],
+                "assignedByGroup": "",
+                "lastUpdatedDateTime": ""
+              }
+            ],
+            "onPremisesSamAccountName": "",
+            "lastPasswordChangeDateTime": "",
+            "onPremisesLastSyncDateTime": "",
+            "legalAgeGroupClassification": "",
+            "onPremisesDistinguishedName": "",
+            "onPremisesUserPrincipalName": "",
+            "onPremisesProvisioningErrors": [],
+            "onPremisesSecurityIdentifier": "",
+            "onPremisesExtensionAttributes": {
+              "extensionAttribute1": ""
+            },
+            "refreshTokensValidFromDateTime": "",
+            "externalUserStateChangeDateTime": "",
+            "signInSessionsValidFromDateTime": ""
+          }
         }
       ],
       "enabled": true
