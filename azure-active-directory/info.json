@@ -1738,7 +1738,8 @@
       "enabled": true
     },
     {
-      "description": "Make a Generic MS Graph API Call",
+      "description": "Make a generic MS Graph API Call",
+      "category": "investigation",
       "operation": "rest_api_call",
       "annotation": "rest_api_call",
       "title": "Generic REST API Call",
@@ -1746,7 +1747,7 @@
         {
           "title": "API Endpoint",
           "name": "endpoint",
-          "description": "MS Graph API Endpoint",
+          "description": "Specify the MS Graph API Endpoint from which you want to fetch details.",
           "tooltip": "MS Graph API Endpoint exp: /users/user@domain.com/ownedDevices",
           "type": "text",
           "visible": true,
@@ -1756,7 +1757,7 @@
         {
           "title": "HTTP method",
           "name": "method",
-          "description": "HTTP Method",
+          "description": "Specify the HTTP Method used to access the endpoint.",
           "type": "select",
           "visible": true,
           "editable": true,
@@ -1773,8 +1774,8 @@
         {
           "title": "Query params",
           "name": "params",
-          "description": "Any query params in JSON format to send as part of the url",
-          "tooltip": "Any query params in JSON format to send as part of the url",
+          "description": "Specify the query params in JSON format to send as part of the url",
+          "tooltip": "Specify the query params in JSON format to send as part of the url",
           "type": "json",
           "visible": true,
           "editable": true,
@@ -1784,7 +1785,7 @@
         {
           "title": "Request Payload",
           "name": "body",
-          "description": "The Body of the request in JSON",
+          "description": "Specify the Body of the POST/PUT/PATCH request in JSON",
           "tooltip": "The Body of the POST/PUT/PATCH... request in JSON, exp: {\"officeLocation\": \"18/2111\"}",
           "type": "json",
           "visible": true,
