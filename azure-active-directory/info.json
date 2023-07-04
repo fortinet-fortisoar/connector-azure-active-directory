@@ -1195,19 +1195,90 @@
         {
           "condition": "{{additional_info === false}}",
           "output_schema": {
-            "@odata.context": "",
-            "businessPhones": [
-            ],
-            "displayName": "",
-            "givenName": "",
-            "jobTitle": "",
+            "id": "",
+            "city": "",
             "mail": "",
-            "mobilePhone": "",
-            "officeLocation": "",
-            "preferredLanguage": "",
+            "state": "",
+            "country": "",
             "surname": "",
+            "ageGroup": "",
+            "jobTitle": "",
+            "userType": "",
+            "faxNumber": "",
+            "givenName": "",
+            "department": "",
+            "employeeId": "",
+            "identities": [
+              {
+                "issuer": "",
+                "signInType": "",
+                "issuerAssignedId": ""
+              }
+            ],
+            "otherMails": [],
+            "postalCode": "",
+            "companyName": "",
+            "displayName": "",
+            "imAddresses": [],
+            "mobilePhone": "",
+            "creationType": "",
+            "employeeType": "",
+            "mailNickname": "",
+            "assignedPlans": [
+              {
+                "service": "",
+                "servicePlanId": "",
+                "assignedDateTime": "",
+                "capabilityStatus": ""
+              }
+            ],
+            "streetAddress": "",
+            "usageLocation": "",
+            "@odata.context": "",
+            "accountEnabled": "",
+            "businessPhones": [],
+            "officeLocation": "",
+            "proxyAddresses": [],
+            "createdDateTime": "",
+            "deletedDateTime": "",
+            "employeeOrgData": "",
+            "passwordProfile": "",
+            "assignedLicenses": [],
+            "employeeHireDate": "",
+            "passwordPolicies": "",
+            "provisionedPlans": [
+              {
+                "service": "",
+                "capabilityStatus": "",
+                "provisioningStatus": ""
+              }
+            ],
+            "externalUserState": "",
+            "isResourceAccount": "",
+            "preferredLanguage": "",
+            "showInAddressList": "",
             "userPrincipalName": "",
-            "id": ""
+            "securityIdentifier": "",
+            "onPremisesDomainName": "",
+            "onPremisesImmutableId": "",
+            "onPremisesSyncEnabled": "",
+            "preferredDataLocation": "",
+            "consentProvidedForMinor": "",
+            "licenseAssignmentStates": [],
+            "onPremisesSamAccountName": "",
+            "lastPasswordChangeDateTime": "",
+            "onPremisesLastSyncDateTime": "",
+            "legalAgeGroupClassification": "",
+            "onPremisesDistinguishedName": "",
+            "onPremisesUserPrincipalName": "",
+            "onPremisesProvisioningErrors": [],
+            "onPremisesSecurityIdentifier": "",
+            "onPremisesExtensionAttributes": {
+              "extensionAttribute1": ""
+            },
+            "refreshTokensValidFromDateTime": "",
+            "externalUserStateChangeDateTime": "",
+            "signInSessionsValidFromDateTime": ""
           }
         },
         {
