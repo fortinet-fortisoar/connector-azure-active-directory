@@ -13,3 +13,4 @@
 - List User Owned Devices
 - List User Owned Objects
 - Generic REST API Call
+- The Azure Active Directory connector now supports pluggable enrichment to retrieve verdicts related to the indicator of type 'user'.
