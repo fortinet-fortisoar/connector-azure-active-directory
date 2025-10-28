@@ -1,15 +1,16 @@
 {
-  "description": "Identity and access management for the cloud using Azure Active Directory REST API services.",
+  "description": "Formely Azure Active Directory, Identity and access management for the cloud using Azure Active Directory REST API services.",
   "category": "Identity and Access Management",
   "name": "azure-active-directory",
-  "label": "Azure Active Directory",
-  "version": "2.2.0",
+  "label": "Microsoft Entra ID",
+  "version": "2.2.1",
   "publisher": "Fortinet",
+  "contributor":"Naili.M",
   "cs_approved": true,
   "cs_compatible": true,
   "icon_small_name": "small-azure.png",
   "icon_large_name": "large-azure.png",
-  "help_online": "https://docs.fortinet.com/document/fortisoar/2.2.0/azure-active-directory/592/azure-active-directory-v2-2-0",
+  "help_online": "https://docs.fortinet.com/document/fortisoar/2.2.1/azure-active-directory/592/azure-active-directory-v2-2-0",
   "configuration": {
     "fields": [
       {
