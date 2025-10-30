@@ -3,8 +3,8 @@
   "data": [
     {
       "@type": "WorkflowCollection",
-      "name": "Sample - Azure Active Directory - 2.2.1",
-      "description": "Sample playbooks for \"Azure Active Directory\" connector. If you are planning to use any of the sample playbooks in your environment, ensure that you clone those playbooks and move them to a different collection, since the sample playbook collection gets deleted during connector upgrade and delete.",
+      "name": "Sample - Microsoft Entra ID - 2.2.1",
+      "description": "Sample playbooks for \"Microsoft Entra ID\" connector. If you are planning to use any of the sample playbooks in your environment, ensure that you clone those playbooks and move them to a different collection, since the sample playbook collection gets deleted during connector upgrade and delete.",
       "visible": true,
       "image": "",
       "id": 91,
@@ -20,8 +20,8 @@
           "triggerLimit": null,
           "name": "List Users",
           "aliasName": null,
-          "tag": "#Azure Active Directory",
-          "description": "Retrieves the list of users from Azure Active Directory based on the input parameters such as the query for filtering users you have specified.",
+          "tag": "#Microsoft Entra ID",
+          "description": "Retrieves the list of users from Microsoft Entra ID based on the input parameters such as the query for filtering users you have specified.",
           "isActive": false,
           "debug": false,
           "singleRecordExecution": false,
@@ -38,8 +38,8 @@
               "name": "List Users",
               "description": null,
               "arguments": {
-                "name": "Azure Active Directory",
-                "config": "''",
+                "name": "Microsoft Entra ID",
+                "config": "",
                 "params": {
                   "get_all_pages": false
                 },
@@ -64,7 +64,7 @@
               "description": null,
               "arguments": {
                 "route": "3ff18e91-db48-4508-8a88-15c9c420280a",
-                "title": "Azure Active Directory: List Users",
+                "title": "Microsoft Entra ID: List Users",
                 "resources": [
                   "alerts"
                 ],
@@ -116,8 +116,8 @@
           "triggerLimit": null,
           "name": "Delete User",
           "aliasName": null,
-          "tag": "#Azure Active Directory",
-          "description": "Deletes a specific user's account from Azure Active Directory, based on the Object ID or User Principal Name you have specified.",
+          "tag": "#Microsoft Entra ID",
+          "description": "Deletes a specific user's account from Microsoft Entra ID, based on the Object ID or User Principal Name you have specified.",
           "isActive": false,
           "debug": false,
           "singleRecordExecution": false,
@@ -134,7 +134,7 @@
               "name": "Delete User",
               "description": null,
               "arguments": {
-                "name": "Azure Active Directory",
+                "name": "Microsoft Entra ID",
                 "config": "''",
                 "params": {
                   "based_on": "Object ID"
@@ -160,7 +160,7 @@
               "description": null,
               "arguments": {
                 "route": "5fb2ae64-ea15-4ad5-b909-49146e47a17c",
-                "title": "Azure Active Directory: Delete User",
+                "title": "Microsoft Entra ID: Delete User",
                 "resources": [
                   "alerts"
                 ],
@@ -263,7 +263,7 @@
               "name": "Get SignIn Events",
               "description": null,
               "arguments": {
-                "name": "Azure Active Directory",
+                "name": "Microsoft Entra ID",
                 "config": "905347ed-308e-4967-a8b2-85fe88de1cdd",
                 "params": {
                   "$top": 1,
@@ -458,7 +458,7 @@
           "triggerLimit": null,
           "name": "List Registered Users",
           "aliasName": null,
-          "tag": "#Azure Active Directory",
+          "tag": "#Microsoft Entra ID",
           "description": "List registered users for a device",
           "isActive": false,
           "debug": false,
@@ -476,7 +476,7 @@
               "name": "List Registered Owners",
               "description": null,
               "arguments": {
-                "name": "Azure Active Directory",
+                "name": "Microsoft Entra ID",
                 "config": "3f014316-51eb-4048-81fd-a2ff2b25c922",
                 "params": {
                   "device_id": "754e8e13-bbc8-46d4-a7fe-edaea5b8694a"
@@ -502,7 +502,7 @@
               "description": null,
               "arguments": {
                 "route": "1b6f28eb-128f-4b30-9ca6-7395ba62a8f8",
-                "title": "Azure Active Directory: Reset Password",
+                "title": "Microsoft Entra ID: Reset Password",
                 "resources": [
                   "alerts"
                 ],
@@ -554,7 +554,7 @@
           "triggerLimit": null,
           "name": "Remove Member",
           "aliasName": null,
-          "tag": "#Azure Active Directory",
+          "tag": "#Microsoft Entra ID",
           "description": "Remove member from a group.",
           "isActive": false,
           "debug": false,
@@ -572,8 +572,8 @@
               "name": "Remove Member",
               "description": null,
               "arguments": {
-                "name": "Azure Active Directory",
-                "config": "''",
+                "name": "Microsoft Entra ID",
+                "config": "",
                 "params": [],
                 "version": "2.2.1",
                 "connector": "azure-active-directory",
@@ -596,7 +596,7 @@
               "description": null,
               "arguments": {
                 "route": "e1f71e32-e350-45a6-9247-103541ed527e",
-                "title": "Azure Active Directory: Remove Member",
+                "title": "Microsoft Entra ID: Remove Member",
                 "resources": [
                   "alerts"
                 ],
@@ -648,8 +648,8 @@
           "triggerLimit": null,
           "name": "Enable User",
           "aliasName": null,
-          "tag": "#Azure Active Directory",
-          "description": "Enables a specific user's account in Azure Active Directory, based on the Object ID or User Principal Name you have specified.",
+          "tag": "#Microsoft Entra ID",
+          "description": "Enables a specific user's account in Microsoft Entra ID, based on the Object ID or User Principal Name you have specified.",
           "isActive": false,
           "debug": false,
           "singleRecordExecution": false,
@@ -666,8 +666,8 @@
               "name": "Enable User",
               "description": null,
               "arguments": {
-                "name": "Azure Active Directory",
-                "config": "''",
+                "name": "Microsoft Entra ID",
+                "config": "",
                 "params": {
                   "based_on": "Object ID"
                 },
@@ -692,7 +692,7 @@
               "description": null,
               "arguments": {
                 "route": "2148fe8e-18ec-4288-9669-3cf92a0e3ff9",
-                "title": "Azure Active Directory: Enable User",
+                "title": "Microsoft Entra ID: Enable User",
                 "resources": [
                   "alerts"
                 ],
@@ -744,8 +744,8 @@
           "triggerLimit": null,
           "name": "Disable User",
           "aliasName": null,
-          "tag": "#Azure Active Directory",
-          "description": "Disables a specific user's account in Azure Active Directory, based on the Object ID or User Principal Name you have specified.",
+          "tag": "#Microsoft Entra ID",
+          "description": "Disables a specific user's account in Microsoft Entra ID, based on the Object ID or User Principal Name you have specified.",
           "isActive": false,
           "debug": false,
           "singleRecordExecution": false,
@@ -762,8 +762,8 @@
               "name": "Disable User",
               "description": null,
               "arguments": {
-                "name": "Azure Active Directory",
-                "config": "''",
+                "name": "Microsoft Entra ID",
+                "config": "",
                 "params": {
                   "based_on": "Object ID"
                 },
@@ -788,7 +788,7 @@
               "description": null,
               "arguments": {
                 "route": "90d8dea5-d9b1-49c2-b948-7537532d5554",
-                "title": "Azure Active Directory: Disable User",
+                "title": "Microsoft Entra ID: Disable User",
                 "resources": [
                   "alerts"
                 ],
@@ -840,7 +840,7 @@
           "triggerLimit": null,
           "name": "Get People",
           "aliasName": null,
-          "tag": "#Azure Active Directory",
+          "tag": "#Microsoft Entra ID",
           "description": "Retrieve a collection of person objects ordered by their relevance to the user, which is determined by the user's communication and collaboration patterns, and business relationships",
           "isActive": false,
           "debug": false,
@@ -858,7 +858,7 @@
               "name": "Get People",
               "description": null,
               "arguments": {
-                "name": "Azure Active Directory",
+                "name": "Microsoft Entra ID",
                 "config": "3f014316-51eb-4048-81fd-a2ff2b25c922",
                 "params": {
                   "$top": "",
@@ -888,7 +888,7 @@
               "description": null,
               "arguments": {
                 "route": "979c2814-cbab-4dc8-9520-72b718abfdf3",
-                "title": "Azure Active Directory: Reset Password",
+                "title": "Microsoft Entra ID: Reset Password",
                 "resources": [
                   "alerts"
                 ],
@@ -940,7 +940,7 @@
           "triggerLimit": null,
           "name": "List User Owned Objects",
           "aliasName": null,
-          "tag": "#Azure Active Directory",
+          "tag": "#Microsoft Entra ID",
           "description": "Get the list of directory objects that are owned by a user",
           "isActive": false,
           "debug": false,
@@ -958,7 +958,7 @@
               "name": "List User Owned Objects",
               "description": null,
               "arguments": {
-                "name": "Azure Active Directory",
+                "name": "Microsoft Entra ID",
                 "config": "3f014316-51eb-4048-81fd-a2ff2b25c922",
                 "params": {
                   "user_id": "fortisoar@forty.com"
@@ -984,7 +984,7 @@
               "description": null,
               "arguments": {
                 "route": "419849ff-b948-4778-858c-05a4e955a028",
-                "title": "Azure Active Directory: Reset Password",
+                "title": "Microsoft Entra ID: Reset Password",
                 "resources": [
                   "alerts"
                 ],
@@ -1036,7 +1036,7 @@
           "triggerLimit": null,
           "name": "Get Managers",
           "aliasName": null,
-          "tag": "#Azure Active Directory",
+          "tag": "#Microsoft Entra ID",
           "description": "List the groups the user is member of",
           "isActive": false,
           "debug": false,
@@ -1054,7 +1054,7 @@
               "name": "Get Managers",
               "description": null,
               "arguments": {
-                "name": "Azure Active Directory",
+                "name": "Microsoft Entra ID",
                 "config": "3f014316-51eb-4048-81fd-a2ff2b25c922",
                 "params": {
                   "user_id": "fd5533e3-e598-4cd2-b962-07bd5f3c6b63"
@@ -1080,7 +1080,7 @@
               "description": null,
               "arguments": {
                 "route": "46d8860c-5fd5-49e7-a144-4e9a96580136",
-                "title": "Azure Active Directory: Reset Password",
+                "title": "Microsoft Entra ID: Reset Password",
                 "resources": [
                   "alerts"
                 ],
@@ -1132,8 +1132,8 @@
           "triggerLimit": null,
           "name": "Get Group Details",
           "aliasName": null,
-          "tag": "#Azure Active Directory",
-          "description": "Retrieves the details of a particular group from Azure Active Directory.",
+          "tag": "#Microsoft Entra ID",
+          "description": "Retrieves the details of a particular group from Microsoft Entra ID.",
           "isActive": false,
           "debug": false,
           "singleRecordExecution": false,
@@ -1150,8 +1150,8 @@
               "name": "Get Group Details",
               "description": null,
               "arguments": {
-                "name": "Azure Active Directory",
-                "config": "''",
+                "name": "Microsoft Entra ID",
+                "config": "",
                 "params": [],
                 "version": "2.2.1",
                 "connector": "azure-active-directory",
@@ -1174,7 +1174,7 @@
               "description": null,
               "arguments": {
                 "route": "b5797bf2-8b17-4c70-9429-72b78d82a864",
-                "title": "Azure Active Directory: Get Group Details",
+                "title": "Microsoft Entra ID: Get Group Details",
                 "resources": [
                   "alerts"
                 ],
@@ -1226,7 +1226,7 @@
           "triggerLimit": null,
           "name": "Generic API Call",
           "aliasName": null,
-          "tag": "#Azure Active Directory",
+          "tag": "#Microsoft Entra ID",
           "description": "Make a Generic MS Graph API Call",
           "isActive": false,
           "debug": false,
@@ -1244,7 +1244,7 @@
               "name": "Generic REST API Call",
               "description": null,
               "arguments": {
-                "name": "Azure Active Directory",
+                "name": "Microsoft Entra ID",
                 "config": "3f014316-51eb-4048-81fd-a2ff2b25c922",
                 "params": {
                   "body": "",
@@ -1273,7 +1273,7 @@
               "description": null,
               "arguments": {
                 "route": "7fa3e790-2252-4370-aba1-e15552161c0c",
-                "title": "Azure Active Directory: Reset Password",
+                "title": "Microsoft Entra ID: Reset Password",
                 "resources": [
                   "alerts"
                 ],
@@ -1325,7 +1325,7 @@
           "triggerLimit": null,
           "name": "List Devices",
           "aliasName": null,
-          "tag": "#Azure Active Directory",
+          "tag": "#Microsoft Entra ID",
           "description": "Retrieve a list of device objects registered in the organization.",
           "isActive": false,
           "debug": false,
@@ -1343,7 +1343,7 @@
               "name": "List Devices",
               "description": null,
               "arguments": {
-                "name": "Azure Active Directory",
+                "name": "Microsoft Entra ID",
                 "config": "3f014316-51eb-4048-81fd-a2ff2b25c922",
                 "params": {
                   "$top": "",
@@ -1373,7 +1373,7 @@
               "description": null,
               "arguments": {
                 "route": "683cce5e-2b1d-45a0-96a8-b295ed9ef843",
-                "title": "Azure Active Directory: Reset Password",
+                "title": "Microsoft Entra ID: Reset Password",
                 "resources": [
                   "alerts"
                 ],
@@ -1425,7 +1425,7 @@
           "triggerLimit": null,
           "name": "Get User Membership",
           "aliasName": null,
-          "tag": "#Azure Active Directory",
+          "tag": "#Microsoft Entra ID",
           "description": "List the groups the user is member of",
           "isActive": false,
           "debug": false,
@@ -1443,7 +1443,7 @@
               "name": "Get User Membership",
               "description": null,
               "arguments": {
-                "name": "Azure Active Directory",
+                "name": "Microsoft Entra ID",
                 "config": "3f014316-51eb-4048-81fd-a2ff2b25c922",
                 "params": {
                   "user_id": "fd5533e3-e598-4cd2-b962-07bd5f3c6b63",
@@ -1470,7 +1470,7 @@
               "description": null,
               "arguments": {
                 "route": "99eb4307-9e82-4df0-aad3-8262c7f010f6",
-                "title": "Azure Active Directory: Reset Password",
+                "title": "Microsoft Entra ID: Reset Password",
                 "resources": [
                   "alerts"
                 ],
@@ -1522,8 +1522,8 @@
           "triggerLimit": null,
           "name": "Add User",
           "aliasName": null,
-          "tag": "#Azure Active Directory",
-          "description": "Creates a new user in Azure Active Directory, based on the User Principal Name, Display Name, Password, and other input parameters you have specified.",
+          "tag": "#Microsoft Entra ID",
+          "description": "Creates a new user in Microsoft Entra ID, based on the User Principal Name, Display Name, Password, and other input parameters you have specified.",
           "isActive": false,
           "debug": false,
           "singleRecordExecution": false,
@@ -1540,7 +1540,7 @@
               "name": "Add User",
               "description": null,
               "arguments": {
-                "name": "Azure Active Directory",
+                "name": "Microsoft Entra ID",
                 "config": "''",
                 "params": {
                   "force_change": true,
@@ -1568,7 +1568,7 @@
               "description": null,
               "arguments": {
                 "route": "8520a9b8-8cc1-4239-bdff-68e7a7769947",
-                "title": "Azure Active Directory: Add User",
+                "title": "Microsoft Entra ID: Add User",
                 "resources": [
                   "alerts"
                 ],
@@ -1618,10 +1618,10 @@
         {
           "@type": "Workflow",
           "triggerLimit": null,
-          "name": "User > Azure Active Directory > Enrichment",
+          "name": "User > Microsoft Entra ID > Enrichment",
           "aliasName": null,
           "tag": null,
-          "description": "Retrieve indicator's user details from Azure Active Directory",
+          "description": "Retrieve indicator's user details from Microsoft Entra ID",
           "isActive": true,
           "debug": false,
           "singleRecordExecution": false,
@@ -1670,7 +1670,7 @@
               "description": null,
               "arguments": {
                 "params": {
-                  "value": "<div class=\"solid-border\" style=\"width: fit-content;\">\n<table class=\"no-border\">\n<tr>\n<th colspan=\"5\" class=\"no-background padding-0\">\n<div class=\"font-size-11 ng-binding padding-bottom-sm\">\n<h4 style=\"color: orange;\"\n                    class=\"body-default-bgcolor margin-bottom-0 padding-bottom-md padding-left-md padding-top-md text-align-left\">\n                    Azure Active Directory Detection Summary</h4>\n</div>\n</th>\n</tr>\n{%for table in vars.entity%}\n<tr>\n<td>\n<div style=\"float:left; border:2px solid grey; margin:5px;background-color: #1b2430; color:white;font-size:16;\"><h6 style=\"background:#3A6A9B;color:white;padding:5px;\">{{table.0}}</h2>    <p style=\"padding:1px;color:white;\">\n{{table.1|json2html(row_fields=[], template=\"Stylized with row selection\", display=\"Vertical\", styling=true, table_style={'th':'background-color:#22a6af !important;'})}}</p></div>\n</td>\n</tr>\n{%endfor%}\n</table>\n </div>"
+                  "value": "<div class=\"solid-border\" style=\"width: fit-content;\">\n<table class=\"no-border\">\n<tr>\n<th colspan=\"5\" class=\"no-background padding-0\">\n<div class=\"font-size-11 ng-binding padding-bottom-sm\">\n<h4 style=\"color: orange;\"\n                    class=\"body-default-bgcolor margin-bottom-0 padding-bottom-md padding-left-md padding-top-md text-align-left\">\n                    Microsoft Entra ID Detection Summary</h4>\n</div>\n</th>\n</tr>\n{%for table in vars.entity%}\n<tr>\n<td>\n<div style=\"float:left; border:2px solid grey; margin:5px;background-color: #1b2430; color:white;font-size:16;\"><h6 style=\"background:#3A6A9B;color:white;padding:5px;\">{{table.0}}</h2>    <p style=\"padding:1px;color:white;\">\n{{table.1|json2html(row_fields=[], template=\"Stylized with row selection\", display=\"Vertical\", styling=true, table_style={'th':'background-color:#22a6af !important;'})}}</p></div>\n</td>\n</tr>\n{%endfor%}\n</table>\n </div>"
                 },
                 "version": "3.2.4",
                 "connector": "cyops_utilities",
@@ -1690,7 +1690,7 @@
               "name": "Get People",
               "description": null,
               "arguments": {
-                "name": "Azure Active Directory",
+                "name": "Microsoft Entra ID",
                 "config": "3f014316-51eb-4048-81fd-a2ff2b25c922",
                 "params": {
                   "$top": "",
@@ -1722,7 +1722,7 @@
               "name": "Get User Details",
               "description": null,
               "arguments": {
-                "name": "Azure Active Directory",
+                "name": "Microsoft Entra ID",
                 "config": "3f014316-51eb-4048-81fd-a2ff2b25c922",
                 "params": {
                   "id": "{{vars.indicator_value}}",
@@ -1752,7 +1752,7 @@
               "name": "Get User Managers",
               "description": null,
               "arguments": {
-                "name": "Azure Active Directory",
+                "name": "Microsoft Entra ID",
                 "config": "3f014316-51eb-4048-81fd-a2ff2b25c922",
                 "params": {
                   "user_id": "{{vars.indicator_value}}"
@@ -1780,7 +1780,7 @@
               "name": "Get User Membership",
               "description": null,
               "arguments": {
-                "name": "Azure Active Directory",
+                "name": "Microsoft Entra ID",
                 "config": "3f014316-51eb-4048-81fd-a2ff2b25c922",
                 "params": {
                   "user_id": "{{vars.indicator_value}}",
@@ -1809,7 +1809,7 @@
               "name": "Get User Owned Devices",
               "description": null,
               "arguments": {
-                "name": "Azure Active Directory",
+                "name": "Microsoft Entra ID",
                 "config": "3f014316-51eb-4048-81fd-a2ff2b25c922",
                 "params": {
                   "user_id": "{{vars.indicator_value}}"
@@ -1837,7 +1837,7 @@
               "name": "Get User Owned Objects",
               "description": null,
               "arguments": {
-                "name": "Azure Active Directory",
+                "name": "Microsoft Entra ID",
                 "config": "3f014316-51eb-4048-81fd-a2ff2b25c922",
                 "params": {
                   "user_id": "{{vars.indicator_value}}"
@@ -2128,7 +2128,7 @@
           "triggerLimit": null,
           "name": "List Direct Reports",
           "aliasName": null,
-          "tag": "#Azure Active Directory",
+          "tag": "#Microsoft Entra ID",
           "description": "List user's direct reports",
           "isActive": false,
           "debug": false,
@@ -2146,7 +2146,7 @@
               "name": "List Direct Reports",
               "description": null,
               "arguments": {
-                "name": "Azure Active Directory",
+                "name": "Microsoft Entra ID",
                 "config": "3f014316-51eb-4048-81fd-a2ff2b25c922",
                 "params": {
                   "user_id": "fd5533e3-e598-4cd2-b962-07bd5f3c6b63"
@@ -2172,7 +2172,7 @@
               "description": null,
               "arguments": {
                 "route": "28c065cf-86b5-4a24-ace6-3add5d477a57",
-                "title": "Azure Active Directory: Reset Password",
+                "title": "Microsoft Entra ID: Reset Password",
                 "resources": [
                   "alerts"
                 ],
@@ -2224,7 +2224,7 @@
           "triggerLimit": null,
           "name": "Add Member",
           "aliasName": null,
-          "tag": "#Azure Active Directory",
+          "tag": "#Microsoft Entra ID",
           "description": "Add member to a group.",
           "isActive": false,
           "debug": false,
@@ -2242,8 +2242,8 @@
               "name": "Add Member",
               "description": null,
               "arguments": {
-                "name": "Azure Active Directory",
-                "config": "''",
+                "name": "Microsoft Entra ID",
+                "config": "",
                 "params": [],
                 "version": "2.2.1",
                 "connector": "azure-active-directory",
@@ -2266,7 +2266,7 @@
               "description": null,
               "arguments": {
                 "route": "f9e5eecb-5b75-4796-a9cc-b0865276a0d3",
-                "title": "Azure Active Directory: Add Member",
+                "title": "Microsoft Entra ID: Add Member",
                 "resources": [
                   "alerts"
                 ],
@@ -2318,8 +2318,8 @@
           "triggerLimit": null,
           "name": "List Groups",
           "aliasName": null,
-          "tag": "#Azure Active Directory",
-          "description": "Retrieves the list of groups from Azure Active Directory based on the input parameters such as the query for filtering groups you have specified.",
+          "tag": "#Microsoft Entra ID",
+          "description": "Retrieves the list of groups from Microsoft Entra ID based on the input parameters such as the query for filtering groups you have specified.",
           "isActive": false,
           "debug": false,
           "singleRecordExecution": false,
@@ -2336,8 +2336,8 @@
               "name": "List Groups",
               "description": null,
               "arguments": {
-                "name": "Azure Active Directory",
-                "config": "''",
+                "name": "Microsoft Entra ID",
+                "config": "",
                 "params": {
                   "get_all_pages": false
                 },
@@ -2362,7 +2362,7 @@
               "description": null,
               "arguments": {
                 "route": "98796121-daa6-4040-98de-f6381896ba24",
-                "title": "Azure Active Directory: List Groups",
+                "title": "Microsoft Entra ID: List Groups",
                 "resources": [
                   "alerts"
                 ],
@@ -2414,8 +2414,8 @@
           "triggerLimit": null,
           "name": "List Group Members",
           "aliasName": null,
-          "tag": "#Azure Active Directory",
-          "description": "Retrieves the list of member users of a particular group from Azure Active Directory based on the input parameters such as the query for filtering groups members you have specified",
+          "tag": "#Microsoft Entra ID",
+          "description": "Retrieves the list of member users of a particular group from Microsoft Entra ID based on the input parameters such as the query for filtering groups members you have specified",
           "isActive": false,
           "debug": false,
           "singleRecordExecution": false,
@@ -2432,8 +2432,8 @@
               "name": "List Group Members",
               "description": null,
               "arguments": {
-                "name": "Azure Active Directory",
-                "config": "''",
+                "name": "Microsoft Entra ID",
+                "config": "",
                 "params": {
                   "get_all_pages": false
                 },
@@ -2458,7 +2458,7 @@
               "description": null,
               "arguments": {
                 "route": "45724a10-aa28-43f5-99aa-2b353087318b",
-                "title": "Azure Active Directory: List Group Members",
+                "title": "Microsoft Entra ID: List Group Members",
                 "resources": [
                   "alerts"
                 ],
@@ -2510,8 +2510,8 @@
           "triggerLimit": null,
           "name": "Get User Details",
           "aliasName": null,
-          "tag": "#Azure Active Directory",
-          "description": "Retrieves specific information for a specific user from Azure Active Directory, based on the Object ID or User Principal Name you have specified.",
+          "tag": "#Microsoft Entra ID",
+          "description": "Retrieves specific information for a specific user from Microsoft Entra ID, based on the Object ID or User Principal Name you have specified.",
           "isActive": false,
           "debug": false,
           "singleRecordExecution": false,
@@ -2528,8 +2528,8 @@
               "name": "Get User Details",
               "description": null,
               "arguments": {
-                "name": "Azure Active Directory",
-                "config": "''",
+                "name": "Microsoft Entra ID",
+                "config": "",
                 "params": {
                   "based_on": "Object ID",
                   "additional_info": true
@@ -2555,7 +2555,7 @@
               "description": null,
               "arguments": {
                 "route": "c54eca77-c799-4665-9941-74853aa8aa1d",
-                "title": "Azure Active Directory: Get User Details",
+                "title": "Microsoft Entra ID: Get User Details",
                 "resources": [
                   "alerts"
                 ],
@@ -2607,8 +2607,8 @@
           "triggerLimit": null,
           "name": "List SignIns Events",
           "aliasName": null,
-          "tag": "#Azure Active Directory",
-          "description": "Retrieves the list sign ins events from Azure Active Directory based on the input parameters such as the query for filtering users you have specified.",
+          "tag": "#Microsoft Entra ID",
+          "description": "Retrieves the list sign ins events from Microsoft Entra ID based on the input parameters such as the query for filtering users you have specified.",
           "isActive": false,
           "debug": false,
           "singleRecordExecution": false,
@@ -2625,8 +2625,8 @@
               "name": "List SignIns Events",
               "description": null,
               "arguments": {
-                "name": "Azure Active Directory",
-                "config": "''",
+                "name": "Microsoft Entra ID",
+                "config": "",
                 "params": {
                   "get_all_pages": false
                 },
@@ -2651,7 +2651,7 @@
               "description": null,
               "arguments": {
                 "route": "cf8f4fd0-202b-4626-886e-3e1156398ef7",
-                "title": "Azure Active Directory: List SignIns Events",
+                "title": "Microsoft Entra ID: List SignIns Events",
                 "resources": [
                   "alerts"
                 ],
@@ -2703,7 +2703,7 @@
           "triggerLimit": null,
           "name": "List User Owned Devices",
           "aliasName": null,
-          "tag": "#Azure Active Directory",
+          "tag": "#Microsoft Entra ID",
           "description": "Lists the devices that are owned by a user",
           "isActive": false,
           "debug": false,
@@ -2721,7 +2721,7 @@
               "name": "List User Owned Devices",
               "description": null,
               "arguments": {
-                "name": "Azure Active Directory",
+                "name": "Microsoft Entra ID",
                 "config": "3f014316-51eb-4048-81fd-a2ff2b25c922",
                 "params": {
                   "user_id": "fortisoar@forty.com"
@@ -2747,7 +2747,7 @@
               "description": null,
               "arguments": {
                 "route": "05daf1fa-c18d-4c33-82ba-aee84e60c1fc",
-                "title": "Azure Active Directory: Reset Password",
+                "title": "Microsoft Entra ID: Reset Password",
                 "resources": [
                   "alerts"
                 ],
@@ -2799,8 +2799,8 @@
           "triggerLimit": null,
           "name": "Reset Password",
           "aliasName": null,
-          "tag": "#Azure Active Directory",
-          "description": "Resets the password for an existing Azure Active Directory user, based on the Object ID or User Principal Name, password, and other input parameters you have specified.",
+          "tag": "#Microsoft Entra ID",
+          "description": "Resets the password for an existing Microsoft Entra ID user, based on the Object ID or User Principal Name, password, and other input parameters you have specified.",
           "isActive": false,
           "debug": false,
           "singleRecordExecution": false,
@@ -2817,7 +2817,7 @@
               "name": "Reset Password",
               "description": null,
               "arguments": {
-                "name": "Azure Active Directory",
+                "name": "Microsoft Entra ID",
                 "config": "3f014316-51eb-4048-81fd-a2ff2b25c922",
                 "params": {
                   "id": "7c2ee4aa-ff69-4196-bf4c-e727e9980667",
@@ -2846,7 +2846,7 @@
               "description": null,
               "arguments": {
                 "route": "f91f32e6-767f-49a5-a648-36fa0177d803",
-                "title": "Azure Active Directory: Reset Password",
+                "title": "Microsoft Entra ID: Reset Password",
                 "resources": [
                   "alerts"
                 ],
@@ -2898,7 +2898,7 @@
           "triggerLimit": null,
           "name": "Revoke SignIn Sessions",
           "aliasName": null,
-          "tag": "#Azure Active Directory",
+          "tag": "#Microsoft Entra ID",
           "description": "Invalidates all the refresh tokens issued to applications for a user. Action typically performed if the user has a lost or stolen device.",
           "isActive": false,
           "debug": false,
@@ -2916,7 +2916,7 @@
               "name": "Revoke SignIn Sessions",
               "description": null,
               "arguments": {
-                "name": "Azure Active Directory",
+                "name": "Microsoft Entra ID",
                 "config": "3f014316-51eb-4048-81fd-a2ff2b25c922",
                 "params": {
                   "user_id": "7c2ee4aa-ff69-4196-bf4c-e727e9980667"
@@ -2942,7 +2942,7 @@
               "description": null,
               "arguments": {
                 "route": "2029e0c4-922a-4fa4-80b9-56a05f68b32b",
-                "title": "Azure Active Directory: Reset Password",
+                "title": "Microsoft Entra ID: Reset Password",
                 "resources": [
                   "alerts"
                 ],
@@ -2994,7 +2994,7 @@
           "triggerLimit": null,
           "name": "List Registered Owners",
           "aliasName": null,
-          "tag": "#Azure Active Directory",
+          "tag": "#Microsoft Entra ID",
           "description": "List registered owners for a device",
           "isActive": false,
           "debug": false,
@@ -3012,7 +3012,7 @@
               "name": "List Registered Owners",
               "description": null,
               "arguments": {
-                "name": "Azure Active Directory",
+                "name": "Microsoft Entra ID",
                 "config": "3f014316-51eb-4048-81fd-a2ff2b25c922",
                 "params": {
                   "device_id": "754e8e13-bbc8-46d4-a7fe-edaea5b8694a"
@@ -3038,7 +3038,7 @@
               "description": null,
               "arguments": {
                 "route": "04e8b880-0197-45b7-a340-5c65d85679be",
-                "title": "Azure Active Directory: Reset Password",
+                "title": "Microsoft Entra ID: Reset Password",
                 "resources": [
                   "alerts"
                 ],

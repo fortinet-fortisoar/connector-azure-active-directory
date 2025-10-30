@@ -1,8 +1,9 @@
-""" Copyright start
-  Copyright (C) 2008 - 2023 Fortinet Inc.
-  All rights reserved.
-  FORTINET CONFIDENTIAL & FORTINET PROPRIETARY SOURCE CODE
-  Copyright end """
+"""
+Copyright start
+MIT License
+Copyright (c) 2025 Fortinet Inc
+Copyright end
+"""
 
 from requests import request, exceptions as req_exceptions
 from connectors.core.connector import get_logger, ConnectorError
@@ -12,11 +13,11 @@ from requests_toolbelt.utils import dump
 import logging
 import copy
 
-
 logger = get_logger('azure-active-directory')
-#logger.setLevel(logging.DEBUG) # Uncomment for connector specific debug
+# logger.setLevel(logging.DEBUG) # Uncomment for connector specific debug
 
 API_VERSION = "v1.0"
+
 
 def api_request(method, endpoint, connector_info, config, params=None, data=None, headers={}):
     try:
@@ -151,9 +152,11 @@ def add_member(config, params, connector_info):
 def get_user_details(config, params, connector_info):
     try:
         if params.get('additional_info'):
-            url_params = {'$select': 'id,businessPhones,displayName,givenName,jobTitle,mail,mobilePhone,officeLocation,preferredLanguage,surname,userPrincipalName,aboutMe,accountEnabled,ageGroup,assignedLicenses,assignedPlans,birthday,city,companyName,consentProvidedForMinor,country,createdDateTime,creationType,deletedDateTime,department,employeeHireDate,employeeId,employeeOrgData,employeeType,externalUserState,externalUserStateChangeDateTime,faxNumber,hireDate,id,identities,imAddresses,interests,isResourceAccount,lastPasswordChangeDateTime,legalAgeGroupClassification,licenseAssignmentStates,mailNickname,mySite,onPremisesDistinguishedName,onPremisesDomainName,onPremisesExtensionAttributes,onPremisesImmutableId,onPremisesLastSyncDateTime,onPremisesProvisioningErrors,onPremisesSamAccountName,onPremisesSecurityIdentifier,onPremisesSyncEnabled,onPremisesUserPrincipalName,otherMails,passwordPolicies,passwordProfile,pastProjects,postalCode,preferredDataLocation,preferredName,provisionedPlans,proxyAddresses,refreshTokensValidFromDateTime,responsibilities,schools,securityIdentifier,showInAddressList,signInSessionsValidFromDateTime,skills,state,streetAddress,usageLocation,userType'}
+            url_params = {
+                '$select': 'id,businessPhones,displayName,givenName,jobTitle,mail,mobilePhone,officeLocation,preferredLanguage,surname,userPrincipalName,aboutMe,accountEnabled,ageGroup,assignedLicenses,assignedPlans,birthday,city,companyName,consentProvidedForMinor,country,createdDateTime,creationType,deletedDateTime,department,employeeHireDate,employeeId,employeeOrgData,employeeType,externalUserState,externalUserStateChangeDateTime,faxNumber,hireDate,id,identities,imAddresses,interests,isResourceAccount,lastPasswordChangeDateTime,legalAgeGroupClassification,licenseAssignmentStates,mailNickname,mySite,onPremisesDistinguishedName,onPremisesDomainName,onPremisesExtensionAttributes,onPremisesImmutableId,onPremisesLastSyncDateTime,onPremisesProvisioningErrors,onPremisesSamAccountName,onPremisesSecurityIdentifier,onPremisesSyncEnabled,onPremisesUserPrincipalName,otherMails,passwordPolicies,passwordProfile,pastProjects,postalCode,preferredDataLocation,preferredName,provisionedPlans,proxyAddresses,refreshTokensValidFromDateTime,responsibilities,schools,securityIdentifier,showInAddressList,signInSessionsValidFromDateTime,skills,state,streetAddress,usageLocation,userType'}
         else:
-            url_params = {'$select': 'id,businessPhones,displayName,givenName,jobTitle,mail,mobilePhone,officeLocation,preferredLanguage,surname,userPrincipalName,accountEnabled,ageGroup,assignedLicenses,assignedPlans,city,companyName,consentProvidedForMinor,country,createdDateTime,creationType,deletedDateTime,department,employeeHireDate,employeeId,employeeOrgData,employeeType,externalUserState,externalUserStateChangeDateTime,faxNumber,id,identities,imAddresses,isResourceAccount,lastPasswordChangeDateTime,legalAgeGroupClassification,licenseAssignmentStates,mailNickname,onPremisesDistinguishedName,onPremisesDomainName,onPremisesExtensionAttributes,onPremisesImmutableId,onPremisesLastSyncDateTime,onPremisesProvisioningErrors,onPremisesSamAccountName,onPremisesSecurityIdentifier,onPremisesSyncEnabled,onPremisesUserPrincipalName,otherMails,passwordPolicies,passwordProfile,postalCode,preferredDataLocation,provisionedPlans,proxyAddresses,refreshTokensValidFromDateTime,securityIdentifier,showInAddressList,signInSessionsValidFromDateTime,state,streetAddress,usageLocation,userType'}
+            url_params = {
+                '$select': 'id,businessPhones,displayName,givenName,jobTitle,mail,mobilePhone,officeLocation,preferredLanguage,surname,userPrincipalName,accountEnabled,ageGroup,assignedLicenses,assignedPlans,city,companyName,consentProvidedForMinor,country,createdDateTime,creationType,deletedDateTime,department,employeeHireDate,employeeId,employeeOrgData,employeeType,externalUserState,externalUserStateChangeDateTime,faxNumber,id,identities,imAddresses,isResourceAccount,lastPasswordChangeDateTime,legalAgeGroupClassification,licenseAssignmentStates,mailNickname,onPremisesDistinguishedName,onPremisesDomainName,onPremisesExtensionAttributes,onPremisesImmutableId,onPremisesLastSyncDateTime,onPremisesProvisioningErrors,onPremisesSamAccountName,onPremisesSecurityIdentifier,onPremisesSyncEnabled,onPremisesUserPrincipalName,otherMails,passwordPolicies,passwordProfile,postalCode,preferredDataLocation,provisionedPlans,proxyAddresses,refreshTokensValidFromDateTime,securityIdentifier,showInAddressList,signInSessionsValidFromDateTime,state,streetAddress,usageLocation,userType'}
         response = api_request("GET", "/users/{0}".format(params.get('id')), connector_info, config, params=url_params)
         return response
     except Exception as err:
@@ -276,7 +279,7 @@ def rest_api_call(config, params, connector_info):
         endpoint = params.get("endpoint")
         if '/' not in endpoint:
             raise ConnectorError("Wrong endpoint, make sure to follow the MS Graph API documentation")
-        method = params.get("method","GET")
+        method = params.get("method", "GET")
         url_params = params.get("params", None)
         body = params.get("body", None)
         response = api_request(method, endpoint, connector_info, config, params=url_params, data=body)
@@ -284,6 +287,7 @@ def rest_api_call(config, params, connector_info):
             return response
     except Exception as err:
         raise ConnectorError(str(err))
+
 
 def _check_health(config, connector_info):
     if check(config, connector_info) and list_users(config, params={}, connector_info=connector_info):
