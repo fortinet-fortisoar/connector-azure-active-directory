@@ -1,16 +1,16 @@
 {
-  "description": "Formely Azure Active Directory, Identity and access management for the cloud using Azure Active Directory REST API services.",
+  "description": "Microsoft Entra ID, formerly known as Azure Active Directory (Azure AD), is a cloud-based identity and access management (IAM) service that secures access to Microsoft cloud services and other applications for users. It manages user identities, enforces access policies, and supports single sign-on (SSO) to help organizations protect cloud and on-premises resources",
   "category": "Identity and Access Management",
   "name": "azure-active-directory",
   "label": "Microsoft Entra ID",
   "version": "2.2.1",
   "publisher": "Fortinet",
-  "contributor":"Naili.M",
+  "contributor": "",
   "cs_approved": true,
   "cs_compatible": true,
   "icon_small_name": "small-azure.png",
   "icon_large_name": "large-azure.png",
-  "help_online": "https://docs.fortinet.com/document/fortisoar/2.2.1/azure-active-directory/592/azure-active-directory-v2-2-0",
+  "help_online": "",
   "configuration": {
     "fields": [
       {
@@ -45,7 +45,7 @@
               "visible": true,
               "type": "text",
               "name": "client_id",
-              "description": "Unique Application ID of the Azure Active Directory application that is used to create an authentication token required to access the API."
+              "description": "Unique Application ID of the Microsoft Entra ID application that is used to create an authentication token required to access the API."
             },
             {
               "title": "Client Secret",
@@ -54,7 +54,7 @@
               "visible": true,
               "type": "password",
               "name": "client_secret",
-              "description": "Unique Client Secret of the Azure Active Directory application that is used to create an authentication token required to access the API. For information on how to get the secret key, see 'https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-atp/exposed-apis-create-app-webapp'."
+              "description": "Unique Client Secret of the Microsoft Entra ID application that is used to create an authentication token required to access the API. For information on how to get the secret key, see 'https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-atp/exposed-apis-create-app-webapp'."
             },
             {
               "title": "Tenant ID",
@@ -63,7 +63,7 @@
               "visible": true,
               "type": "text",
               "name": "tenant_id",
-              "description": "ID of the tenant that you have been provided for your Azure Active Directory instance."
+              "description": "ID of the tenant that you have been provided for your Microsoft Entra ID instance."
             },
             {
               "title": "Verify SSL",
@@ -94,7 +94,7 @@
               "visible": true,
               "type": "text",
               "name": "client_id",
-              "description": "Unique API ID of the Azure Active Directory application that is used to create an authentication token required to access the API."
+              "description": "Unique API ID of the Microsoft Entra ID application that is used to create an authentication token required to access the API."
             },
             {
               "title": "Client Secret",
@@ -103,7 +103,7 @@
               "visible": true,
               "type": "password",
               "name": "client_secret",
-              "description": "Unique API Secret of the Azure Active Directory application that is used to create an authentication token required to access the API. For information on how to get the secret key, see 'https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-atp/exposed-apis-create-app-webapp'."
+              "description": "Unique API Secret of the Microsoft Entra ID application that is used to create an authentication token required to access the API. For information on how to get the secret key, see 'https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-atp/exposed-apis-create-app-webapp'."
             },
             {
               "title": "Tenant ID",
@@ -112,7 +112,7 @@
               "visible": true,
               "type": "text",
               "name": "tenant_id",
-              "description": "ID of the tenant that you have been provided for your Azure Active Directory instance."
+              "description": "ID of the tenant that you have been provided for your Microsoft Entra ID instance."
             },
             {
               "title": "Authorization Code",
@@ -295,7 +295,7 @@
         },
         {
           "title": "Select Query",
-          "description": "Specify the $select query to retrieve people from Azure Active Directory. The OData's Select query is supported on fields such as id, displayName, etc. Refer to OData system query options for more information. ",
+          "description": "Specify the $select query to retrieve people from Microsoft Entra ID. The OData's Select query is supported on fields such as id, displayName, etc. Refer to OData system query options for more information. ",
           "required": false,
           "editable": true,
           "visible": true,
@@ -321,7 +321,7 @@
           "visible": true,
           "type": "integer",
           "name": "$skip",
-          "description": "(Optional) Specify the count of the first few records to skip while retrieving response from Azure Active Directory.",
+          "description": "(Optional) Specify the count of the first few records to skip while retrieving response from Microsoft Entra ID.",
           "tooltip": "(Optional) Skip the first n results, useful for paging."
         }
       ],
@@ -459,14 +459,14 @@
         },
         {
           "title": "Select Query",
-          "description": "Specify the $select query to retrieve people from Azure Active Directory. The OData's Select query is supported on fields such as id, displayName, etc. Refer to OData system query options for more information. ",
+          "description": "Specify the $select query to retrieve people from Microsoft Entra ID. The OData's Select query is supported on fields such as id, displayName, etc. Refer to OData system query options for more information. ",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "$select",
           "placeholder": "id,displayName",
-          "tooltip": "Specify the select query to retrieve records from Azure Active Directory. The OData's Select query is supported on fields such as: \"id\", \"displayName\", etc."
+          "tooltip": "Specify the select query to retrieve records from Microsoft Entra ID. The OData's Select query is supported on fields such as: \"id\", \"displayName\", etc."
         },
         {
           "title": "Number Of Records To Fetch",
@@ -620,7 +620,7 @@
     {
       "title": "List Groups",
       "operation": "list_groups",
-      "description": "Retrieves a list of groups from Azure Active Directory based on the query for filtering groups that you have specified.",
+      "description": "Retrieves a list of groups from Microsoft Entra ID based on the query for filtering groups that you have specified.",
       "category": "investigation ",
       "annotation": "list_groups",
       "output_schema": {
@@ -683,14 +683,14 @@
         },
         {
           "title": "Select Query",
-          "description": "Specify the $select query to retrieve groups from Azure Active Directory. The OData's Select query is supported on fields such as id, displayName, etc. Refer to OData system query options for more information. ",
+          "description": "Specify the $select query to retrieve groups from Microsoft Entra ID. The OData's Select query is supported on fields such as id, displayName, etc. Refer to OData system query options for more information. ",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "$select",
           "placeholder": "id,displayName",
-          "tooltip": "Specify the select query to retrieve groups from Azure Active Directory. The OData's Select query is supported on fields such as: \"id\", \"displayName\", etc."
+          "tooltip": "Specify the select query to retrieve groups from Microsoft Entra ID. The OData's Select query is supported on fields such as: \"id\", \"displayName\", etc."
         },
         {
           "title": "Number Of Groups To Fetch",
@@ -727,7 +727,7 @@
     {
       "title": "List Group Members",
       "operation": "list_group_members",
-      "description": "Retrieves a list of members of a particular group from Azure Active Directory based on the query for filtering group members that you have specified. ",
+      "description": "Retrieves a list of members of a particular group from Microsoft Entra ID based on the query for filtering group members that you have specified. ",
       "category": "investigation ",
       "annotation": "list_group_members",
       "output_schema": {
@@ -775,14 +775,14 @@
         },
         {
           "title": "Select Query",
-          "description": "Specify the $select query to retrieve group members from Azure Active Directory. The OData's Select query is supported on fields such as id, userPrincipalName, displayName, etc.",
+          "description": "Specify the $select query to retrieve group members from Microsoft Entra ID. The OData's Select query is supported on fields such as id, userPrincipalName, displayName, etc.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "$select",
           "placeholder": "id,displayName",
-          "tooltip": "Specify the select query to retrieve group members from Azure Active Directory. The OData's Select query is supported on fields such as: \"id\", \"userPrincipalName\", \"displayName\", etc. Allowed properties: businessPhones,displayName,givenName,jobTitle,mail,mobilePhone,officeLocation,preferredLanguage,surname,userPrincipalName,accountEnabled,ageGroup,assignedLicenses,assignedPlans,city,companyName,consentProvidedForMinor,country,createdDateTime,creationType,deletedDateTime,department,employeeHireDate,employeeId,employeeOrgData,employeeType,externalUserState,externalUserStateChangeDateTime,faxNumber,id,identities,imAddresses,isResourceAccount,lastPasswordChangeDateTime,legalAgeGroupClassification,licenseAssignmentStates,mailNickname,onPremisesDistinguishedName,onPremisesDomainName,onPremisesExtensionAttributes,onPremisesImmutableId,onPremisesLastSyncDateTime,onPremisesProvisioningErrors,onPremisesSamAccountName,onPremisesSecurityIdentifier,onPremisesSyncEnabled,onPremisesUserPrincipalName,otherMails,passwordPolicies,passwordProfile,postalCode,preferredDataLocation,provisionedPlans,proxyAddresses,refreshTokensValidFromDateTime,securityIdentifier,showInAddressList,signInSessionsValidFromDateTime,state,streetAddress,usageLocation"
+          "tooltip": "Specify the select query to retrieve group members from Microsoft Entra ID. The OData's Select query is supported on fields such as: \"id\", \"userPrincipalName\", \"displayName\", etc. Allowed properties: businessPhones,displayName,givenName,jobTitle,mail,mobilePhone,officeLocation,preferredLanguage,surname,userPrincipalName,accountEnabled,ageGroup,assignedLicenses,assignedPlans,city,companyName,consentProvidedForMinor,country,createdDateTime,creationType,deletedDateTime,department,employeeHireDate,employeeId,employeeOrgData,employeeType,externalUserState,externalUserStateChangeDateTime,faxNumber,id,identities,imAddresses,isResourceAccount,lastPasswordChangeDateTime,legalAgeGroupClassification,licenseAssignmentStates,mailNickname,onPremisesDistinguishedName,onPremisesDomainName,onPremisesExtensionAttributes,onPremisesImmutableId,onPremisesLastSyncDateTime,onPremisesProvisioningErrors,onPremisesSamAccountName,onPremisesSecurityIdentifier,onPremisesSyncEnabled,onPremisesUserPrincipalName,otherMails,passwordPolicies,passwordProfile,postalCode,preferredDataLocation,provisionedPlans,proxyAddresses,refreshTokensValidFromDateTime,securityIdentifier,showInAddressList,signInSessionsValidFromDateTime,state,streetAddress,usageLocation"
         },
         {
           "title": "Number Of Group Members To Fetch",
@@ -819,7 +819,7 @@
     {
       "title": "Get Group Details",
       "operation": "get_group_details",
-      "description": "Retrieves the details of a particular group from Azure Active Directory based on the group ID that you have specified. ",
+      "description": "Retrieves the details of a particular group from Microsoft Entra ID based on the group ID that you have specified. ",
       "category": "investigation ",
       "annotation": "get_group_details",
       "output_schema": {
@@ -948,7 +948,7 @@
     {
       "title": "List SignIns Events",
       "operation": "list_sign_ins",
-      "description": "Retrieves the list of sign-in events from Azure Active Directory based on the query for filtering users that you have specified. ",
+      "description": "Retrieves the list of sign-in events from Microsoft Entra ID based on the query for filtering users that you have specified. ",
       "category": "investigation ",
       "annotation": "list_sign_ins",
       "output_schema": {
@@ -1010,14 +1010,14 @@
       "parameters": [
         {
           "title": "Filter Query",
-          "description": "Specify the filter query based on which you want to retrieve sign-in events from Azure Active Directory. The OData's Filter query is supported on the following fields: id, userPrincipalName, displayName, givenName and jobTitle. For example [userPrincipalName eq 'username@example.com'] retrieves a user whose userPrincipalName is username@example.com. Refer to OData system query options for more information.",
+          "description": "Specify the filter query based on which you want to retrieve sign-in events from Microsoft Entra ID. The OData's Filter query is supported on the following fields: id, userPrincipalName, displayName, givenName and jobTitle. For example [userPrincipalName eq 'username@example.com'] retrieves a user whose userPrincipalName is username@example.com. Refer to OData system query options for more information.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "$filter",
           "placeholder": "userPrincipalName eq 'username@fortisoar1.onmicrosoft.com'",
-          "tooltip": "Filter query based on which you want to retrieve sign-in events from Azure Active Directory. The OData's Filter query is supported on the following fields: \"id\", \"userPrincipalName\", \"displayName\", \"givenName\" and \"jobTitle\". For example [userPrincipalName eq 'username@fortisoar1.onmicrosoft.com'] retrieve a user which userPrincipalName is username@fortisoar1.onmicrosoft.com"
+          "tooltip": "Filter query based on which you want to retrieve sign-in events from Microsoft Entra ID. The OData's Filter query is supported on the following fields: \"id\", \"userPrincipalName\", \"displayName\", \"givenName\" and \"jobTitle\". For example [userPrincipalName eq 'username@fortisoar1.onmicrosoft.com'] retrieve a user which userPrincipalName is username@fortisoar1.onmicrosoft.com"
         },
         {
           "title": "Number of Events to Fetch",
@@ -1054,7 +1054,7 @@
     {
       "title": "List Users",
       "operation": "list_users",
-      "description": "Retrieves a list of users from Azure Active Directory based on the query for filtering users you have specified. ",
+      "description": "Retrieves a list of users from Microsoft Entra ID based on the query for filtering users you have specified. ",
       "category": "investigation ",
       "annotation": "list_users",
       "output_schema": {
@@ -1080,25 +1080,25 @@
       "parameters": [
         {
           "title": "Filter Query",
-          "description": "Specify the filter query based on which you want to retrieve users from Azure Active Directory. The OData's Filter query is supported on the following fields: id, userPrincipalName, displayName, givenName and jobTitle. For example [userPrincipalName eq \"username@example.com\"] retrieves a user whose userPrincipalName is username@example.com ",
+          "description": "Specify the filter query based on which you want to retrieve users from Microsoft Entra ID. The OData's Filter query is supported on the following fields: id, userPrincipalName, displayName, givenName and jobTitle. For example [userPrincipalName eq \"username@example.com\"] retrieves a user whose userPrincipalName is username@example.com ",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "$filter",
           "placeholder": "userPrincipalName eq 'username@fortisoar1.onmicrosoft.com'",
-          "tooltip": "Filter query based on which you want to retrieve users from Azure Active Directory. The OData's Filter query is supported on the following fields: \"id\", \"userPrincipalName\", \"displayName\", \"givenName\" and \"jobTitle\". For example [userPrincipalName eq 'username@fortisoar1.onmicrosoft.com'] retrieve a user which userPrincipalName is username@fortisoar1.onmicrosoft.com"
+          "tooltip": "Filter query based on which you want to retrieve users from Microsoft Entra ID. The OData's Filter query is supported on the following fields: \"id\", \"userPrincipalName\", \"displayName\", \"givenName\" and \"jobTitle\". For example [userPrincipalName eq 'username@fortisoar1.onmicrosoft.com'] retrieve a user which userPrincipalName is username@fortisoar1.onmicrosoft.com"
         },
         {
           "title": "Select Query",
-          "description": "Specify the $select query to retrieve user fields from Azure Active Directory. The OData's Select query is supported on fields such as id, userPrincipalName, displayName, etc. Refer to OData system query options for more information. ",
+          "description": "Specify the $select query to retrieve user fields from Microsoft Entra ID. The OData's Select query is supported on fields such as id, userPrincipalName, displayName, etc. Refer to OData system query options for more information. ",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "$select",
           "placeholder": "id,displayName",
-          "tooltip": "Specify the select query to retrieve user fields from Azure Active Directory. The OData's Select query is supported on fields such as: \"id\", \"userPrincipalName\", \"displayName\", etc."
+          "tooltip": "Specify the select query to retrieve user fields from Microsoft Entra ID. The OData's Select query is supported on fields such as: \"id\", \"userPrincipalName\", \"displayName\", etc."
         },
         {
           "title": "Number Of Users To Fetch",
@@ -1135,7 +1135,7 @@
     {
       "title": "Get User Details",
       "operation": "get_user_details",
-      "description": "Retrieves specific information for a specific user from Azure Active Directory, based on the Object ID or User Principal Name you have specified.",
+      "description": "Retrieves specific information for a specific user from Microsoft Entra ID, based on the Object ID or User Principal Name you have specified.",
       "category": "investigation",
       "annotation": "get_user_details",
       "parameters": [
@@ -1143,8 +1143,8 @@
           "title": "Based On",
           "name": "based_on",
           "type": "select",
-          "tooltip": "Select the parameter based on which you want to retrieve details of a user from Azure Active Directory. You can choose between Object ID or User Principal Name.",
-          "description": "Select the parameter based on which you want to retrieve details of a user from Azure Active Directory. You can choose between Object ID or User Principal Name.",
+          "tooltip": "Select the parameter based on which you want to retrieve details of a user from Microsoft Entra ID. You can choose between Object ID or User Principal Name.",
+          "description": "Select the parameter based on which you want to retrieve details of a user from Microsoft Entra ID. You can choose between Object ID or User Principal Name.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -1159,8 +1159,8 @@
                 "title": "Object ID",
                 "name": "id",
                 "type": "text",
-                "tooltip": "If you choose Object ID, then in the Object ID field, you must specify the ID of the object based on which details of the user are retrieved from Azure Active Directory.",
-                "description": "Specify the object ID of the user whose details are to be retrieved from Azure Active Directory.",
+                "tooltip": "If you choose Object ID, then in the Object ID field, you must specify the ID of the object based on which details of the user are retrieved from Microsoft Entra ID.",
+                "description": "Specify the object ID of the user whose details are to be retrieved from Microsoft Entra ID.",
                 "required": true,
                 "editable": true,
                 "visible": true
@@ -1171,8 +1171,8 @@
                 "title": "User Principal Name",
                 "name": "id",
                 "type": "text",
-                "tooltip": "If you choose User Principal Name, then in the User Principal Name field, you must specify the principal name of the user whose details you want to retrieve from Azure Active Directory.",
-                "description": "Specify the principal name of the user whose details are to be retrieved from Azure Active Directory.",
+                "tooltip": "If you choose User Principal Name, then in the User Principal Name field, you must specify the principal name of the user whose details you want to retrieve from Microsoft Entra ID.",
+                "description": "Specify the principal name of the user whose details are to be retrieved from Microsoft Entra ID.",
                 "required": true,
                 "editable": true,
                 "visible": true
@@ -1401,7 +1401,7 @@
     {
       "title": "Add User",
       "operation": "add_user",
-      "description": "Creates a new user in Azure Active Directory, based on the User Principal Name, Display Name, Password, and other input parameters you have specified.",
+      "description": "Creates a new user in Microsoft Entra ID, based on the User Principal Name, Display Name, Password, and other input parameters you have specified.",
       "category": "investigation",
       "annotation": "add_user",
       "output_schema": {
@@ -1424,8 +1424,8 @@
           "title": "Display Name",
           "name": "displayName",
           "type": "text",
-          "tooltip": "Name that you want to display in the address book for the user that you are creating in Azure Active Directory.",
-          "description": "Specify the name that you want to be displayed in the address book for the user that you are creating in Azure Active Directory. ",
+          "tooltip": "Name that you want to display in the address book for the user that you are creating in Microsoft Entra ID.",
+          "description": "Specify the name that you want to be displayed in the address book for the user that you are creating in Microsoft Entra ID. ",
           "required": true,
           "editable": true,
           "visible": true
@@ -1434,8 +1434,8 @@
           "title": "Mail Nick Name",
           "name": "mailNickname",
           "type": "text",
-          "tooltip": "Mail alias for the user that you are creating in Azure Active Directory.",
-          "description": "Specify the mail alias for the user that you are creating in Azure Active Directory. ",
+          "tooltip": "Mail alias for the user that you are creating in Microsoft Entra ID.",
+          "description": "Specify the mail alias for the user that you are creating in Microsoft Entra ID. ",
           "required": true,
           "editable": true,
           "visible": true
@@ -1444,8 +1444,8 @@
           "title": "User Principal Name",
           "name": "userPrincipalName",
           "type": "text",
-          "description": "Specify the principal name of the user that you are creating in Azure Active Directory. ",
-          "tooltip": "Principal name of the user that you are creating in Azure Active Directory.",
+          "description": "Specify the principal name of the user that you are creating in Microsoft Entra ID. ",
+          "tooltip": "Principal name of the user that you are creating in Microsoft Entra ID.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -1455,8 +1455,8 @@
           "title": "Password",
           "name": "password",
           "type": "password",
-          "tooltip": "Password of the user that you are creating in Azure Active Directory.",
-          "description": "Specify the password of the user that you are creating in Azure Active Directory. ",
+          "tooltip": "Password of the user that you are creating in Microsoft Entra ID.",
+          "description": "Specify the password of the user that you are creating in Microsoft Entra ID.",
           "required": true,
           "editable": true,
           "visible": true
@@ -1465,8 +1465,8 @@
           "title": "Force Change Password Next Login",
           "name": "force_change",
           "type": "checkbox",
-          "tooltip": "If you select this option, i.e., set it to true, then the user is forced to change his password when the users next logs into Azure Active Directory.",
-          "description": "Select this option, i.e., set it to true, to force the users to change their password when they next log on to Azure Active Directory. ",
+          "tooltip": "If you select this option, i.e., set it to true, then the user is forced to change his password when the users next logs into Microsoft Entra ID.",
+          "description": "Select this option, i.e., set it to true, to force the users to change their password when they next log on to Microsoft Entra ID.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -1476,8 +1476,8 @@
           "title": "Account Enabled",
           "name": "accountEnabled",
           "type": "checkbox",
-          "tooltip": "If you select this option, i.e., set it to true, then the user's account is enabled on Azure Active Directory.",
-          "description": "Select this option, i.e., set it to true, to enable this user's account on Azure Active Directory. ",
+          "tooltip": "If you select this option, i.e., set it to true, then the user's account is enabled on Microsoft Entra ID.",
+          "description": "Select this option, i.e., set it to true, to enable this user's account on Microsoft Entra ID.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -1491,8 +1491,8 @@
           "editable": true,
           "visible": true,
           "value": "",
-          "tooltip": "(Optional) Additional fields that you want to add to the user that you are creating in Azure Active Directory.",
-          "description": "(Optional) Specify additional fields to add to the user's account that you are creating in Azure Active Directory. "
+          "tooltip": "(Optional) Additional fields that you want to add to the user that you are creating in Microsoft Entra ID.",
+          "description": "(Optional) Specify additional fields to add to the user's account that you are creating in Microsoft Entra ID."
         }
       ],
       "enabled": true
@@ -1500,7 +1500,7 @@
     {
       "title": "Enable User",
       "operation": "enable_user",
-      "description": "Enables a specific user's account in Azure Active Directory, based on the Object ID or User Principal Name you have specified.",
+      "description": "Enables a specific user's account in Microsoft Entra ID, based on the Object ID or User Principal Name you have specified.",
       "category": "containment",
       "annotation": "enable_user",
       "output_schema": {
@@ -1512,8 +1512,8 @@
           "title": "Based On",
           "name": "based_on",
           "type": "select",
-          "tooltip": "Select the parameter based on which you want to enable a user's account on Azure Active Directory. You can choose between Object ID or User Principal Name.",
-          "description": "Select the parameter based on which you want to enable a user's account on Azure Active Directory. You can choose between Object ID or User Principal Name.",
+          "tooltip": "Select the parameter based on which you want to enable a user's account on Microsoft Entra ID. You can choose between Object ID or User Principal Name.",
+          "description": "Select the parameter based on which you want to enable a user's account on Microsoft Entra ID. You can choose between Object ID or User Principal Name.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -1528,8 +1528,8 @@
                 "title": "Object ID",
                 "name": "id",
                 "type": "text",
-                "tooltip": "If you choose Object ID, then in the Object ID field, you must specify the ID of the object based on which user account is enabled on Azure Active Directory.",
-                "description": "Specify the object ID associated with the user account to be enabled on Azure Active Directory.",
+                "tooltip": "If you choose Object ID, then in the Object ID field, you must specify the ID of the object based on which user account is enabled on Microsoft Entra ID.",
+                "description": "Specify the object ID associated with the user account to be enabled on Microsoft Entra ID.",
                 "required": true,
                 "editable": true,
                 "visible": true
@@ -1540,8 +1540,8 @@
                 "title": "User Principal Name",
                 "name": "id",
                 "type": "text",
-                "tooltip": "If you choose User Principal Name, then in the User Principal Name field, you must specify the principal name of the user based on which user account is enabled on Azure Active Directory.",
-                "description": "Specify the principal name associated with the user account to be enabled on Azure Active Directory.",
+                "tooltip": "If you choose User Principal Name, then in the User Principal Name field, you must specify the principal name of the user based on which user account is enabled on Microsoft Entra ID.",
+                "description": "Specify the principal name associated with the user account to be enabled on Microsoft Entra ID.",
                 "required": true,
                 "editable": true,
                 "visible": true
@@ -1555,7 +1555,7 @@
     {
       "title": "Disable User",
       "operation": "disable_user",
-      "description": "Disables a specific user's account in Azure Active Directory, based on the Object ID or User Principal Name you have specified.",
+      "description": "Disables a specific user's account in Microsoft Entra ID, based on the Object ID or User Principal Name you have specified.",
       "category": "containment",
       "annotation": "disable_user",
       "output_schema": {
@@ -1567,8 +1567,8 @@
           "title": "Based On",
           "name": "based_on",
           "type": "select",
-          "tooltip": "Select the parameter based on which you want to disable a user's account on Azure Active Directory. You can choose between Object ID or User Principal Name.",
-          "description": "Select the parameter based on which you want to disable a user's account on Azure Active Directory. You can choose between Object ID or User Principal Name.",
+          "tooltip": "Select the parameter based on which you want to disable a user's account on Microsoft Entra ID. You can choose between Object ID or User Principal Name.",
+          "description": "Select the parameter based on which you want to disable a user's account on Microsoft Entra ID. You can choose between Object ID or User Principal Name.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -1583,8 +1583,8 @@
                 "title": "Object ID",
                 "name": "id",
                 "type": "text",
-                "tooltip": "If you choose Object ID, then in the Object ID field, you must specify the ID of the object based on which user account is disabled on Azure Active Directory.",
-                "description": "Specify the object ID associated with the user account to be disabled on Azure Active Directory.",
+                "tooltip": "If you choose Object ID, then in the Object ID field, you must specify the ID of the object based on which user account is disabled on Microsoft Entra ID.",
+                "description": "Specify the object ID associated with the user account to be disabled on Microsoft Entra ID.",
                 "required": true,
                 "editable": true,
                 "visible": true
@@ -1595,8 +1595,8 @@
                 "title": "User Principal Name",
                 "name": "id",
                 "type": "text",
-                "tooltip": "If you choose User Principal Name, then in the User Principal Name field, you must specify the principal name of the user based on which user account is disabled on Azure Active Directory.",
-                "description": "Specify the principal name associated with the user account to be disabled on Azure Active Directory.",
+                "tooltip": "If you choose User Principal Name, then in the User Principal Name field, you must specify the principal name of the user based on which user account is disabled on Microsoft Entra ID.",
+                "description": "Specify the principal name associated with the user account to be disabled on Microsoft Entra ID.",
                 "required": true,
                 "editable": true,
                 "visible": true
@@ -1610,7 +1610,7 @@
     {
       "title": "Delete User",
       "operation": "delete_user",
-      "description": "Deletes a specific user's account from Azure Active Directory, based on the Object ID or User Principal Name you have specified.",
+      "description": "Deletes a specific user's account from Microsoft Entra ID, based on the Object ID or User Principal Name you have specified.",
       "category": "investigation",
       "annotation": "delete_user",
       "output_schema": {
@@ -1622,8 +1622,8 @@
           "title": "Based On",
           "name": "based_on",
           "type": "select",
-          "tooltip": "Select the parameter based on which you want to delete a user's account from Azure Active Directory. You can choose between Object ID or User Principal Name.",
-          "description": "Select the parameter based on which you want to delete a user's account from Azure Active Directory. You can choose between Object ID or User Principal Name.",
+          "tooltip": "Select the parameter based on which you want to delete a user's account from Microsoft Entra ID. You can choose between Object ID or User Principal Name.",
+          "description": "Select the parameter based on which you want to delete a user's account from Microsoft Entra ID. You can choose between Object ID or User Principal Name.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -1638,8 +1638,8 @@
                 "title": "Object ID",
                 "name": "id",
                 "type": "text",
-                "tooltip": "If you choose Object ID, then in the Object ID field, you must specify the ID of the object based on which user account is deleted from Azure Active Directory.",
-                "description": "Specify the object ID associated with the user account to be deleted on Azure Active Directory.",
+                "tooltip": "If you choose Object ID, then in the Object ID field, you must specify the ID of the object based on which user account is deleted from Microsoft Entra ID.",
+                "description": "Specify the object ID associated with the user account to be deleted on Microsoft Entra ID.",
                 "required": true,
                 "editable": true,
                 "visible": true
@@ -1650,8 +1650,8 @@
                 "title": "User Principal Name",
                 "name": "id",
                 "type": "text",
-                "tooltip": "If you choose User Principal Name, then in the User Principal Name field, you must specify the principal name of the user based on which user account is deleted from Azure Active Directory.",
-                "description": "Specify the principal name associated with the user account to be deleted on Azure Active Directory.",
+                "tooltip": "If you choose User Principal Name, then in the User Principal Name field, you must specify the principal name of the user based on which user account is deleted from Microsoft Entra ID.",
+                "description": "Specify the principal name associated with the user account to be deleted on Microsoft Entra ID.",
                 "required": true,
                 "editable": true,
                 "visible": true
@@ -1665,7 +1665,7 @@
     {
       "title": "Reset Password",
       "operation": "reset_password",
-      "description": "Resets the password for an existing Azure Active Directory user, based on the Object ID or User Principal Name, password, and other input parameters you have specified.",
+      "description": "Resets the password for an existing Microsoft Entra ID user, based on the Object ID or User Principal Name, password, and other input parameters you have specified.",
       "category": "containment",
       "annotation": "reset_password",
       "output_schema": {
@@ -1677,8 +1677,8 @@
           "title": "Based On",
           "name": "based_on",
           "type": "select",
-          "tooltip": "Select the parameter based on which you want to retrieve details of the user, whose password you want to reset, from Azure Active Directory. You can choose between Object ID or User Principal Name.",
-          "description": "Select the parameter based on which you want to reset the password of a user's account on Azure Active Directory You can choose between Object ID or User Principal Name.",
+          "tooltip": "Select the parameter based on which you want to retrieve details of the user, whose password you want to reset, from Microsoft Entra ID. You can choose between Object ID or User Principal Name.",
+          "description": "Select the parameter based on which you want to reset the password of a user's account on Microsoft Entra ID You can choose between Object ID or User Principal Name.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -1693,8 +1693,8 @@
                 "title": "Object ID",
                 "name": "id",
                 "type": "text",
-                "tooltip": "If you choose Object ID, then in the Object ID field, you must specify the ID of the object based on which details of the user are retrieved from Azure Active Directory.",
-                "description": "Specify the object ID associated with the user account whose password is to be reset on Azure Active Directory. ",
+                "tooltip": "If you choose Object ID, then in the Object ID field, you must specify the ID of the object based on which details of the user are retrieved from Microsoft Entra ID.",
+                "description": "Specify the object ID associated with the user account whose password is to be reset on Microsoft Entra ID. ",
                 "required": true,
                 "editable": true,
                 "visible": true
@@ -1705,8 +1705,8 @@
                 "title": "User Principal Name",
                 "name": "id",
                 "type": "text",
-                "tooltip": "If you choose User Principal Name, then in the User Principal Name field, you must specify the principal name of the user whose details you want to retrieve from Azure Active Directory.",
-                "description": "Specify the principal name associated with the user account whose password is to be reset on Azure Active Directory. ",
+                "tooltip": "If you choose User Principal Name, then in the User Principal Name field, you must specify the principal name of the user whose details you want to retrieve from Microsoft Entra ID.",
+                "description": "Specify the principal name associated with the user account whose password is to be reset on Microsoft Entra ID.",
                 "required": true,
                 "editable": true,
                 "visible": true
@@ -1718,8 +1718,8 @@
           "title": "Password",
           "name": "password",
           "type": "password",
-          "tooltip": "Temporary password that you want to set for the user whose password you want to rest on Azure Active Directory.",
-          "description": "Specify a temporary password that you want to set for the user on Azure Active Directory. ",
+          "tooltip": "Temporary password that you want to set for the user whose password you want to rest on Microsoft Entra ID.",
+          "description": "Specify a temporary password that you want to set for the user on Microsoft Entra ID.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -1729,8 +1729,8 @@
           "title": "Force Change Password Next Login",
           "name": "force_change",
           "type": "checkbox",
-          "tooltip": "If you select this option, i.e., set it to true, then the user is forced to change his password when the user next logs into Azure Active Directory.",
-          "description": "Select this option, i.e., set it to true, to force the users to change their password when they next log on to Azure Active Directory. ",
+          "tooltip": "If you select this option, i.e., set it to true, then the user is forced to change his password when the user next logs into Microsoft Entra ID.",
+          "description": "Select this option, i.e., set it to true, to force the users to change their password when they next log on to Microsoft Entra ID.",
           "required": false,
           "editable": true,
           "visible": true
