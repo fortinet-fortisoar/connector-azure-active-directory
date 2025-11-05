@@ -5,7 +5,7 @@
   "label": "Microsoft Entra ID",
   "version": "2.2.1",
   "publisher": "Fortinet",
-  "contributor": "",
+  "contributor":"Naili.M",
   "cs_approved": true,
   "cs_compatible": true,
   "icon_small_name": "small-azure.png",
